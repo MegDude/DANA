@@ -1,7 +1,7 @@
 const SITE_NAV = `
   <nav class="nav-shell" aria-label="Primary navigation">
     <a class="brand" href="index.html" aria-label="DANA home">
-      <span class="brand-mark" aria-hidden="true">D</span>
+      <span class="brand-mark brand-mark-image" aria-hidden="true"><img src="images/dana-logo-green-white.png" alt="" /></span>
       <span><strong>DANA</strong><small>Downtown Austin Neighborhood Association</small></span>
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
@@ -26,7 +26,7 @@ const SITE_FOOTER = `
   <div class="shell footer-grid">
     <div>
       <a class="brand footer-brand" href="index.html" aria-label="DANA home">
-        <span class="brand-mark" aria-hidden="true">D</span>
+        <span class="brand-mark brand-mark-image" aria-hidden="true"><img src="images/dana-logo-green-white.png" alt="" /></span>
         <span><strong>DANA</strong><small>Downtown Austin Neighborhood Association</small></span>
       </a>
       <p>Influencing decisions, educating residents, and fostering community through civic work and social events.</p>

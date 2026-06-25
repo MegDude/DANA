@@ -1,21 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap");
 
 :root {
-  --navy: #00335f;
-  --blue: #164c7a;
-  --gold: #d9ac2e;
-  --soft-gold: #f1d37a;
-  --teal: #007d82;
-  --olive: #78ad2e;
-  --chartreuse: #d4dc19;
-  --paper: #f5f7f8;
-  --paper-warm: #fbfaf6;
+  --navy: #4b5f2a;
+  --blue: #4b5f2a;
+  --gold: #c9a33a;
+  --soft-gold: #e9d79a;
+  --teal: #5f7437;
+  --olive: #4b5f2a;
+  --chartreuse: #d6d166;
+  --paper: #f8f8f4;
+  --paper-warm: #ffffff;
   --white: #ffffff;
-  --ink: #102033;
-  --muted: #5f6d80;
-  --border: rgba(16, 32, 51, 0.11);
-  --hairline: rgba(16, 32, 51, 0.07);
-  --shadow: 0 18px 48px rgba(16, 32, 51, 0.1);
+  --ink: #26301b;
+  --muted: #68705e;
+  --border: rgba(75, 95, 42, 0.18);
+  --hairline: rgba(75, 95, 42, 0.1);
+  --shadow: none;
   --radius: 7px;
   --max: 1180px;
   --serif: "Instrument Serif", Georgia, serif;
@@ -32,9 +32,7 @@ html {
 body {
   margin: 0;
   color: var(--ink);
-  background:
-    linear-gradient(180deg, var(--paper-warm) 0, var(--paper) 36rem),
-    var(--paper);
+  background: var(--white);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.6;
   text-rendering: optimizeLegibility;
@@ -98,7 +96,7 @@ input {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(251, 250, 246, 0.9);
+  background: rgba(255, 255, 255, 0.94);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(16px);
 }
@@ -132,6 +130,17 @@ input {
   background: var(--navy);
   color: var(--soft-gold);
   font-weight: 800;
+  overflow: hidden;
+}
+
+.brand-mark-image {
+  background: transparent;
+}
+
+.brand-mark-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .brand strong,
@@ -225,7 +234,7 @@ input {
 .button-primary {
   background: var(--gold);
   color: var(--navy);
-  box-shadow: 0 10px 24px rgba(217, 172, 46, 0.18);
+  box-shadow: none;
 }
 
 .button-secondary {
@@ -291,8 +300,8 @@ input {
 
 .hero-scrim {
   background:
-    linear-gradient(180deg, rgba(0, 51, 95, 0.08), rgba(4, 27, 44, 0.88)),
-    linear-gradient(90deg, rgba(4, 27, 44, 0.84), rgba(0, 51, 95, 0.18));
+    linear-gradient(180deg, rgba(75, 95, 42, 0.04), rgba(35, 47, 21, 0.86)),
+    linear-gradient(90deg, rgba(35, 47, 21, 0.82), rgba(75, 95, 42, 0.12));
 }
 
 .hero-content {
@@ -396,7 +405,7 @@ h3 {
 }
 
 .section-muted {
-  background: #eef3f4;
+  background: var(--paper);
 }
 
 .section-navy {
@@ -450,10 +459,11 @@ h3 {
 .governance-list a,
 .integration-note,
 .profile-list article {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: 0 12px 34px rgba(16, 32, 51, 0.055);
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .feature-card,
@@ -684,12 +694,13 @@ h3 {
   display: grid;
   gap: 0.85rem;
   padding: 1.25rem;
-  min-height: 230px;
+  min-height: 0;
   align-content: start;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: 0 12px 34px rgba(16, 32, 51, 0.055);
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .pathway-card span,
@@ -727,11 +738,12 @@ h3 {
 
 .feature-story-points {
   display: grid;
-  gap: 1px;
+  gap: 0;
   overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--border);
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  background: transparent;
 }
 
 .feature-story-points article {
@@ -798,9 +810,9 @@ h3 {
   display: grid;
   gap: 1rem;
   padding: 1.25rem;
-  background: var(--paper);
+  background: var(--white);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: 0;
 }
 
 .form-row {
@@ -931,7 +943,7 @@ h3 {
 }
 
 .site-footer {
-  background: #0d1d2c;
+  background: #26301b;
   color: rgba(255, 255, 255, 0.76);
 }
 
@@ -1181,5 +1193,412 @@ h3 {
 
   .sponsor-rail {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Production polish pass: DANA green/gold editorial minimal system. */
+:root {
+  --navy: #465a2a;
+  --blue: #465a2a;
+  --teal: #5c6f35;
+  --gold: #c8a640;
+  --soft-gold: #efe1ad;
+  --paper: #f7f8f3;
+  --paper-warm: #ffffff;
+  --ink: #202819;
+  --muted: #626a59;
+  --border: rgba(70, 90, 42, 0.18);
+  --hairline: rgba(70, 90, 42, 0.1);
+}
+
+body {
+  background: var(--white);
+  color: var(--ink);
+}
+
+.site-header {
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.nav-shell {
+  min-height: 72px;
+}
+
+.brand {
+  gap: 0.85rem;
+}
+
+.brand-mark {
+  width: 48px;
+  height: 48px;
+  border-radius: 5px;
+}
+
+.brand-mark-image img {
+  object-fit: cover;
+  object-position: top center;
+}
+
+.brand strong {
+  color: var(--navy);
+  font-size: 0.98rem;
+  font-weight: 850;
+}
+
+.brand small {
+  max-width: 260px;
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.nav-list a {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 750;
+}
+
+.nav-list a:hover {
+  color: var(--navy);
+}
+
+.button {
+  border-radius: 5px;
+  font-size: 0.94rem;
+  letter-spacing: 0;
+}
+
+.button-primary {
+  background: var(--navy);
+  color: var(--white);
+  box-shadow: none;
+}
+
+.button-primary:hover {
+  background: #38491f;
+}
+
+.button-secondary {
+  border-color: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.text-link {
+  color: var(--navy);
+  border-bottom-color: var(--gold);
+  border-bottom-width: 1px;
+}
+
+.hero {
+  min-height: 680px;
+}
+
+.hero-scrim {
+  background:
+    linear-gradient(180deg, rgba(70, 90, 42, 0.02), rgba(28, 37, 17, 0.9)),
+    linear-gradient(90deg, rgba(28, 37, 17, 0.86), rgba(70, 90, 42, 0.08));
+}
+
+.hero-content {
+  padding-bottom: 4.75rem;
+}
+
+.eyebrow {
+  color: var(--teal);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+
+.hero .eyebrow,
+.landing-leadership .eyebrow,
+.section-navy .eyebrow {
+  color: var(--soft-gold);
+}
+
+h1,
+h2,
+h3 {
+  color: inherit;
+}
+
+h1 {
+  max-width: 860px;
+  font-size: 4.45rem;
+  line-height: 0.98;
+}
+
+h2 {
+  max-width: 880px;
+  font-size: 3.18rem;
+  line-height: 1;
+}
+
+h3 {
+  font-size: 1.34rem;
+}
+
+p {
+  line-height: 1.68;
+}
+
+.hero-copy {
+  max-width: 670px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.section {
+  padding: 5.75rem 0;
+}
+
+.section-muted {
+  background: var(--paper);
+}
+
+.landing-signal,
+.landing-intro,
+.newsletter-panel {
+  background: var(--white);
+}
+
+.landing-signal a {
+  color: var(--ink);
+}
+
+.landing-signal span,
+.pathway-card span,
+.feature-story-points span,
+.status-pill {
+  color: var(--navy);
+}
+
+.pathway-card,
+.issue-card,
+.event-card,
+.feature-card,
+.profile-list article,
+.archive-list article,
+.contact-card,
+.content-aside,
+.governance-list a,
+.membership-card {
+  border-top-color: var(--border);
+}
+
+.pathway-card h3,
+.issue-card h3,
+.event-card h3,
+.feature-card h3,
+.profile-list h3 {
+  margin-bottom: 0.3rem;
+}
+
+.pathway-card a,
+.issue-card a,
+.event-card a,
+.membership-card a,
+.content-aside a {
+  color: var(--navy);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.status-pill {
+  padding: 0;
+  background: transparent;
+  font-size: 0.7rem;
+}
+
+.event-date {
+  width: 62px;
+  height: 62px;
+  background: var(--navy);
+}
+
+.feature-story-points strong {
+  color: var(--ink);
+  font-size: 1.02rem;
+}
+
+.landing-leadership,
+.section-navy,
+.site-footer {
+  background: var(--navy);
+}
+
+.landing-leadership p,
+.section-navy .membership-card p,
+.site-footer {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.sponsor-rail span {
+  color: var(--navy);
+  font-size: 0.94rem;
+}
+
+.signup-form {
+  padding: 1.35rem 0 0;
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+
+.form-row input {
+  border-radius: 5px;
+  border-color: var(--border);
+  background: var(--white);
+}
+
+.form-row input:focus {
+  border-color: var(--navy);
+}
+
+.page-hero {
+  background:
+    linear-gradient(120deg, rgba(70, 90, 42, 0.92), rgba(38, 48, 27, 0.72)),
+    url("images/austin.jpg") center / cover;
+}
+
+@media (min-width: 1100px) {
+  h1 {
+    font-size: 5.85rem;
+  }
+
+  h2 {
+    font-size: 3.9rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav-shell {
+    min-height: 68px;
+  }
+
+  .brand-mark {
+    width: 44px;
+    height: 44px;
+  }
+
+  h1 {
+    font-size: 3.35rem;
+  }
+
+  h2 {
+    font-size: 2.38rem;
+  }
+
+  .hero {
+    min-height: 700px;
+  }
+
+  .section {
+    padding: 4.4rem 0;
+  }
+}
+
+/* Final DANA editorial system: bright white, green/gold, no bento card chrome. */
+.feature-card,
+.issue-card,
+.event-card,
+.membership-card,
+.contact-card,
+.archive-list article,
+.content-aside,
+.governance-list a,
+.integration-note,
+.profile-list article,
+.pathway-card {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.feature-card,
+.issue-card,
+.event-card,
+.membership-card,
+.contact-card,
+.archive-list article,
+.content-aside,
+.integration-note,
+.profile-list article,
+.pathway-card {
+  padding: 1.15rem 0 0;
+}
+
+.pathway-card {
+  min-height: 0;
+}
+
+.feature-grid,
+.issue-grid,
+.event-grid,
+.membership-grid,
+.contact-grid,
+.archive-list,
+.governance-list,
+.pathway-grid {
+  gap: 1.75rem;
+}
+
+.section-navy .membership-card {
+  border-top: 1px solid rgba(255, 255, 255, 0.24);
+  background: transparent;
+}
+
+.status-pill {
+  border-radius: 4px;
+  background: rgba(75, 95, 42, 0.08);
+}
+
+.event-date {
+  border-radius: 4px;
+}
+
+.feature-story-points {
+  gap: 0;
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  background: transparent;
+}
+
+.feature-story-points article {
+  min-height: 132px;
+  padding: 1.15rem 0;
+  background: transparent;
+  border-bottom: 1px solid var(--border);
+}
+
+.sponsor-rail {
+  gap: 0;
+}
+
+.sponsor-rail span {
+  min-height: 64px;
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  background: transparent;
+}
+
+.signup-form {
+  background: var(--white);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+@media (max-width: 420px) {
+  .feature-card,
+  .issue-card,
+  .event-card,
+  .membership-card,
+  .contact-card,
+  .archive-list article,
+  .content-aside,
+  .integration-note,
+  .profile-list article,
+  .pathway-card {
+    padding: 1rem 0 0;
   }
 }

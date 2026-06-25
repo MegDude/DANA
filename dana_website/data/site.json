@@ -9,15 +9,14 @@
   "mission": "DANA influences decisions, educates residents, and fosters community through social events.",
   "sourceSite": "https://www.downtownaustin.org/",
   "wordpressAdmin": "https://www.downtownaustin.org/wp-admin",
-  "paletteStatus": "NEEDS_DANA_REVIEW: brand book olive/chartreuse vs dana-child navy/gold/teal.",
+  "paletteStatus": "Updated to DANA green, warm gold, and polished bright white based on supplied brand assets.",
   "palette": {
-    "navy": "#00335F",
-    "civicBlue": "#164C7A",
-    "gold": "#D9AC2E",
-    "softGold": "#F1D37A",
-    "teal": "#007D82",
-    "olive": "#78AD2E",
-    "chartreuse": "#D4DC19"
+    "danaGreen": "#4B5F2A",
+    "deepGreen": "#31401F",
+    "gold": "#C9A33A",
+    "softGold": "#E9D79A",
+    "white": "#FFFFFF",
+    "offWhite": "#F8F8F4"
   },
   "tools": {
     "hostingCurrent": "Bluehost WordPress",
@@ -58,7 +57,7 @@
   ],
   "reviewItems": [
     "Confirm Association remains final naming direction across all brand assets.",
-    "Resolve olive/chartreuse vs navy/gold/teal palette.",
+    "Confirm final DANA green and gold values against brand book.",
     "Confirm mission statement wording.",
     "Confirm board roster, bylaws, minutes, official email, and contact paths.",
     "Confirm Givebutter and Mailchimp campaign/list URLs.",
