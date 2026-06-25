@@ -17,6 +17,8 @@ Date: 2026-06-25
 - JavaScript syntax check passed with `node --check dana_website/script.js`.
 - Local link audit passed for static HTML files.
 - Static preview server was started on port `8080` after sandbox approval.
+- Second-pass content QA added homepage sponsor visibility, Association naming, dedicated Public Safety page, collaborative board profiles, and Vercel rewrites.
+- Swept for outdated phrases including sole-ownership technical framing, old membership CTA language, and obsolete sponsorship price placeholders.
 
 ## Pending Checks
 
@@ -29,7 +31,7 @@ Date: 2026-06-25
 
 ## Known Review Items
 
-- Association vs Alliance naming.
+- Confirm Association remains final naming direction across all brand assets.
 - Palette decision.
 - Official contact information.
 - Final pricing and Givebutter URLs.

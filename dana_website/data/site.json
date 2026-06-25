@@ -1,10 +1,11 @@
 {
   "name": "DANA",
+  "legalName": "Downtown Austin Neighborhood Association",
   "legalNameOptions": [
     "Downtown Austin Neighborhood Association",
     "Downtown Austin Neighborhood Alliance"
   ],
-  "namingStatus": "NEEDS_DANA_REVIEW: current WordPress source uses Association; supplied rebuild brief uses Alliance.",
+  "namingStatus": "Resolved in prototype to Association because the current WordPress source and supplied board section use Association. Alliance remains a review note.",
   "mission": "DANA influences decisions, educates residents, and fosters community through social events.",
   "sourceSite": "https://www.downtownaustin.org/",
   "wordpressAdmin": "https://www.downtownaustin.org/wp-admin",
@@ -32,31 +33,31 @@
   "membership": [
     {
       "id": "join",
-      "label": "Join / Subscribe",
-      "price": "Free",
-      "copy": "Stay informed through Mailchimp once the list is configured.",
-      "cta": "Subscribe",
+      "label": "Live Downtown",
+      "price": "$25 - $50 NEEDS_DANA_REVIEW",
+      "copy": "Residents who want to stay connected, meet neighbors, attend social events, and support downtown advocacy.",
+      "cta": "Join DANA",
       "url": "MAILCHIMP_SIGNUP_URL"
     },
     {
       "id": "member",
-      "label": "Member",
-      "price": "$50/year NEEDS_DANA_REVIEW",
-      "copy": "Support resident advocacy and receive member updates, event access, and voting eligibility where applicable.",
-      "cta": "Become a Member",
+      "label": "Building Membership",
+      "price": "Variable NEEDS_DANA_REVIEW",
+      "copy": "HOAs and high-rises that want to provide DANA benefits to all their residents.",
+      "cta": "Start Building Membership",
       "url": "GIVEBUTTER_MEMBER_URL"
     },
     {
       "id": "sponsor",
       "label": "Sponsorship",
-      "price": "$199/year NEEDS_DANA_REVIEW",
-      "copy": "Support DANA's civic work and connect your organization with downtown residents.",
+      "price": "$1,000+ NEEDS_DANA_REVIEW",
+      "copy": "Local businesses and partners who want to support DANA's mission and gain visibility.",
       "cta": "Sponsor DANA",
       "url": "GIVEBUTTER_SPONSOR_URL"
     }
   ],
   "reviewItems": [
-    "Resolve Association vs Alliance naming.",
+    "Confirm Association remains final naming direction across all brand assets.",
     "Resolve olive/chartreuse vs navy/gold/teal palette.",
     "Confirm mission statement wording.",
     "Confirm board roster, bylaws, minutes, official email, and contact paths.",

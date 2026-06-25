@@ -7,7 +7,7 @@ Date: 2026-06-25
 - Current site: `https://www.downtownaustin.org/`
 - WordPress admin: `https://www.downtownaustin.org/wp-admin`
 - Current site identifies itself in Open Graph metadata as `Downtown Austin Neighborhood Association`.
-- Rebuild brief uses `Downtown Austin Neighborhood Alliance`.
+- Earlier rebuild brief used `Downtown Austin Neighborhood Alliance`; this prototype now uses `Association` because the current WordPress source and supplied leadership copy use Association.
 - Public WordPress REST API header reports `X-WP-Total: 295` posts.
 - Project note reports approximately `461` old blog posts, with about 80% to retire.
 - Public WordPress REST API exposes only 4 pages via `/wp-json/wp/v2/pages?per_page=100`.
@@ -46,7 +46,7 @@ Date: 2026-06-25
 
 ## Content Needing DANA Review
 
-- Association vs Alliance naming.
+- Confirm Association remains final naming direction across all brand assets.
 - Olive/chartreuse brand book palette vs navy/gold/teal dana-child palette.
 - Board roster and leadership titles.
 - Bylaws and minutes links.

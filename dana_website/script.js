@@ -2,7 +2,7 @@ const SITE_NAV = `
   <nav class="nav-shell" aria-label="Primary navigation">
     <a class="brand" href="index.html" aria-label="DANA home">
       <span class="brand-mark" aria-hidden="true">D</span>
-      <span><strong>DANA</strong><small>Downtown Austin Neighborhood Association / Alliance</small></span>
+      <span><strong>DANA</strong><small>Downtown Austin Neighborhood Association</small></span>
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
       <span class="sr-only">Open navigation</span>
@@ -17,7 +17,7 @@ const SITE_NAV = `
         <li><a href="newsletter.html">Newsletter</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <a class="button button-primary nav-cta" href="join.html">Become a Member</a>
+      <a class="button button-primary nav-cta" href="join.html">Join DANA</a>
     </div>
   </nav>
 `;
@@ -27,7 +27,7 @@ const SITE_FOOTER = `
     <div>
       <a class="brand footer-brand" href="index.html" aria-label="DANA home">
         <span class="brand-mark" aria-hidden="true">D</span>
-        <span><strong>DANA</strong><small>Downtown Austin Neighborhood Association / Alliance</small></span>
+        <span><strong>DANA</strong><small>Downtown Austin Neighborhood Association</small></span>
       </a>
       <p>Influencing decisions, educating residents, and fostering community through civic work and social events.</p>
     </div>
@@ -48,7 +48,7 @@ const SITE_FOOTER = `
     </div>
     <div>
       <h2>Issues</h2>
-      <a href="issues.html#public-safety">Public Safety</a>
+      <a href="public-safety.html">Public Safety</a>
       <a href="issues.html#transportation-homes">Transportation / HOMES</a>
       <a href="issues.html#parks-shoal-creek">Parks & Shoal Creek</a>
       <a href="issues.html#i-35-expansion">I-35 Expansion</a>
@@ -62,7 +62,7 @@ const SITE_FOOTER = `
     </div>
   </div>
   <div class="shell footer-bottom">
-    <p>© 2026 DANA. Naming, palette, prices, and official contact details are marked NEEDS_DANA_REVIEW.</p>
+    <p>© 2026 DANA. Palette, prices, and official contact details are marked NEEDS_DANA_REVIEW.</p>
   </div>
 `;
 
@@ -71,9 +71,9 @@ const fallback = {
     {
       id: "public-safety",
       title: "Public Safety",
-      summary: "Security best practices, crosswalk striping, and forum-based resident safety work.",
+      summary: "Sound standards, safer streets, high-rise security, and compassionate public-space solutions.",
       status: "Evergreen",
-      sourceUrl: "https://www.downtownaustin.org/downtown-safety-forum-may-2026/"
+      sourceUrl: "public-safety.html"
     },
     {
       id: "transportation-homes",
@@ -155,25 +155,25 @@ const fallback = {
   membership: [
     {
       id: "join",
-      label: "Join / Subscribe",
-      price: "Free",
-      copy: "Stay informed through Mailchimp once the list is configured.",
-      cta: "Subscribe",
+      label: "Live Downtown",
+      price: "$25 - $50 NEEDS_DANA_REVIEW",
+      copy: "For residents who want to meet neighbors, attend social events, and support downtown advocacy.",
+      cta: "Join DANA",
       url: "MAILCHIMP_SIGNUP_URL"
     },
     {
       id: "member",
-      label: "Member",
-      price: "$50/year NEEDS_DANA_REVIEW",
-      copy: "Support resident advocacy and receive member updates, event access, and voting eligibility where applicable.",
-      cta: "Become a Member",
+      label: "Building Membership",
+      price: "Variable NEEDS_DANA_REVIEW",
+      copy: "For HOAs and high-rises that want to provide DANA benefits to all their residents.",
+      cta: "Start building membership",
       url: "GIVEBUTTER_MEMBER_URL"
     },
     {
       id: "sponsor",
       label: "Sponsorship",
-      price: "$199/year NEEDS_DANA_REVIEW",
-      copy: "Support DANA's civic work and connect your organization with downtown residents.",
+      price: "$1,000+ NEEDS_DANA_REVIEW",
+      copy: "For local businesses and partners who want to support DANA's mission and gain visibility.",
       cta: "Sponsor DANA",
       url: "GIVEBUTTER_SPONSOR_URL"
     }
@@ -232,7 +232,7 @@ function renderIssues(issues) {
             <span class="status-pill">${issue.status}</span>
             <h3>${issue.title}</h3>
             <p>${issue.summary}</p>
-            <a href="${issue.sourceUrl || "#"}">Source / details</a>
+            <a href="${issue.sourceUrl || "#"}">${issue.sourceUrl && issue.sourceUrl.endsWith(".html") ? "Read issue page" : "Source / details"}</a>
           </article>
         `
       )

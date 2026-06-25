@@ -39,7 +39,7 @@ See `docs/integrations.md`.
 
 ## Known Review Items
 
-- Resolve Association vs Alliance.
+- Confirm Association remains final naming direction across all brand assets.
 - Resolve olive/chartreuse vs navy/gold/teal.
 - Import approved Privacy Policy and WCAG 2.1 AA accessibility statement.
 - Verify board, bylaws, minutes, official email, social links, and campaign URLs.
