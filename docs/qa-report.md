@@ -19,6 +19,7 @@ Date: 2026-06-25
 - Static preview server was started on port `8080` after sandbox approval.
 - Second-pass content QA added homepage sponsor visibility, Association naming, dedicated Public Safety page, collaborative board profiles, and Vercel rewrites.
 - Swept for outdated phrases including sole-ownership technical framing, old membership CTA language, and obsolete sponsorship price placeholders.
+- Landing-page redesign QA passed on local preview: mobile render at phone width had no horizontal overflow, desktop render had no horizontal overflow, homepage dynamic issue/event sections rendered, and browser console errors were empty.
 
 ## Pending Checks
 
