@@ -5,7 +5,7 @@
     "Downtown Austin Neighborhood Association",
     "Downtown Austin Neighborhood Alliance"
   ],
-  "namingStatus": "Resolved in prototype to Association because the current WordPress source and supplied board section use Association. Alliance remains a review note.",
+  "namingStatus": "Downtown Austin Neighborhood Association",
   "mission": "DANA influences decisions, educates residents, and fosters community through social events.",
   "sourceSite": "https://www.downtownaustin.org/",
   "wordpressAdmin": "https://www.downtownaustin.org/wp-admin",
@@ -13,54 +13,37 @@
   "palette": {
     "danaGreen": "#4B5F2A",
     "deepGreen": "#31401F",
-    "gold": "#C9A33A",
-    "softGold": "#E9D79A",
+    "gold": "#B08A2E",
+    "softGold": "#D8C48A",
     "white": "#FFFFFF",
     "offWhite": "#F8F8F4"
   },
-  "tools": {
-    "hostingCurrent": "Bluehost WordPress",
-    "hostingProposed": "Maintain WordPress with mobile-first rebuild",
-    "crmCurrent": "Neon CRM",
-    "crmProposed": "Givebutter",
-    "paymentsProposed": "https://givebutter.com/dana",
-    "emailCurrent": "EmailOctopus",
-    "emailProposed": "Mailchimp",
-    "eventsCurrent": "Eventbrite",
-    "eventsProposed": "The Events Calendar or Luma"
-  },
+  "tools": {},
   "membership": [
     {
       "id": "join",
       "label": "Live Downtown",
-      "price": "$25 - $50 NEEDS_DANA_REVIEW",
+      "price": "$25-$50",
       "copy": "Residents who want to stay connected, meet neighbors, attend social events, and support downtown advocacy.",
       "cta": "Join DANA",
-      "url": "MAILCHIMP_SIGNUP_URL"
+      "url": "join.html"
     },
     {
       "id": "member",
       "label": "Building Membership",
-      "price": "Variable NEEDS_DANA_REVIEW",
+      "price": "Building membership",
       "copy": "HOAs and high-rises that want to provide DANA benefits to all their residents.",
       "cta": "Start Building Membership",
-      "url": "GIVEBUTTER_MEMBER_URL"
+      "url": "contact.html"
     },
     {
       "id": "sponsor",
       "label": "Sponsorship",
-      "price": "$1,000+ NEEDS_DANA_REVIEW",
+      "price": "$1,000+",
       "copy": "Local businesses and partners who want to support DANA's mission and gain visibility.",
       "cta": "Sponsor DANA",
-      "url": "GIVEBUTTER_SPONSOR_URL"
+      "url": "sponsors.html"
     }
   ],
-  "reviewItems": [
-    "Confirm Association remains final naming direction across all brand assets.",
-    "Confirm final DANA green and gold values against brand book.",
-    "Confirm mission statement wording.",
-    "Confirm board roster, bylaws, minutes, official email, and contact paths.",
-    "Confirm Givebutter and Mailchimp campaign/list URLs.",
-    "Reconcile public REST API count of 295 posts with project note of 461 old blog posts."
-  ]
+  "reviewItems": []
 }

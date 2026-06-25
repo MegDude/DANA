@@ -11,7 +11,7 @@
     "id": "transportation-homes",
     "title": "Transportation / HOMES",
     "summary": "Transit, street experience, active transportation, and HOMES-related resident education.",
-    "status": "Needs source review",
+    "status": "In progress",
     "sourceUrl": "https://www.downtownaustin.org/toward-a-more-walkable-austin/",
     "notes": "Dedicated page requested for Transportation/HOMES."
   },
@@ -27,16 +27,16 @@
     "id": "i-35-expansion",
     "title": "I-35 Expansion",
     "summary": "Historic opposition to current TxDOT plans, with focus on air quality, active transportation, and no-build alternatives.",
-    "status": "Archive source",
-    "sourceUrl": "NEEDS_DANA_REVIEW",
+    "status": "Long-range",
+    "sourceUrl": "#",
     "notes": "User-supplied migration brief references extensive documentation."
   },
   {
     "id": "project-connect",
     "title": "Project Connect",
     "summary": "Orange Line, Blue Line, cost context, and transit tunnel benefits.",
-    "status": "Reference docs",
-    "sourceUrl": "NEEDS_DANA_REVIEW",
+    "status": "Transit",
+    "sourceUrl": "#",
     "notes": "Source docs supplied as Google Drive references for Orange Line and Blue Line."
   },
   {

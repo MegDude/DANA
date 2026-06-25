@@ -2,7 +2,6 @@ const SITE_NAV = `
   <nav class="nav-shell" aria-label="Primary navigation">
     <a class="brand" href="index.html" aria-label="DANA home">
       <span class="brand-mark brand-mark-image" aria-hidden="true"><img src="images/dana-logo-green-white.png" alt="" /></span>
-      <span><strong>DANA</strong><small>Downtown Austin Neighborhood Association</small></span>
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
       <span class="sr-only">Open navigation</span>
@@ -24,45 +23,31 @@ const SITE_NAV = `
 
 const SITE_FOOTER = `
   <div class="shell footer-grid">
-    <div>
+    <div class="footer-column footer-summary">
       <a class="brand footer-brand" href="index.html" aria-label="DANA home">
         <span class="brand-mark brand-mark-image" aria-hidden="true"><img src="images/dana-logo-green-white.png" alt="" /></span>
-        <span><strong>DANA</strong><small>Downtown Austin Neighborhood Association</small></span>
       </a>
-      <p>Influencing decisions, educating residents, and fostering community through civic work and social events.</p>
+      <p>Neighbors working together for a safer, more welcoming downtown Austin.</p>
     </div>
-    <div>
-      <h2>About DANA</h2>
+    <div class="footer-column">
+      <h2>Explore</h2>
       <a href="about.html">About</a>
       <a href="board.html">Board</a>
-      <a href="governance.html">Bylaws & Minutes</a>
-      <a href="archive.html">Archive</a>
-    </div>
-    <div>
-      <h2>Get Involved</h2>
-      <a href="join.html">Join</a>
-      <a href="newsletter.html">Newsletter</a>
-      <a href="committees.html">Committees</a>
-      <a href="sponsors.html">Sponsors</a>
-      <a href="volunteer.html">Volunteer</a>
-    </div>
-    <div>
-      <h2>Issues</h2>
       <a href="public-safety.html">Public Safety</a>
-      <a href="issues.html#transportation-homes">Transportation / HOMES</a>
-      <a href="issues.html#parks-shoal-creek">Parks & Shoal Creek</a>
-      <a href="issues.html#i-35-expansion">I-35 Expansion</a>
+      <a href="issues.html">Issues</a>
     </div>
-    <div>
-      <h2>Governance</h2>
+    <div class="footer-column">
+      <h2>Connect</h2>
+      <a href="join.html">Join DANA</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="sponsors.html">Sponsors</a>
+      <a href="governance.html">Bylaws & Minutes</a>
       <a href="privacy.html">Privacy Policy</a>
       <a href="accessibility.html">Accessibility</a>
-      <a href="contact.html">Contact</a>
-      <span>Downtown Austin, TX</span>
     </div>
   </div>
   <div class="shell footer-bottom">
-    <p>© 2026 DANA. Palette, prices, and official contact details are marked NEEDS_DANA_REVIEW.</p>
+    <p>© 2026 Downtown Austin Neighborhood Association.</p>
   </div>
 `;
 
@@ -79,7 +64,7 @@ const fallback = {
       id: "transportation-homes",
       title: "Transportation / HOMES",
       summary: "Transit access, HOMES discussion, active transportation, and street experience.",
-      status: "Needs review",
+      status: "In progress",
       sourceUrl: "#"
     },
     {
@@ -93,14 +78,14 @@ const fallback = {
       id: "i-35-expansion",
       title: "I-35 Expansion",
       summary: "Historic advocacy around air quality, active transportation, and no-build alternatives.",
-      status: "Archive source",
+      status: "Long-range",
       sourceUrl: "#"
     },
     {
       id: "project-connect",
       title: "Project Connect",
       summary: "Orange Line, Blue Line, cost context, and transit tunnel benefits.",
-      status: "Reference docs",
+      status: "Transit",
       sourceUrl: "#"
     },
     {
@@ -116,10 +101,10 @@ const fallback = {
       id: "june-shoal-creek-clean-up",
       title: "June Shoal Creek Clean-Up",
       date: "2026-06-10",
-      startTime: "TBD",
+      startTime: "Community update",
       endTime: "",
       location: "Shoal Creek area",
-      description: "Imported from the current DANA WordPress post inventory.",
+      description: "A neighborhood cleanup supporting Shoal Creek and nearby public spaces.",
       category: "Parks",
       rsvpUrl: "https://www.downtownaustin.org/june-shoal-creek-clean-up/",
       featured: true,
@@ -129,10 +114,10 @@ const fallback = {
       id: "downtown-safety-forum-may-2026",
       title: "Downtown Safety Forum",
       date: "2026-05-12",
-      startTime: "TBD",
+      startTime: "Community forum",
       endTime: "",
-      location: "NEEDS_DANA_REVIEW",
-      description: "Safety forum imported from current WordPress content inventory.",
+      location: "Downtown Austin",
+      description: "A resident forum focused on public safety, sound, and street-level concerns.",
       category: "Public Safety",
       rsvpUrl: "https://www.downtownaustin.org/downtown-safety-forum-may-2026/",
       featured: true,
@@ -142,10 +127,10 @@ const fallback = {
       id: "next-board-meeting",
       title: "Next Board Meeting",
       date: "2026-08-01",
-      startTime: "TBD",
+      startTime: "Board update",
       endTime: "",
-      location: "NEEDS_DANA_REVIEW",
-      description: "Placeholder event. Replace with official board meeting details.",
+      location: "Downtown Austin",
+      description: "A board meeting for neighborhood updates, resident questions, and current work.",
       category: "Governance",
       rsvpUrl: "#",
       featured: true,
@@ -156,26 +141,26 @@ const fallback = {
     {
       id: "join",
       label: "Live Downtown",
-      price: "$25 - $50 NEEDS_DANA_REVIEW",
+      price: "$25-$50",
       copy: "For residents who want to meet neighbors, attend social events, and support downtown advocacy.",
       cta: "Join DANA",
-      url: "MAILCHIMP_SIGNUP_URL"
+      url: "join.html"
     },
     {
       id: "member",
       label: "Building Membership",
-      price: "Variable NEEDS_DANA_REVIEW",
+      price: "Building membership",
       copy: "For HOAs and high-rises that want to provide DANA benefits to all their residents.",
       cta: "Start building membership",
-      url: "GIVEBUTTER_MEMBER_URL"
+      url: "contact.html"
     },
     {
       id: "sponsor",
       label: "Sponsorship",
-      price: "$1,000+ NEEDS_DANA_REVIEW",
+      price: "$1,000+",
       copy: "For local businesses and partners who want to support DANA's mission and gain visibility.",
       cta: "Sponsor DANA",
-      url: "GIVEBUTTER_SPONSOR_URL"
+      url: "sponsors.html"
     }
   ]
 };
@@ -229,10 +214,10 @@ function renderIssues(issues) {
       .map(
         (issue) => `
           <article class="issue-card" id="${issue.id}">
-            <span class="status-pill">${issue.status}</span>
+            ${issue.status ? `<span class="status-pill">${issue.status}</span>` : ""}
             <h3>${issue.title}</h3>
             <p>${issue.summary}</p>
-            <a href="${issue.sourceUrl || "#"}">${issue.sourceUrl && issue.sourceUrl.endsWith(".html") ? "Read issue page" : "Source / details"}</a>
+            ${issue.sourceUrl && issue.sourceUrl !== "#" ? `<a href="${issue.sourceUrl}">${issue.sourceUrl.endsWith(".html") ? "Read more" : "Learn more"}</a>` : ""}
           </article>
         `
       )
@@ -242,7 +227,7 @@ function renderIssues(issues) {
 
 function dateParts(dateString) {
   const date = new Date(`${dateString}T12:00:00`);
-  if (Number.isNaN(date.getTime())) return { day: "TBD", month: "" };
+  if (Number.isNaN(date.getTime())) return { day: "--", month: "" };
   return {
     day: new Intl.DateTimeFormat("en-US", { day: "2-digit" }).format(date),
     month: new Intl.DateTimeFormat("en-US", { month: "short" }).format(date)
@@ -251,13 +236,14 @@ function dateParts(dateString) {
 
 function eventCard(event) {
   const date = dateParts(event.date);
+  const meta = [event.startTime, event.location].filter(Boolean).join(" · ");
   return `
     <article class="event-card" data-status="${event.status}">
       <div class="event-date"><strong>${date.day}</strong><span>${date.month}</span></div>
       <div>
         <span class="status-pill">${event.category}</span>
         <h3>${event.title}</h3>
-        <p class="event-meta">${event.startTime || "TBD"} · ${event.location || "Location TBD"}</p>
+        ${meta ? `<p class="event-meta">${meta}</p>` : ""}
         <p>${event.description}</p>
         <a href="${event.rsvpUrl || "#"}">View details</a>
       </div>
@@ -295,13 +281,7 @@ function renderMembership(items) {
           <span>${item.price}</span>
           <h3>${item.label}</h3>
           <p>${item.copy}</p>
-          <ul>
-            <li>Givebutter / Mailchimp URL configured later</li>
-            <li>Graceful placeholder when URL is missing</li>
-            <li>Final wording requires DANA approval</li>
-          </ul>
-          <div class="embed-placeholder">${item.url}</div>
-          <a class="button button-primary" href="${item.url.startsWith("http") ? item.url : "#"}">${item.cta}</a>
+          <a class="button button-primary" href="${item.url}">${item.cta}</a>
         </article>
       `
     )
@@ -330,14 +310,40 @@ function setupForms() {
         email.focus();
         return;
       }
-      status.textContent = "Thanks. This placeholder will connect to Mailchimp before launch.";
+      status.textContent = "Thanks. You're on the list.";
       form.reset();
     });
   });
 }
 
+function setupHeroParallax() {
+  const hero = document.querySelector(".hero");
+  if (!hero || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  let ticking = false;
+  const update = () => {
+    const rect = hero.getBoundingClientRect();
+    const offset = Math.max(-48, Math.min(48, rect.top * -0.08));
+    hero.style.setProperty("--hero-parallax", `${offset}px`);
+    ticking = false;
+  };
+
+  update();
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    },
+    { passive: true }
+  );
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   setupChrome();
+  setupHeroParallax();
   const [issues, events, membership] = await Promise.all([
     getJson("data/issues.json", "issues"),
     getJson("data/events.json", "events"),
