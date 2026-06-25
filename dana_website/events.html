@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events | DANA</title>
+    <meta name="description" content="Upcoming and archived DANA events, meetings, and resident forums." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header></header>
+    <main id="main">
+      <section class="page-hero">
+        <div class="shell">
+          <p class="eyebrow">Events</p>
+          <h1>Meetings and gatherings for downtown residents.</h1>
+          <p>Events are powered by structured JSON and ready for Luma, Eventbrite, Givebutter, or calendar plugin integration.</p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="shell">
+          <div class="event-toolbar" role="group" aria-label="Event view">
+            <button class="is-active" type="button" data-event-filter="upcoming">Upcoming</button>
+            <button type="button" data-event-filter="past">Past archive</button>
+            <button type="button" data-event-filter="all">All</button>
+          </div>
+          <div class="event-grid event-grid-wide" data-events-all></div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Newsletter | DANA</title>
+    <meta name="description" content="Subscribe to DANA updates for downtown Austin residents." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header></header>
+    <main id="main">
+      <section class="page-hero">
+        <div class="shell">
+          <p class="eyebrow">Newsletter</p>
+          <h1>Stay informed without becoming a member.</h1>
+          <p>Use the placeholder form now, then connect EmailOctopus, Mailchimp, or Givebutter sync when configured.</p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="shell newsletter-inner standalone">
+          <form class="signup-form" data-signup novalidate>
+            <div class="form-row">
+              <label for="newsletter-name">Name <span>optional</span></label>
+              <input id="newsletter-name" name="name" type="text" autocomplete="name" />
+            </div>
+            <div class="form-row">
+              <label for="newsletter-email">Email address</label>
+              <input id="newsletter-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <button class="button button-primary" type="submit">Subscribe</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+          <div class="integration-note">
+            <h2>Integration placeholder</h2>
+            <p>Replace the local success state with the selected email platform embed or API endpoint. See docs/integrations.md.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"></footer>
+    <script src="script.js"></script>
+  </body>
+</html>

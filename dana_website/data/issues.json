@@ -1,0 +1,50 @@
+[
+  {
+    "id": "public-safety",
+    "title": "Public Safety",
+    "summary": "Safety forums, building security best practices, and crosswalk striping advocacy.",
+    "status": "Active",
+    "sourceUrl": "https://www.downtownaustin.org/downtown-safety-forum-may-2026/",
+    "notes": "Use historical Building Best Practices and safety forum posts as source material."
+  },
+  {
+    "id": "transportation-homes",
+    "title": "Transportation / HOMES",
+    "summary": "Transit, street experience, active transportation, and HOMES-related resident education.",
+    "status": "Needs source review",
+    "sourceUrl": "https://www.downtownaustin.org/toward-a-more-walkable-austin/",
+    "notes": "Dedicated page requested for Transportation/HOMES."
+  },
+  {
+    "id": "parks-shoal-creek",
+    "title": "Parks & Shoal Creek",
+    "summary": "Shoal Creek cleanups, parks, trails, and downtown public-space stewardship.",
+    "status": "Active",
+    "sourceUrl": "https://www.downtownaustin.org/june-shoal-creek-clean-up/",
+    "notes": "Current posts show recurring monthly Shoal Creek cleanup content."
+  },
+  {
+    "id": "i-35-expansion",
+    "title": "I-35 Expansion",
+    "summary": "Historic opposition to current TxDOT plans, with focus on air quality, active transportation, and no-build alternatives.",
+    "status": "Archive source",
+    "sourceUrl": "NEEDS_DANA_REVIEW",
+    "notes": "User-supplied migration brief references extensive documentation."
+  },
+  {
+    "id": "project-connect",
+    "title": "Project Connect",
+    "summary": "Orange Line, Blue Line, cost context, and transit tunnel benefits.",
+    "status": "Reference docs",
+    "sourceUrl": "NEEDS_DANA_REVIEW",
+    "notes": "Source docs supplied as Google Drive references for Orange Line and Blue Line."
+  },
+  {
+    "id": "downtown-vitality",
+    "title": "Downtown Vitality",
+    "summary": "Development, walkability, social connection, neighborhood identity, and resident experience.",
+    "status": "Ongoing",
+    "sourceUrl": "https://www.downtownaustin.org/dana-letter-c20-2024-018-ddbp-updates-2026-05-14/",
+    "notes": "Use DDBP and walkability posts as candidate evergreen content."
+  }
+]

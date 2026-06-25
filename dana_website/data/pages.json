@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Home",
+    "sourceUrl": "https://www.downtownaustin.org/",
+    "originalPublishDate": "unknown",
+    "modifiedDate": "2026-06-25 fetch",
+    "contentType": "page",
+    "recommendedDestination": "/",
+    "status": "rewrite",
+    "notes": "Legacy WordPress home is cluttered and desktop-era; retain DANA identity and rebuild mobile-first."
+  },
+  {
+    "title": "Calendar",
+    "sourceUrl": "https://www.downtownaustin.org/calendar/",
+    "originalPublishDate": "2013-04-03",
+    "modifiedDate": "2013-11-13",
+    "contentType": "page",
+    "recommendedDestination": "/events",
+    "status": "rewrite",
+    "notes": "Move to structured events module."
+  },
+  {
+    "title": "June Shoal Creek Clean-Up",
+    "sourceUrl": "https://www.downtownaustin.org/june-shoal-creek-clean-up/",
+    "originalPublishDate": "2026-06-10",
+    "modifiedDate": "2026-06-10",
+    "contentType": "post",
+    "recommendedDestination": "/events and /issues#parks-shoal-creek",
+    "status": "migrate",
+    "notes": "Recent parks/public-space event and issue signal."
+  },
+  {
+    "title": "DANA Letter - C20-2024-018 DDBP Updates",
+    "sourceUrl": "https://www.downtownaustin.org/dana-letter-c20-2024-018-ddbp-updates-2026-05-14/",
+    "originalPublishDate": "2026-05-17",
+    "modifiedDate": "2026-05-17",
+    "contentType": "post",
+    "recommendedDestination": "/issues#downtown-vitality",
+    "status": "migrate",
+    "notes": "Candidate evergreen advocacy item."
+  },
+  {
+    "title": "Downtown Safety Forum (May 2026)",
+    "sourceUrl": "https://www.downtownaustin.org/downtown-safety-forum-may-2026/",
+    "originalPublishDate": "2026-05-12",
+    "modifiedDate": "2026-05-13",
+    "contentType": "post",
+    "recommendedDestination": "/issues#public-safety and /events",
+    "status": "migrate",
+    "notes": "Public safety event and issue source."
+  },
+  {
+    "title": "Toward a More Walkable Austin",
+    "sourceUrl": "https://www.downtownaustin.org/toward-a-more-walkable-austin/",
+    "originalPublishDate": "2026-01-29",
+    "modifiedDate": "2026-01-29",
+    "contentType": "post",
+    "recommendedDestination": "/issues#transportation-homes",
+    "status": "migrate",
+    "notes": "Candidate transportation/walkability evergreen content."
+  }
+]

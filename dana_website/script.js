@@ -1,0 +1,351 @@
+const SITE_NAV = `
+  <nav class="nav-shell" aria-label="Primary navigation">
+    <a class="brand" href="index.html" aria-label="DANA home">
+      <span class="brand-mark" aria-hidden="true">D</span>
+      <span><strong>DANA</strong><small>Downtown Austin Neighborhood Association / Alliance</small></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+      <span class="sr-only">Open navigation</span>
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+    <div class="nav-panel" id="primary-menu">
+      <ul class="nav-list">
+        <li><a href="about.html">About</a></li>
+        <li><a href="issues.html">Issues</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="newsletter.html">Newsletter</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a class="button button-primary nav-cta" href="join.html">Become a Member</a>
+    </div>
+  </nav>
+`;
+
+const SITE_FOOTER = `
+  <div class="shell footer-grid">
+    <div>
+      <a class="brand footer-brand" href="index.html" aria-label="DANA home">
+        <span class="brand-mark" aria-hidden="true">D</span>
+        <span><strong>DANA</strong><small>Downtown Austin Neighborhood Association / Alliance</small></span>
+      </a>
+      <p>Influencing decisions, educating residents, and fostering community through civic work and social events.</p>
+    </div>
+    <div>
+      <h2>About DANA</h2>
+      <a href="about.html">About</a>
+      <a href="board.html">Board</a>
+      <a href="governance.html">Bylaws & Minutes</a>
+      <a href="archive.html">Archive</a>
+    </div>
+    <div>
+      <h2>Get Involved</h2>
+      <a href="join.html">Join</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="committees.html">Committees</a>
+      <a href="sponsors.html">Sponsors</a>
+      <a href="volunteer.html">Volunteer</a>
+    </div>
+    <div>
+      <h2>Issues</h2>
+      <a href="issues.html#public-safety">Public Safety</a>
+      <a href="issues.html#transportation-homes">Transportation / HOMES</a>
+      <a href="issues.html#parks-shoal-creek">Parks & Shoal Creek</a>
+      <a href="issues.html#i-35-expansion">I-35 Expansion</a>
+    </div>
+    <div>
+      <h2>Governance</h2>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="accessibility.html">Accessibility</a>
+      <a href="contact.html">Contact</a>
+      <span>Downtown Austin, TX</span>
+    </div>
+  </div>
+  <div class="shell footer-bottom">
+    <p>© 2026 DANA. Naming, palette, prices, and official contact details are marked NEEDS_DANA_REVIEW.</p>
+  </div>
+`;
+
+const fallback = {
+  issues: [
+    {
+      id: "public-safety",
+      title: "Public Safety",
+      summary: "Security best practices, crosswalk striping, and forum-based resident safety work.",
+      status: "Evergreen",
+      sourceUrl: "https://www.downtownaustin.org/downtown-safety-forum-may-2026/"
+    },
+    {
+      id: "transportation-homes",
+      title: "Transportation / HOMES",
+      summary: "Transit access, HOMES discussion, active transportation, and street experience.",
+      status: "Needs review",
+      sourceUrl: "#"
+    },
+    {
+      id: "parks-shoal-creek",
+      title: "Parks & Shoal Creek",
+      summary: "Monthly Shoal Creek cleanups and downtown public-space stewardship.",
+      status: "Active",
+      sourceUrl: "https://www.downtownaustin.org/june-shoal-creek-clean-up/"
+    },
+    {
+      id: "i-35-expansion",
+      title: "I-35 Expansion",
+      summary: "Historic advocacy around air quality, active transportation, and no-build alternatives.",
+      status: "Archive source",
+      sourceUrl: "#"
+    },
+    {
+      id: "project-connect",
+      title: "Project Connect",
+      summary: "Orange Line, Blue Line, cost context, and transit tunnel benefits.",
+      status: "Reference docs",
+      sourceUrl: "#"
+    },
+    {
+      id: "downtown-vitality",
+      title: "Downtown Vitality",
+      summary: "Development, walkability, events, resident experience, and neighborhood identity.",
+      status: "Ongoing",
+      sourceUrl: "https://www.downtownaustin.org/toward-a-more-walkable-austin/"
+    }
+  ],
+  events: [
+    {
+      id: "june-shoal-creek-clean-up",
+      title: "June Shoal Creek Clean-Up",
+      date: "2026-06-10",
+      startTime: "TBD",
+      endTime: "",
+      location: "Shoal Creek area",
+      description: "Imported from the current DANA WordPress post inventory.",
+      category: "Parks",
+      rsvpUrl: "https://www.downtownaustin.org/june-shoal-creek-clean-up/",
+      featured: true,
+      status: "past"
+    },
+    {
+      id: "downtown-safety-forum-may-2026",
+      title: "Downtown Safety Forum",
+      date: "2026-05-12",
+      startTime: "TBD",
+      endTime: "",
+      location: "NEEDS_DANA_REVIEW",
+      description: "Safety forum imported from current WordPress content inventory.",
+      category: "Public Safety",
+      rsvpUrl: "https://www.downtownaustin.org/downtown-safety-forum-may-2026/",
+      featured: true,
+      status: "past"
+    },
+    {
+      id: "next-board-meeting",
+      title: "Next Board Meeting",
+      date: "2026-08-01",
+      startTime: "TBD",
+      endTime: "",
+      location: "NEEDS_DANA_REVIEW",
+      description: "Placeholder event. Replace with official board meeting details.",
+      category: "Governance",
+      rsvpUrl: "#",
+      featured: true,
+      status: "upcoming"
+    }
+  ],
+  membership: [
+    {
+      id: "join",
+      label: "Join / Subscribe",
+      price: "Free",
+      copy: "Stay informed through Mailchimp once the list is configured.",
+      cta: "Subscribe",
+      url: "MAILCHIMP_SIGNUP_URL"
+    },
+    {
+      id: "member",
+      label: "Member",
+      price: "$50/year NEEDS_DANA_REVIEW",
+      copy: "Support resident advocacy and receive member updates, event access, and voting eligibility where applicable.",
+      cta: "Become a Member",
+      url: "GIVEBUTTER_MEMBER_URL"
+    },
+    {
+      id: "sponsor",
+      label: "Sponsorship",
+      price: "$199/year NEEDS_DANA_REVIEW",
+      copy: "Support DANA's civic work and connect your organization with downtown residents.",
+      cta: "Sponsor DANA",
+      url: "GIVEBUTTER_SPONSOR_URL"
+    }
+  ]
+};
+
+async function getJson(path, key) {
+  try {
+    const response = await fetch(path);
+    if (!response.ok) throw new Error(`Unable to load ${path}`);
+    return response.json();
+  } catch (error) {
+    return fallback[key];
+  }
+}
+
+function setupChrome() {
+  document.querySelectorAll("[data-header]").forEach((header) => {
+    if (!header.innerHTML.trim()) header.innerHTML = SITE_NAV;
+  });
+  document.querySelectorAll("footer.site-footer").forEach((footer) => {
+    if (!footer.innerHTML.trim()) footer.innerHTML = SITE_FOOTER;
+  });
+
+  const toggle = document.querySelector(".nav-toggle");
+  const panel = document.querySelector(".nav-panel");
+  if (!toggle || !panel) return;
+
+  toggle.addEventListener("click", () => {
+    const isOpen = panel.classList.toggle("is-open");
+    document.body.classList.toggle("menu-open", isOpen);
+    toggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  panel.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      panel.classList.remove("is-open");
+      document.body.classList.remove("menu-open");
+      toggle.setAttribute("aria-expanded", "false");
+    });
+  });
+}
+
+function renderIssues(issues) {
+  const targets = [
+    [document.querySelector("[data-issues-preview]"), issues.slice(0, 6)],
+    [document.querySelector("[data-issues-all]"), issues]
+  ];
+
+  targets.forEach(([target, list]) => {
+    if (!target) return;
+    target.innerHTML = list
+      .map(
+        (issue) => `
+          <article class="issue-card" id="${issue.id}">
+            <span class="status-pill">${issue.status}</span>
+            <h3>${issue.title}</h3>
+            <p>${issue.summary}</p>
+            <a href="${issue.sourceUrl || "#"}">Source / details</a>
+          </article>
+        `
+      )
+      .join("");
+  });
+}
+
+function dateParts(dateString) {
+  const date = new Date(`${dateString}T12:00:00`);
+  if (Number.isNaN(date.getTime())) return { day: "TBD", month: "" };
+  return {
+    day: new Intl.DateTimeFormat("en-US", { day: "2-digit" }).format(date),
+    month: new Intl.DateTimeFormat("en-US", { month: "short" }).format(date)
+  };
+}
+
+function eventCard(event) {
+  const date = dateParts(event.date);
+  return `
+    <article class="event-card" data-status="${event.status}">
+      <div class="event-date"><strong>${date.day}</strong><span>${date.month}</span></div>
+      <div>
+        <span class="status-pill">${event.category}</span>
+        <h3>${event.title}</h3>
+        <p class="event-meta">${event.startTime || "TBD"} · ${event.location || "Location TBD"}</p>
+        <p>${event.description}</p>
+        <a href="${event.rsvpUrl || "#"}">View details</a>
+      </div>
+    </article>
+  `;
+}
+
+function renderEvents(events) {
+  const preview = document.querySelector("[data-events-preview]");
+  const all = document.querySelector("[data-events-all]");
+  const upcoming = events.filter((event) => event.status === "upcoming");
+
+  if (preview) preview.innerHTML = (upcoming.length ? upcoming : events.slice(0, 3)).map(eventCard).join("");
+  if (all) all.innerHTML = events.map(eventCard).join("");
+
+  document.querySelectorAll("[data-event-filter]").forEach((button) => {
+    button.addEventListener("click", () => {
+      document.querySelectorAll("[data-event-filter]").forEach((item) => item.classList.remove("is-active"));
+      button.classList.add("is-active");
+      const filter = button.dataset.eventFilter;
+      document.querySelectorAll("[data-events-all] .event-card").forEach((card) => {
+        card.hidden = filter !== "all" && card.dataset.status !== filter;
+      });
+    });
+  });
+}
+
+function renderMembership(items) {
+  const target = document.querySelector("[data-membership]");
+  if (!target) return;
+  target.innerHTML = items
+    .map(
+      (item) => `
+        <article class="membership-card" id="${item.id}">
+          <span>${item.price}</span>
+          <h3>${item.label}</h3>
+          <p>${item.copy}</p>
+          <ul>
+            <li>Givebutter / Mailchimp URL configured later</li>
+            <li>Graceful placeholder when URL is missing</li>
+            <li>Final wording requires DANA approval</li>
+          </ul>
+          <div class="embed-placeholder">${item.url}</div>
+          <a class="button button-primary" href="${item.url.startsWith("http") ? item.url : "#"}">${item.cta}</a>
+        </article>
+      `
+    )
+    .join("");
+}
+
+function renderArchive() {
+  const target = document.querySelector("[data-archive]");
+  if (!target) return;
+  target.innerHTML = `
+    <article><h2>Blog archive</h2><p>Public WordPress API exposes 295 posts as of 2026-06-25. Project notes reference 461 old blog posts; reconcile during authenticated migration.</p></article>
+    <article><h2>Retire</h2><p>Approximately 80% of old posts should be retired if they are time-sensitive, duplicated, or no longer useful.</p></article>
+    <article><h2>Migrate</h2><p>Evergreen advocacy, governance, safety, transportation, parks, and sponsor materials should move into structured pages.</p></article>
+    <article><h2>Preserve</h2><p>Legal, bylaws, meeting minutes, and historically important materials should remain accessible and grouped by year.</p></article>
+  `;
+}
+
+function setupForms() {
+  document.querySelectorAll("[data-signup]").forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const email = form.querySelector('input[type="email"]');
+      const status = form.querySelector(".form-status");
+      if (!email.value || !email.checkValidity()) {
+        status.textContent = "Enter a valid email address.";
+        email.focus();
+        return;
+      }
+      status.textContent = "Thanks. This placeholder will connect to Mailchimp before launch.";
+      form.reset();
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  setupChrome();
+  const [issues, events, membership] = await Promise.all([
+    getJson("data/issues.json", "issues"),
+    getJson("data/events.json", "events"),
+    getJson("data/site.json", "membership").then((data) => data.membership || fallback.membership)
+  ]);
+  renderIssues(issues);
+  renderEvents(events);
+  renderMembership(membership);
+  renderArchive();
+  setupForms();
+});

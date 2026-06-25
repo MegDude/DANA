@@ -1,0 +1,66 @@
+{
+  "name": "DANA",
+  "legalNameOptions": [
+    "Downtown Austin Neighborhood Association",
+    "Downtown Austin Neighborhood Alliance"
+  ],
+  "namingStatus": "NEEDS_DANA_REVIEW: current WordPress source uses Association; supplied rebuild brief uses Alliance.",
+  "mission": "DANA influences decisions, educates residents, and fosters community through social events.",
+  "sourceSite": "https://www.downtownaustin.org/",
+  "wordpressAdmin": "https://www.downtownaustin.org/wp-admin",
+  "paletteStatus": "NEEDS_DANA_REVIEW: brand book olive/chartreuse vs dana-child navy/gold/teal.",
+  "palette": {
+    "navy": "#00335F",
+    "civicBlue": "#164C7A",
+    "gold": "#D9AC2E",
+    "softGold": "#F1D37A",
+    "teal": "#007D82",
+    "olive": "#78AD2E",
+    "chartreuse": "#D4DC19"
+  },
+  "tools": {
+    "hostingCurrent": "Bluehost WordPress",
+    "hostingProposed": "Maintain WordPress with mobile-first rebuild",
+    "crmCurrent": "Neon CRM",
+    "crmProposed": "Givebutter",
+    "paymentsProposed": "https://givebutter.com/dana",
+    "emailCurrent": "EmailOctopus",
+    "emailProposed": "Mailchimp",
+    "eventsCurrent": "Eventbrite",
+    "eventsProposed": "The Events Calendar or Luma"
+  },
+  "membership": [
+    {
+      "id": "join",
+      "label": "Join / Subscribe",
+      "price": "Free",
+      "copy": "Stay informed through Mailchimp once the list is configured.",
+      "cta": "Subscribe",
+      "url": "MAILCHIMP_SIGNUP_URL"
+    },
+    {
+      "id": "member",
+      "label": "Member",
+      "price": "$50/year NEEDS_DANA_REVIEW",
+      "copy": "Support resident advocacy and receive member updates, event access, and voting eligibility where applicable.",
+      "cta": "Become a Member",
+      "url": "GIVEBUTTER_MEMBER_URL"
+    },
+    {
+      "id": "sponsor",
+      "label": "Sponsorship",
+      "price": "$199/year NEEDS_DANA_REVIEW",
+      "copy": "Support DANA's civic work and connect your organization with downtown residents.",
+      "cta": "Sponsor DANA",
+      "url": "GIVEBUTTER_SPONSOR_URL"
+    }
+  ],
+  "reviewItems": [
+    "Resolve Association vs Alliance naming.",
+    "Resolve olive/chartreuse vs navy/gold/teal palette.",
+    "Confirm mission statement wording.",
+    "Confirm board roster, bylaws, minutes, official email, and contact paths.",
+    "Confirm Givebutter and Mailchimp campaign/list URLs.",
+    "Reconcile public REST API count of 295 posts with project note of 461 old blog posts."
+  ]
+}

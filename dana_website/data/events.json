@@ -1,0 +1,54 @@
+[
+  {
+    "id": "next-board-meeting",
+    "title": "Next Board Meeting",
+    "date": "2026-08-01",
+    "startTime": "TBD",
+    "endTime": "",
+    "location": "NEEDS_DANA_REVIEW",
+    "description": "Placeholder for next official board meeting. Replace with verified date, time, and location.",
+    "category": "Governance",
+    "rsvpUrl": "#",
+    "featured": true,
+    "status": "upcoming"
+  },
+  {
+    "id": "june-shoal-creek-clean-up",
+    "title": "June Shoal Creek Clean-Up",
+    "date": "2026-06-10",
+    "startTime": "TBD",
+    "endTime": "",
+    "location": "Shoal Creek area",
+    "description": "Imported from the current DANA WordPress post inventory.",
+    "category": "Parks",
+    "rsvpUrl": "https://www.downtownaustin.org/june-shoal-creek-clean-up/",
+    "featured": true,
+    "status": "past"
+  },
+  {
+    "id": "downtown-safety-forum-may-2026",
+    "title": "Downtown Safety Forum",
+    "date": "2026-05-12",
+    "startTime": "TBD",
+    "endTime": "",
+    "location": "NEEDS_DANA_REVIEW",
+    "description": "Safety forum imported from current WordPress content inventory.",
+    "category": "Public Safety",
+    "rsvpUrl": "https://www.downtownaustin.org/downtown-safety-forum-may-2026/",
+    "featured": true,
+    "status": "past"
+  },
+  {
+    "id": "dana-2026-annual-meeting",
+    "title": "CANCELED: DANA 2026 Annual Meeting",
+    "date": "2026-02-14",
+    "startTime": "TBD",
+    "endTime": "",
+    "location": "NEEDS_DANA_REVIEW",
+    "description": "Archived annual meeting post. Keep out of homepage event promotion.",
+    "category": "Governance",
+    "rsvpUrl": "https://www.downtownaustin.org/dana-2026-annual-meeting/",
+    "featured": false,
+    "status": "past"
+  }
+]
