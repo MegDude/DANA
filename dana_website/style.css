@@ -2120,3 +2120,64 @@ h3 {
     grid-auto-columns: minmax(248px, 84%);
   }
 }
+
+/* Bright white surface guard */
+:root {
+  --paper: #ffffff;
+  --paper-warm: #ffffff;
+  --white: #ffffff;
+  --border: rgba(18, 63, 43, 0.08);
+  --hairline: rgba(18, 63, 43, 0.055);
+}
+
+html,
+body,
+main,
+.section,
+.section-muted,
+.landing-intro,
+.landing-pathways,
+.landing-issues,
+.landing-sponsors,
+.newsletter-panel,
+.page-hero,
+.signup-form,
+.feature-card,
+.issue-card,
+.event-card,
+.membership-card,
+.contact-card,
+.archive-list article,
+.governance-list a,
+.content-aside,
+.integration-note,
+.profile-list article {
+  background-color: #ffffff;
+}
+
+.site-header {
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.landing-signal,
+.landing-leadership,
+.site-footer,
+.button-primary,
+.event-toolbar button.is-active {
+  background-color: var(--navy);
+  color: var(--white);
+}
+
+.signal-card,
+.sponsor-media-card {
+  background-color: #0b2f1f;
+}
+
+.signal-card::before {
+  background-color: var(--gold);
+}
+
+.status-pill {
+  background: transparent;
+}
