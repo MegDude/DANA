@@ -6,17 +6,17 @@
     "Downtown Austin Neighborhood Alliance"
   ],
   "namingStatus": "Downtown Austin Neighborhood Association",
-  "mission": "DANA influences decisions, educates residents, and fosters community through social events.",
+  "mission": "DANA helps downtown neighbors understand what is changing, meet each other, and speak up for the place they call home.",
   "sourceSite": "https://www.downtownaustin.org/",
   "wordpressAdmin": "https://www.downtownaustin.org/wp-admin",
-  "paletteStatus": "Updated to DANA green, warm gold, and polished bright white based on supplied brand assets.",
+  "paletteStatus": "DANA green, crisp white, and a restrained gold accent.",
   "palette": {
     "danaGreen": "#4B5F2A",
     "deepGreen": "#31401F",
     "gold": "#B08A2E",
-    "softGold": "#D8C48A",
+    "softGold": "#9F7A28",
     "white": "#FFFFFF",
-    "offWhite": "#F8F8F4"
+    "offWhite": "#FFFFFF"
   },
   "tools": {},
   "membership": [
@@ -24,24 +24,24 @@
       "id": "join",
       "label": "Live Downtown",
       "price": "$25-$50",
-      "copy": "Residents who want to stay connected, meet neighbors, attend social events, and support downtown advocacy.",
-      "cta": "Join DANA",
+      "copy": "For neighbors who want to meet people, get useful notes, and support a more livable downtown.",
+      "cta": "Become a member",
       "url": "join.html"
     },
     {
       "id": "member",
       "label": "Building Membership",
       "price": "Building membership",
-      "copy": "HOAs and high-rises that want to provide DANA benefits to all their residents.",
-      "cta": "Start Building Membership",
+      "copy": "For buildings that want residents to feel more connected to the neighborhood around them.",
+      "cta": "Bring DANA to your building",
       "url": "contact.html"
     },
     {
       "id": "sponsor",
       "label": "Sponsorship",
       "price": "$1,000+",
-      "copy": "Local businesses and partners who want to support DANA's mission and gain visibility.",
-      "cta": "Sponsor DANA",
+      "copy": "For local partners who want to help DANA show up well for downtown residents.",
+      "cta": "Support the work",
       "url": "sponsors.html"
     }
   ],

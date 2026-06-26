@@ -1935,3 +1935,188 @@ h3 {
     width: auto;
   }
 }
+
+/* Final editorial refinement */
+:root {
+  --max: 1120px;
+  --gold: #9f7a28;
+  --soft-gold: #9f7a28;
+  --muted: #4f5d55;
+  --border: rgba(18, 63, 43, 0.1);
+  --hairline: rgba(18, 63, 43, 0.07);
+}
+
+.shell,
+.nav-shell {
+  width: min(calc(100% - 2rem), var(--max));
+}
+
+.page-hero .shell,
+.section > .shell,
+.landing-signal .shell {
+  margin-inline: auto;
+}
+
+.page-hero h1,
+.hero-title {
+  max-width: 12ch;
+}
+
+.page-hero p,
+.content-main,
+.section-header,
+.landing-intro-grid p:not(.eyebrow),
+.feature-story-copy p,
+.landing-calendar-grid p,
+.leadership-band p,
+.newsletter-inner p {
+  max-width: 64ch;
+}
+
+.page-hero {
+  padding: clamp(2.8rem, 7vw, 4.6rem) 0 clamp(2rem, 5vw, 3.2rem);
+}
+
+.page-hero h1 {
+  margin-bottom: 0.75rem;
+  font-size: clamp(2.15rem, 7vw, 4.15rem);
+  line-height: 1.04;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 8vw, 3.35rem);
+}
+
+.hero-copy,
+.page-hero p,
+.content-main p,
+.content-list,
+.feature-card p,
+.issue-card p,
+.event-card p,
+.membership-card p,
+.contact-card p,
+.archive-list p,
+.governance-list span {
+  font-size: 0.98rem;
+  line-height: 1.58;
+}
+
+.section {
+  padding: clamp(2.8rem, 7vw, 4.8rem) 0;
+}
+
+.section-header {
+  margin-bottom: 1.45rem;
+}
+
+.content-layout {
+  align-items: start;
+}
+
+.content-aside {
+  max-width: 28rem;
+}
+
+.content-main h2 {
+  margin-top: 1.8rem;
+  font-size: clamp(1.55rem, 4vw, 2.1rem);
+}
+
+.content-main h2:first-child {
+  margin-top: 0;
+}
+
+.profile-list,
+.content-list,
+.archive-list,
+.governance-list {
+  gap: 1.15rem;
+}
+
+.profile-list article,
+.archive-list article,
+.governance-list a,
+.content-aside {
+  padding-block: 0.2rem;
+}
+
+.pathway-card,
+.issue-card,
+.event-card,
+.membership-card,
+.contact-card {
+  min-width: 0;
+}
+
+.pathway-card h3,
+.issue-card h3,
+.membership-card h3,
+.contact-card h2,
+.archive-list h2 {
+  font-size: 1.05rem;
+}
+
+.pathway-card a,
+.issue-card a,
+.event-card a,
+.membership-card a,
+.content-aside a,
+.governance-list a {
+  color: var(--navy);
+  font-weight: 760;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+
+.button-primary,
+.event-toolbar button.is-active {
+  background: var(--navy);
+  color: var(--white);
+}
+
+@media (min-width: 900px) {
+  .content-layout {
+    grid-template-columns: minmax(0, 0.72fr) minmax(220px, 0.28fr);
+    gap: 3rem;
+  }
+
+  .page-hero .shell {
+    max-width: 1120px;
+  }
+
+  .hero-title {
+    max-width: 13ch;
+  }
+}
+
+@media (max-width: 520px) {
+  .shell,
+  .nav-shell {
+    width: min(calc(100% - 1.5rem), var(--max));
+  }
+
+  .hero {
+    min-height: 520px;
+  }
+
+  .hero-content {
+    padding: 3.2rem 0 2.35rem;
+  }
+
+  .landing-signal {
+    padding: 2rem 0 1.7rem;
+  }
+
+  .landing-signal-inner,
+  .pathway-grid,
+  .issue-grid,
+  .event-grid,
+  .membership-grid,
+  .contact-grid,
+  .archive-list,
+  .governance-list,
+  .feature-story-points {
+    grid-auto-columns: minmax(248px, 84%);
+  }
+}

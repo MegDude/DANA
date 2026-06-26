@@ -2,49 +2,49 @@
   {
     "id": "public-safety",
     "title": "Public Safety",
-    "summary": "Sound standards, safer streets, high-rise security, and compassionate public-space solutions.",
+    "summary": "Noise, safer crossings, better lighting, and practical street-level safety.",
     "status": "Active",
     "sourceUrl": "public-safety.html",
-    "notes": "Uses supplied Public Safety copy plus historical Building Best Practices, sound enforcement, and crosswalk advocacy."
+    "notes": "Public safety work for downtown residents."
   },
   {
     "id": "transportation-homes",
     "title": "Transportation / HOMES",
-    "summary": "Transit, street experience, active transportation, and HOMES-related resident education.",
+    "summary": "Transit, housing, walkability, and streets that work better for daily life.",
     "status": "In progress",
     "sourceUrl": "https://www.downtownaustin.org/toward-a-more-walkable-austin/",
-    "notes": "Dedicated page requested for Transportation/HOMES."
+    "notes": "Transit and housing work affecting downtown residents."
   },
   {
     "id": "parks-shoal-creek",
     "title": "Parks & Shoal Creek",
-    "summary": "Shoal Creek cleanups, parks, trails, and downtown public-space stewardship.",
+    "summary": "Shoal Creek cleanups, parks, trails, and cared-for public spaces.",
     "status": "Active",
     "sourceUrl": "https://www.downtownaustin.org/june-shoal-creek-clean-up/",
-    "notes": "Current posts show recurring monthly Shoal Creek cleanup content."
+    "notes": "Parks and public-space work."
   },
   {
     "id": "i-35-expansion",
     "title": "I-35 Expansion",
-    "summary": "Historic opposition to current TxDOT plans, with focus on air quality, active transportation, and no-build alternatives.",
+    "summary": "Air quality, safer travel, and better choices for the future of I-35.",
     "status": "Long-range",
     "sourceUrl": "#",
-    "notes": "User-supplied migration brief references extensive documentation."
+    "notes": "Long-range highway work affecting downtown."
   },
   {
     "id": "project-connect",
     "title": "Project Connect",
-    "summary": "Orange Line, Blue Line, cost context, and transit tunnel benefits.",
+    "summary": "Light rail plans, station choices, costs, and what they mean for downtown.",
     "status": "Transit",
     "sourceUrl": "#",
-    "notes": "Source docs supplied as Google Drive references for Orange Line and Blue Line."
+    "notes": "Transit plans and downtown station context."
   },
   {
     "id": "downtown-vitality",
     "title": "Downtown Vitality",
-    "summary": "Development, walkability, social connection, neighborhood identity, and resident experience.",
+    "summary": "Homes, businesses, events, public spaces, and everyday street life.",
     "status": "Ongoing",
     "sourceUrl": "https://www.downtownaustin.org/dana-letter-c20-2024-018-ddbp-updates-2026-05-14/",
-    "notes": "Use DDBP and walkability posts as candidate evergreen content."
+    "notes": "The everyday mix that makes downtown work."
   }
 ]

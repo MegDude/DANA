@@ -16,7 +16,7 @@ const SITE_NAV = `
         <li><a href="newsletter.html">Newsletter</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <a class="button button-primary nav-cta" href="join.html">Join DANA</a>
+      <a class="button button-primary nav-cta" href="join.html">Join us</a>
     </div>
   </nav>
 `;
@@ -27,10 +27,10 @@ const SITE_FOOTER = `
       <a class="brand footer-brand" href="index.html" aria-label="DANA home">
         <span class="brand-mark brand-mark-image" aria-hidden="true"><img src="images/dana-logo-green-white.png" alt="" /></span>
       </a>
-      <p>Neighbors working together for a safer, more welcoming downtown Austin.</p>
+      <p>Neighbors working together for a downtown that feels good to come home to.</p>
     </div>
     <div class="footer-column">
-      <h2>Explore</h2>
+      <h2>Look Around</h2>
       <a href="about.html">About</a>
       <a href="board.html">Board</a>
       <a href="public-safety.html">Public Safety</a>
@@ -56,42 +56,42 @@ const fallback = {
     {
       id: "public-safety",
       title: "Public Safety",
-      summary: "Sound standards, safer streets, high-rise security, and compassionate public-space solutions.",
+      summary: "Noise, safer crossings, better lighting, and practical street-level safety.",
       status: "Evergreen",
       sourceUrl: "public-safety.html"
     },
     {
       id: "transportation-homes",
       title: "Transportation / HOMES",
-      summary: "Transit access, HOMES discussion, active transportation, and street experience.",
+      summary: "Transit, housing, walkability, and streets that work better for daily life.",
       status: "In progress",
       sourceUrl: "#"
     },
     {
       id: "parks-shoal-creek",
       title: "Parks & Shoal Creek",
-      summary: "Monthly Shoal Creek cleanups and downtown public-space stewardship.",
+      summary: "Shoal Creek cleanups, parks, trails, and cared-for public spaces.",
       status: "Active",
       sourceUrl: "https://www.downtownaustin.org/june-shoal-creek-clean-up/"
     },
     {
       id: "i-35-expansion",
       title: "I-35 Expansion",
-      summary: "Historic advocacy around air quality, active transportation, and no-build alternatives.",
+      summary: "Air quality, safer travel, and better choices for the future of I-35.",
       status: "Long-range",
       sourceUrl: "#"
     },
     {
       id: "project-connect",
       title: "Project Connect",
-      summary: "Orange Line, Blue Line, cost context, and transit tunnel benefits.",
+      summary: "Light rail plans, station choices, costs, and what they mean for downtown.",
       status: "Transit",
       sourceUrl: "#"
     },
     {
       id: "downtown-vitality",
       title: "Downtown Vitality",
-      summary: "Development, walkability, events, resident experience, and neighborhood identity.",
+      summary: "Homes, businesses, events, public spaces, and everyday street life.",
       status: "Ongoing",
       sourceUrl: "https://www.downtownaustin.org/toward-a-more-walkable-austin/"
     }
@@ -142,15 +142,15 @@ const fallback = {
       id: "join",
       label: "Live Downtown",
       price: "$25-$50",
-      copy: "For residents who want to meet neighbors, attend social events, and support downtown advocacy.",
-      cta: "Join DANA",
+      copy: "For neighbors who want to meet people, get useful notes, and support a more livable downtown.",
+      cta: "Become a member",
       url: "join.html"
     },
     {
       id: "member",
       label: "Building Membership",
       price: "Building membership",
-      copy: "For HOAs and high-rises that want to provide DANA benefits to all their residents.",
+      copy: "For buildings that want residents to feel more connected to the neighborhood around them.",
       cta: "Start building membership",
       url: "contact.html"
     },
@@ -158,7 +158,7 @@ const fallback = {
       id: "sponsor",
       label: "Sponsorship",
       price: "$1,000+",
-      copy: "For local businesses and partners who want to support DANA's mission and gain visibility.",
+      copy: "For local partners who want to help DANA show up well for downtown residents.",
       cta: "Sponsor DANA",
       url: "sponsors.html"
     }
@@ -217,7 +217,7 @@ function renderIssues(issues) {
             ${issue.status ? `<span class="status-pill">${issue.status}</span>` : ""}
             <h3>${issue.title}</h3>
             <p>${issue.summary}</p>
-            ${issue.sourceUrl && issue.sourceUrl !== "#" ? `<a href="${issue.sourceUrl}">${issue.sourceUrl.endsWith(".html") ? "Read more" : "Learn more"}</a>` : ""}
+            ${issue.sourceUrl && issue.sourceUrl !== "#" ? `<a href="${issue.sourceUrl}">${issue.sourceUrl.endsWith(".html") ? "Read the issue" : "Take a look"}</a>` : ""}
           </article>
         `
       )
@@ -245,7 +245,7 @@ function eventCard(event) {
         <h3>${event.title}</h3>
         ${meta ? `<p class="event-meta">${meta}</p>` : ""}
         <p>${event.description}</p>
-        <a href="${event.rsvpUrl || "#"}">View details</a>
+        <a href="${event.rsvpUrl || "#"}">Take a look</a>
       </div>
     </article>
   `;
@@ -292,10 +292,10 @@ function renderArchive() {
   const target = document.querySelector("[data-archive]");
   if (!target) return;
   target.innerHTML = `
-    <article><h2>Blog archive</h2><p>Public WordPress API exposes 295 posts as of 2026-06-25. Project notes reference 461 old blog posts; reconcile during authenticated migration.</p></article>
-    <article><h2>Retire</h2><p>Approximately 80% of old posts should be retired if they are time-sensitive, duplicated, or no longer useful.</p></article>
-    <article><h2>Migrate</h2><p>Evergreen advocacy, governance, safety, transportation, parks, and sponsor materials should move into structured pages.</p></article>
-    <article><h2>Preserve</h2><p>Legal, bylaws, meeting minutes, and historically important materials should remain accessible and grouped by year.</p></article>
+    <article><h2>Past Updates</h2><p>Older posts and records live here while DANA keeps the main site focused on what residents need now.</p></article>
+    <article><h2>What Stays</h2><p>Meeting records, bylaws, public letters, and useful explainers should stay easy to find.</p></article>
+    <article><h2>What Moves</h2><p>Useful issue updates can move into issue pages so neighbors do not have to search through old posts.</p></article>
+    <article><h2>What Fades</h2><p>Time-sensitive announcements can retire when they no longer help residents understand the work.</p></article>
   `;
 }
 
@@ -306,7 +306,7 @@ function setupForms() {
       const email = form.querySelector('input[type="email"]');
       const status = form.querySelector(".form-status");
       if (!email.value || !email.checkValidity()) {
-        status.textContent = "Enter a valid email address.";
+        status.textContent = "Add a valid email and try again.";
         email.focus();
         return;
       }
