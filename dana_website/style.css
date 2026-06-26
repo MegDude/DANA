@@ -1745,3 +1745,193 @@ h3 {
     font-size: 3.65rem;
   }
 }
+
+/* Holistic cleanup: open editorial layout, minimal chrome */
+.page-hero,
+.section-muted,
+.landing-pathways,
+.landing-issues,
+.landing-sponsors,
+.newsletter-panel {
+  background: var(--white);
+}
+
+.page-hero {
+  padding: 4rem 0 2.8rem;
+  color: var(--ink);
+}
+
+.page-hero p,
+.section-header p,
+.feature-card p,
+.issue-card p,
+.event-card p,
+.membership-card p,
+.contact-card p,
+.archive-list p,
+.content-main p,
+.governance-list span,
+.integration-note li {
+  color: var(--muted);
+}
+
+.feature-card,
+.issue-card,
+.event-card,
+.membership-card,
+.contact-card,
+.archive-list article,
+.content-aside,
+.governance-list a,
+.integration-note,
+.profile-list article,
+.pathway-card {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.feature-grid,
+.issue-grid,
+.event-grid,
+.membership-grid,
+.contact-grid,
+.archive-list,
+.governance-list,
+.pathway-grid,
+.profile-list {
+  gap: 1.6rem;
+}
+
+.feature-card h3,
+.issue-card h3,
+.event-card h3,
+.membership-card h3,
+.contact-card h2,
+.archive-list h2,
+.governance-list strong,
+.pathway-card h3 {
+  margin-bottom: 0.45rem;
+}
+
+.status-pill {
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+}
+
+.event-card {
+  align-items: start;
+}
+
+.event-date {
+  width: auto;
+  height: auto;
+  place-items: start;
+  background: transparent;
+  color: var(--ink);
+}
+
+.event-date strong {
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.event-date span {
+  color: var(--gold);
+}
+
+.event-toolbar {
+  gap: 1rem;
+  margin-bottom: 1.6rem;
+}
+
+.event-toolbar button {
+  min-height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--muted);
+}
+
+.event-toolbar button.is-active {
+  background: transparent;
+  color: var(--navy);
+}
+
+.button {
+  width: auto;
+  min-height: 34px;
+  padding: 0.45rem 0.7rem;
+  border-radius: 4px;
+  font-size: 0.82rem;
+}
+
+.text-link {
+  min-height: 32px;
+  border-bottom: 0;
+}
+
+.signal-card,
+.sponsor-media-card {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.signal-card::before {
+  width: 2rem;
+  height: 1px;
+}
+
+.sponsor-media-card span,
+.signal-card span,
+.signal-card strong,
+.signal-card small {
+  color: var(--white);
+}
+
+.signup-form {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.form-row input {
+  border-radius: 4px;
+  border-color: var(--hairline);
+}
+
+.integration-note ul {
+  display: grid;
+  gap: 0.55rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.integration-note li {
+  line-height: 1.45;
+}
+
+.proof-band,
+.proof-grid {
+  border: 0;
+  background: var(--white);
+}
+
+.proof-grid article {
+  padding: 0;
+  background: transparent;
+}
+
+@media (max-width: 420px) {
+  .button,
+  .hero-actions .button,
+  .feature-story-copy .button {
+    width: auto;
+  }
+}
