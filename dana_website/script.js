@@ -56,43 +56,43 @@ const fallback = {
     {
       id: "public-safety",
       title: "Public Safety",
-      summary: "Noise, safer crossings, better lighting, and safer blocks.",
-      status: "Evergreen",
+      summary: "Quieter nights, safer crossings, better lighting, and blocks that feel easier to walk.",
+      status: "Now",
       sourceUrl: "public-safety.html"
     },
     {
-      id: "transportation-homes",
-      title: "Transportation / HOMES",
-      summary: "Transit, housing, sidewalks, and streets that work better for daily life.",
-      status: "In progress",
+      id: "transportation-housing",
+      title: "Transportation & Housing",
+      summary: "Transit, sidewalks, housing choices, and streets that make daily life less frustrating.",
+      status: "Watching",
       sourceUrl: "#"
     },
     {
       id: "parks-shoal-creek",
       title: "Parks & Shoal Creek",
-      summary: "Shoal Creek cleanups, parks, trails, and public places people care for.",
+      summary: "Cleanups, trails, parks, and green spaces people actually use.",
       status: "Active",
       sourceUrl: "https://www.downtownaustin.org/june-shoal-creek-clean-up/"
     },
     {
       id: "i-35-expansion",
       title: "I-35 Expansion",
-      summary: "Air quality, safer travel, and better choices for I-35.",
-      status: "Long-range",
+      summary: "Air quality, safer routes, and better choices for the highway cutting through downtown.",
+      status: "Long View",
       sourceUrl: "#"
     },
     {
       id: "project-connect",
       title: "Project Connect",
-      summary: "Light rail plans, station choices, costs, and what they mean nearby.",
-      status: "Transit",
+      summary: "Light rail plans, station choices, costs, and how transit will change downtown.",
+      status: "Transit Watch",
       sourceUrl: "#"
     },
     {
       id: "downtown-vitality",
       title: "Downtown Vitality",
-      summary: "Homes, businesses, events, public spaces, and everyday street life.",
-      status: "Ongoing",
+      summary: "More homes, better street life, local businesses, and reasons to know your neighbors.",
+      status: "Everyday Life",
       sourceUrl: "https://www.downtownaustin.org/toward-a-more-walkable-austin/"
     }
   ],
@@ -217,7 +217,7 @@ function renderIssues(issues) {
             ${issue.status ? `<span class="status-pill">${issue.status}</span>` : ""}
             <h3>${issue.title}</h3>
             <p>${issue.summary}</p>
-            ${issue.sourceUrl && issue.sourceUrl !== "#" ? `<a href="${issue.sourceUrl}">${issue.sourceUrl.endsWith(".html") ? "Read the issue" : "Take a look"}</a>` : ""}
+            ${issue.sourceUrl && issue.sourceUrl !== "#" ? `<a href="${issue.sourceUrl}">${issue.sourceUrl.endsWith(".html") ? "Read the issue" : "See the background"}</a>` : ""}
           </article>
         `
       )

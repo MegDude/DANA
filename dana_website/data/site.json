@@ -11,9 +11,9 @@
   "wordpressAdmin": "https://www.downtownaustin.org/wp-admin",
   "paletteStatus": "DANA green, crisp white, and a restrained gold accent.",
   "palette": {
-    "danaGreen": "#4B5F2A",
-    "deepGreen": "#31401F",
-    "gold": "#B08A2E",
+    "danaGreen": "#062F24",
+    "deepGreen": "#062F24",
+    "gold": "#9F7A28",
     "softGold": "#9F7A28",
     "white": "#FFFFFF",
     "offWhite": "#FFFFFF"
