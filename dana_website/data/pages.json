@@ -17,7 +17,7 @@
     "contentType": "page",
     "recommendedDestination": "/events",
     "status": "rewrite",
-    "notes": "Move to structured events module."
+    "notes": "Move to the events page."
   },
   {
     "title": "June Shoal Creek Clean-Up",
@@ -27,7 +27,7 @@
     "contentType": "post",
     "recommendedDestination": "/events and /issues#parks-shoal-creek",
     "status": "migrate",
-    "notes": "Recent parks/public-space event and issue signal."
+    "notes": "Recent parks and public places item."
   },
   {
     "title": "DANA Letter - C20-2024-018 DDBP Updates",
@@ -37,7 +37,7 @@
     "contentType": "post",
     "recommendedDestination": "/issues#downtown-vitality",
     "status": "migrate",
-    "notes": "Candidate evergreen advocacy item."
+    "notes": "Older item that may still be worth keeping."
   },
   {
     "title": "Downtown Safety Forum (May 2026)",

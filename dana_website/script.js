@@ -56,35 +56,35 @@ const fallback = {
     {
       id: "public-safety",
       title: "Public Safety",
-      summary: "Noise, safer crossings, better lighting, and practical street-level safety.",
+      summary: "Noise, safer crossings, better lighting, and safer blocks.",
       status: "Evergreen",
       sourceUrl: "public-safety.html"
     },
     {
       id: "transportation-homes",
       title: "Transportation / HOMES",
-      summary: "Transit, housing, walkability, and streets that work better for daily life.",
+      summary: "Transit, housing, sidewalks, and streets that work better for daily life.",
       status: "In progress",
       sourceUrl: "#"
     },
     {
       id: "parks-shoal-creek",
       title: "Parks & Shoal Creek",
-      summary: "Shoal Creek cleanups, parks, trails, and cared-for public spaces.",
+      summary: "Shoal Creek cleanups, parks, trails, and public places people care for.",
       status: "Active",
       sourceUrl: "https://www.downtownaustin.org/june-shoal-creek-clean-up/"
     },
     {
       id: "i-35-expansion",
       title: "I-35 Expansion",
-      summary: "Air quality, safer travel, and better choices for the future of I-35.",
+      summary: "Air quality, safer travel, and better choices for I-35.",
       status: "Long-range",
       sourceUrl: "#"
     },
     {
       id: "project-connect",
       title: "Project Connect",
-      summary: "Light rail plans, station choices, costs, and what they mean for downtown.",
+      summary: "Light rail plans, station choices, costs, and what they mean nearby.",
       status: "Transit",
       sourceUrl: "#"
     },
@@ -104,7 +104,7 @@ const fallback = {
       startTime: "Community update",
       endTime: "",
       location: "Shoal Creek area",
-      description: "A neighborhood cleanup supporting Shoal Creek and nearby public spaces.",
+      description: "A neighborhood cleanup for Shoal Creek and the public spaces around it.",
       category: "Parks",
       rsvpUrl: "https://www.downtownaustin.org/june-shoal-creek-clean-up/",
       featured: true,
@@ -117,7 +117,7 @@ const fallback = {
       startTime: "Community forum",
       endTime: "",
       location: "Downtown Austin",
-      description: "A resident forum focused on public safety, sound, and street-level concerns.",
+      description: "A resident forum on safety, sound, and what people are seeing on the street.",
       category: "Public Safety",
       rsvpUrl: "https://www.downtownaustin.org/downtown-safety-forum-may-2026/",
       featured: true,
@@ -130,7 +130,7 @@ const fallback = {
       startTime: "Board update",
       endTime: "",
       location: "Downtown Austin",
-      description: "A board meeting for neighborhood updates, resident questions, and current work.",
+      description: "A board meeting for neighborhood notes, resident questions, and what is next.",
       category: "Governance",
       rsvpUrl: "#",
       featured: true,
@@ -142,7 +142,7 @@ const fallback = {
       id: "join",
       label: "Live Downtown",
       price: "$25-$50",
-      copy: "For neighbors who want to meet people, get useful notes, and support a more livable downtown.",
+      copy: "For neighbors who want to meet people, get short notes, and help make downtown easier to live in.",
       cta: "Become a member",
       url: "join.html"
     },
@@ -150,7 +150,7 @@ const fallback = {
       id: "member",
       label: "Building Membership",
       price: "Building membership",
-      copy: "For buildings that want residents to feel more connected to the neighborhood around them.",
+      copy: "For buildings that want residents to know more people and feel more at home downtown.",
       cta: "Start building membership",
       url: "contact.html"
     },
@@ -158,8 +158,8 @@ const fallback = {
       id: "sponsor",
       label: "Sponsorship",
       price: "$1,000+",
-      copy: "For local partners who want to help DANA show up well for downtown residents.",
-      cta: "Sponsor DANA",
+      copy: "For local partners who want to help downtown feel better for the people who live here.",
+      cta: "Help out",
       url: "sponsors.html"
     }
   ]
@@ -292,10 +292,10 @@ function renderArchive() {
   const target = document.querySelector("[data-archive]");
   if (!target) return;
   target.innerHTML = `
-    <article><h2>Past Updates</h2><p>Older posts and records live here while DANA keeps the main site focused on what residents need now.</p></article>
-    <article><h2>What Stays</h2><p>Meeting records, bylaws, public letters, and useful explainers should stay easy to find.</p></article>
-    <article><h2>What Moves</h2><p>Useful issue updates can move into issue pages so neighbors do not have to search through old posts.</p></article>
-    <article><h2>What Fades</h2><p>Time-sensitive announcements can retire when they no longer help residents understand the work.</p></article>
+    <article><h2>Past Notes</h2><p>Older posts and records live here while the main site stays centered on what neighbors need now.</p></article>
+    <article><h2>Worth Keeping</h2><p>Meeting records, bylaws, public letters, and helpful explainers should stay easy to find.</p></article>
+    <article><h2>Worth Moving</h2><p>Good issue notes can move into issue pages so neighbors do not have to search through old posts.</p></article>
+    <article><h2>Ready To Retire</h2><p>Old announcements can come down when they no longer help explain what happened.</p></article>
   `;
 }
 

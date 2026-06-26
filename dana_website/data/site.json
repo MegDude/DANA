@@ -6,7 +6,7 @@
     "Downtown Austin Neighborhood Alliance"
   ],
   "namingStatus": "Downtown Austin Neighborhood Association",
-  "mission": "DANA helps downtown neighbors understand what is changing, meet each other, and speak up for the place they call home.",
+  "mission": "DANA helps downtown neighbors know what is changing, meet each other, and speak up for the place they call home.",
   "sourceSite": "https://www.downtownaustin.org/",
   "wordpressAdmin": "https://www.downtownaustin.org/wp-admin",
   "paletteStatus": "DANA green, crisp white, and a restrained gold accent.",
@@ -24,7 +24,7 @@
       "id": "join",
       "label": "Live Downtown",
       "price": "$25-$50",
-      "copy": "For neighbors who want to meet people, get useful notes, and support a more livable downtown.",
+      "copy": "For neighbors who want to meet people, get short notes, and help make downtown easier to live in.",
       "cta": "Become a member",
       "url": "join.html"
     },
@@ -32,7 +32,7 @@
       "id": "member",
       "label": "Building Membership",
       "price": "Building membership",
-      "copy": "For buildings that want residents to feel more connected to the neighborhood around them.",
+      "copy": "For buildings that want residents to know more people and feel more at home downtown.",
       "cta": "Bring DANA to your building",
       "url": "contact.html"
     },
@@ -40,8 +40,8 @@
       "id": "sponsor",
       "label": "Sponsorship",
       "price": "$1,000+",
-      "copy": "For local partners who want to help DANA show up well for downtown residents.",
-      "cta": "Support the work",
+      "copy": "For local partners who want to help downtown feel better for the people who live here.",
+      "cta": "Help out",
       "url": "sponsors.html"
     }
   ],
