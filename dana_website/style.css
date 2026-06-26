@@ -3558,3 +3558,208 @@ li,
     grid-auto-columns: minmax(218px, 80%);
   }
 }
+
+/* Whole-app alignment and readable text lock */
+:root {
+  --max: 960px;
+  --page-gutter: clamp(0.9rem, 3.4vw, 1.55rem);
+  --content-rail: rgba(6, 47, 36, 0.075);
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  font-size: 14px;
+}
+
+main .shell,
+.site-footer .shell,
+.nav-shell {
+  width: min(calc(100% - var(--page-gutter)), var(--max));
+}
+
+main .shell,
+.site-footer .shell {
+  padding-left: clamp(0.72rem, 2vw, 0.95rem);
+  border-left: 1px solid var(--content-rail);
+}
+
+.nav-shell {
+  padding-inline: 0;
+}
+
+main,
+section,
+article,
+aside,
+form,
+p,
+li,
+h1,
+h2,
+h3,
+h4,
+a,
+span,
+strong {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.page-hero {
+  padding: clamp(2.1rem, 5.8vw, 3.35rem) 0 clamp(1.35rem, 4vw, 2.15rem);
+}
+
+.page-hero h1 {
+  max-width: 15ch;
+  font-size: clamp(1.65rem, 6.2vw, 2.55rem);
+  line-height: 1.06;
+}
+
+.page-hero p {
+  max-width: 52ch;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.section {
+  padding: clamp(1.75rem, 4.8vw, 2.8rem) 0;
+}
+
+.content-layout,
+.newsletter-inner,
+.contact-grid,
+.archive-list,
+.governance-list,
+.profile-list {
+  gap: clamp(0.85rem, 2.5vw, 1.25rem);
+}
+
+.content-main {
+  max-width: 62ch;
+}
+
+.content-main h2 {
+  font-size: clamp(1.18rem, 3.8vw, 1.65rem);
+}
+
+.contact-card h2,
+.archive-list h2,
+.content-aside h2,
+.integration-note h2 {
+  font-size: 0.98rem;
+  line-height: 1.18;
+}
+
+.contact-card p,
+.archive-list p,
+.content-aside p,
+.integration-note li,
+.profile-list p,
+.content-main p {
+  max-width: 58ch;
+  font-size: 0.88rem;
+  line-height: 1.52;
+}
+
+.signup-form,
+.integration-note,
+.content-aside {
+  max-width: 430px;
+}
+
+.signup-form {
+  gap: 0.72rem;
+}
+
+.form-row input {
+  min-height: 40px;
+  padding: 0.65rem 0.75rem;
+}
+
+.sponsor-detail h4 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.22;
+}
+
+.sponsor-detail ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+  padding: 0;
+  margin: 0.1rem 0 0.25rem;
+  list-style: none;
+}
+
+.sponsor-detail li {
+  padding: 0.18rem 0.42rem;
+  border-left: 1px solid var(--hairline);
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.25;
+}
+
+.sponsor-detail p strong {
+  color: var(--ink);
+  font-weight: 760;
+}
+
+@media (min-width: 900px) {
+  .content-layout {
+    grid-template-columns: minmax(0, 0.68fr) minmax(220px, 0.32fr);
+    gap: 2rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .newsletter-inner.standalone {
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  :root {
+    --page-gutter: 0.85rem;
+  }
+
+  main .shell,
+  .site-footer .shell {
+    padding-left: 0.62rem;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(1.48rem, 8vw, 2.05rem);
+  }
+
+  .contact-grid,
+  .archive-list,
+  .governance-list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(210px, 80%);
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 0.55rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .contact-grid::-webkit-scrollbar,
+  .archive-list::-webkit-scrollbar,
+  .governance-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .contact-card,
+  .archive-list article,
+  .governance-list a {
+    scroll-snap-align: start;
+  }
+}
