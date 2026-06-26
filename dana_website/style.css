@@ -2065,8 +2065,7 @@ h3 {
 .governance-list a {
   color: var(--navy);
   font-weight: 760;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.22em;
+  text-decoration: none;
 }
 
 .button-primary,
@@ -2720,9 +2719,7 @@ li {
 .content-aside a {
   color: var(--ink);
   font-weight: 760;
-  text-decoration-color: var(--gold);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.24em;
+  text-decoration: none;
 }
 
 .sponsor-community .partner-stats {
@@ -3761,5 +3758,332 @@ strong {
   .archive-list article,
   .governance-list a {
     scroll-snap-align: start;
+  }
+}
+
+/* Final page rail lock: one left edge, slight breathing room, no stretched rhythm */
+:root {
+  --max: 980px;
+  --page-gutter: clamp(1rem, 4vw, 2.75rem);
+  --rail-pad: clamp(0.72rem, 2.1vw, 1rem);
+  --content-rail: rgba(6, 47, 36, 0.075);
+}
+
+.nav-shell,
+main .shell,
+.site-footer .shell {
+  width: min(calc(100% - var(--page-gutter)), var(--max));
+  margin-inline: auto;
+}
+
+main .shell,
+.site-footer .shell {
+  padding-left: var(--rail-pad);
+  border-left: 1px solid var(--content-rail);
+}
+
+.hero .shell,
+.landing-leadership .shell,
+.landing-signal .shell,
+.site-footer .shell {
+  border-left-color: rgba(255, 255, 255, 0.18);
+}
+
+.page-hero .shell,
+.section > .shell,
+.landing-signal > .shell,
+.site-footer > .shell {
+  display: grid;
+  justify-items: start;
+}
+
+.section-header,
+.split-header,
+.landing-intro-grid,
+.feature-story,
+.landing-calendar-grid,
+.newsletter-inner,
+.content-layout,
+.partner-section,
+.sponsor-guide-grid,
+.sponsor-connection-grid,
+.archive-list,
+.profile-list,
+.issue-grid,
+.event-grid,
+.pathway-grid,
+.membership-grid,
+.contact-grid,
+.governance-list {
+  width: 100%;
+}
+
+.hero-title {
+  max-width: 16ch;
+  font-size: clamp(1.82rem, 8vw, 3.2rem);
+}
+
+.hero-copy,
+.page-hero p,
+.content-main p,
+.content-main li,
+.section-header p,
+.landing-intro-grid p:not(.eyebrow),
+.feature-story-copy p,
+.landing-calendar-grid p,
+.partner-intro p:not(.eyebrow),
+.newsletter-inner p {
+  max-width: 58ch;
+}
+
+.pathway-grid,
+.issue-grid,
+.event-grid,
+.membership-grid,
+.contact-grid,
+.archive-list,
+.governance-list,
+.feature-story-points,
+.landing-signal-inner,
+.partner-category-rail,
+.sponsor-place-rail,
+.sponsor-logo-rail {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.content-main h2,
+.archive-list h2,
+.profile-list h3,
+.issue-card h3,
+.event-card h3,
+.pathway-card h3 {
+  overflow-wrap: normal;
+}
+
+@media (max-width: 520px) {
+  :root {
+    --page-gutter: 0.95rem;
+    --rail-pad: 0.62rem;
+  }
+
+  .hero-title {
+    max-width: 15ch;
+    font-size: clamp(1.65rem, 8.5vw, 2.25rem);
+  }
+}
+
+/* Final typography and rail polish: lighter copy, cleaner CTAs, responsive scrollers */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 560;
+}
+
+p,
+li,
+small,
+input,
+button {
+  font-weight: 400;
+}
+
+strong {
+  font-weight: 620;
+}
+
+.eyebrow,
+.status-pill,
+.event-date span,
+.partner-category p,
+.sponsor-detail .eyebrow,
+.sponsor-place-rail span,
+.pathway-card span,
+.feature-story-points span,
+.signal-card span {
+  font-weight: 680;
+}
+
+a,
+.text-link,
+.button,
+.nav-cta,
+.hero-action-link,
+.pathway-card a,
+.issue-card a,
+.event-card a,
+.membership-card a,
+.content-aside a,
+.governance-list a,
+.partner-category a,
+.partner-cta a,
+.sponsor-detail a {
+  text-decoration: none;
+}
+
+.button,
+.nav-cta,
+.hero-action-link,
+.text-link,
+.pathway-card a,
+.issue-card a,
+.event-card a,
+.membership-card a,
+.content-aside a,
+.partner-category a,
+.partner-cta a {
+  font-weight: 600;
+}
+
+.text-link,
+.hero-action-link,
+.pathway-card a,
+.issue-card a,
+.event-card a,
+.membership-card a,
+.content-aside a,
+.partner-category a,
+.partner-cta a,
+.sponsor-detail a {
+  border: 0;
+}
+
+.text-link::after,
+.pathway-card a::after,
+.issue-card a::after,
+.event-card a::after,
+.membership-card a::after,
+.content-aside a::after,
+.partner-category a::after,
+.partner-cta a::after {
+  content: " →";
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.hero-action-link::after {
+  font-weight: 500;
+}
+
+.pathway-grid,
+.issue-grid,
+.event-grid,
+.membership-grid,
+.contact-grid,
+.archive-list,
+.governance-list,
+.feature-story-points,
+.landing-signal-inner,
+.partner-category-rail,
+.sponsor-place-rail,
+.sponsor-logo-rail,
+.partner-name-rail {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.pathway-card,
+.issue-card,
+.event-card,
+.membership-card,
+.contact-card,
+.archive-list article,
+.governance-list a,
+.feature-story-points article,
+.signal-card,
+.partner-category,
+.sponsor-place-rail article,
+.sponsor-logo-rail button,
+.sponsor-detail-stage {
+  box-shadow: none;
+}
+
+.pathway-card,
+.issue-card,
+.event-card,
+.membership-card,
+.contact-card,
+.archive-list article,
+.governance-list a,
+.feature-story-points article,
+.sponsor-place-rail article,
+.sponsor-logo-rail button,
+.sponsor-detail-stage {
+  border-left: 0;
+}
+
+.signal-card,
+.partner-category {
+  border: 0;
+}
+
+.pathway-card p,
+.issue-card p,
+.event-card p,
+.membership-card p,
+.contact-card p,
+.archive-list p,
+.governance-list span,
+.feature-story-points strong,
+.signal-card strong,
+.partner-category span,
+.sponsor-place-rail p,
+.sponsor-detail p {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: auto;
+}
+
+.pathway-card h3,
+.issue-card h3,
+.event-card h3,
+.membership-card h3,
+.signal-card strong,
+.partner-category h3,
+.sponsor-detail h3 {
+  max-width: 20ch;
+}
+
+.pathway-card p,
+.issue-card p,
+.event-card p,
+.membership-card p,
+.partner-category span {
+  max-width: 32ch;
+}
+
+.sponsor-logo-rail button {
+  padding-left: 0;
+}
+
+.sponsor-detail-stage {
+  padding-left: 0;
+}
+
+@media (max-width: 520px) {
+  .pathway-grid,
+  .issue-grid,
+  .event-grid,
+  .membership-grid,
+  .contact-grid,
+  .archive-list,
+  .governance-list,
+  .feature-story-points,
+  .landing-signal-inner,
+  .partner-category-rail,
+  .sponsor-place-rail {
+    grid-auto-columns: minmax(214px, 82%);
+  }
+
+  .sponsor-logo-rail {
+    grid-auto-columns: minmax(124px, 38%);
   }
 }

@@ -1,50 +1,50 @@
 [
   {
     "id": "public-safety",
-    "title": "Public Safety",
-    "summary": "Quieter nights, safer crossings, better lighting, and blocks that feel easier to walk.",
-    "status": "Now",
+    "title": "Public Safety & Quality of Life",
+    "summary": "Helping downtown feel safer, quieter, better lit, and easier to enjoy at different times of day.",
+    "status": "Recently Updated",
     "sourceUrl": "public-safety.html",
-    "notes": "Safety work for downtown neighbors."
+    "notes": "Street lighting, crossings, sound, walking, and public spaces."
   },
   {
     "id": "transportation-housing",
-    "title": "Transportation & Housing",
-    "summary": "Transit, sidewalks, housing choices, and streets that make daily life less frustrating.",
-    "status": "Watching",
+    "title": "Housing & Development",
+    "summary": "New homes, new buildings, and planning conversations that shape how downtown grows.",
+    "status": "In Planning",
     "sourceUrl": "https://www.downtownaustin.org/toward-a-more-walkable-austin/",
-    "notes": "Transit and housing changes near downtown."
+    "notes": "Residential development, affordable housing, mixed-use projects, and development proposals."
   },
   {
     "id": "parks-shoal-creek",
-    "title": "Parks & Shoal Creek",
-    "summary": "Cleanups, trails, parks, and green spaces people actually use.",
-    "status": "Active",
+    "title": "Parks & Public Spaces",
+    "summary": "Parks, trails, trees, plazas, and open spaces where people actually want to spend time.",
+    "status": "Community Project",
     "sourceUrl": "https://www.downtownaustin.org/june-shoal-creek-clean-up/",
-    "notes": "Parks, trails, and public places."
+    "notes": "Waterloo Greenway, Shoal Creek, Republic Square, public plazas, and street trees."
   },
   {
     "id": "i-35-expansion",
-    "title": "I-35 Expansion",
-    "summary": "Air quality, safer routes, and better choices for the highway cutting through downtown.",
-    "status": "Long View",
+    "title": "I-35",
+    "summary": "Construction, traffic changes, air quality, and how the reconstruction may affect downtown residents.",
+    "status": "Long-Term Project",
     "sourceUrl": "#",
-    "notes": "Highway changes near downtown."
+    "notes": "Highway changes near downtown and the long effort to reconnect the city."
   },
   {
     "id": "project-connect",
     "title": "Project Connect",
-    "summary": "Light rail plans, station choices, costs, and how transit will change downtown.",
-    "status": "Transit Watch",
+    "summary": "Austin's future transit network, including downtown station planning, timelines, and resident impact.",
+    "status": "City Project",
     "sourceUrl": "#",
-    "notes": "Transit plans and downtown stations."
+    "notes": "Light rail planning, station locations, timelines, and downtown connections."
   },
   {
     "id": "downtown-vitality",
-    "title": "Downtown Vitality",
-    "summary": "More homes, better street life, local businesses, and reasons to know your neighbors.",
-    "status": "Everyday Life",
+    "title": "Downtown's Future",
+    "summary": "The mix of homes, local businesses, walkable streets, public life, and community events that make downtown feel like a neighborhood.",
+    "status": "Community Conversation",
     "sourceUrl": "https://www.downtownaustin.org/dana-letter-c20-2024-018-ddbp-updates-2026-05-14/",
-    "notes": "The everyday mix that makes downtown work."
+    "notes": "Housing, public spaces, walkability, street life, and local businesses."
   }
 ]

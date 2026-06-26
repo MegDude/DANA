@@ -40,14 +40,14 @@ const SITE_FOOTER = `
       <h2>Connect</h2>
       <a href="join.html">Join DANA</a>
       <a href="newsletter.html">Newsletter</a>
-      <a href="sponsors.html">Sponsors</a>
+      <a href="sponsors.html">Community Partners</a>
       <a href="governance.html">Bylaws & Minutes</a>
       <a href="privacy.html">Privacy Policy</a>
       <a href="accessibility.html">Accessibility</a>
     </div>
   </div>
   <div class="shell footer-bottom">
-    <p>© 2026 Downtown Austin Neighborhood Association.</p>
+    <p>© 2026 Downtown Austin Neighborhood Association. Helping neighbors feel at home downtown.</p>
   </div>
 `;
 
@@ -55,44 +55,44 @@ const fallback = {
   issues: [
     {
       id: "public-safety",
-      title: "Public Safety",
-      summary: "Quieter nights, safer crossings, better lighting, and blocks that feel easier to walk.",
-      status: "Now",
+      title: "Public Safety & Quality of Life",
+      summary: "Helping downtown feel safer, quieter, better lit, and easier to enjoy.",
+      status: "Recently Updated",
       sourceUrl: "public-safety.html"
     },
     {
       id: "transportation-housing",
-      title: "Transportation & Housing",
-      summary: "Transit, sidewalks, housing choices, and streets that make daily life less frustrating.",
-      status: "Watching",
+      title: "Housing & Development",
+      summary: "New homes, new buildings, and planning conversations that shape how downtown grows.",
+      status: "In Planning",
       sourceUrl: "#"
     },
     {
       id: "parks-shoal-creek",
-      title: "Parks & Shoal Creek",
-      summary: "Cleanups, trails, parks, and green spaces people actually use.",
-      status: "Active",
+      title: "Parks & Public Spaces",
+      summary: "Parks, trails, trees, plazas, and open spaces where people want to spend time.",
+      status: "Community Project",
       sourceUrl: "https://www.downtownaustin.org/june-shoal-creek-clean-up/"
     },
     {
       id: "i-35-expansion",
-      title: "I-35 Expansion",
-      summary: "Air quality, safer routes, and better choices for the highway cutting through downtown.",
-      status: "Long View",
+      title: "I-35",
+      summary: "Construction, traffic changes, air quality, and how the reconstruction may affect downtown residents.",
+      status: "Long-Term Project",
       sourceUrl: "#"
     },
     {
       id: "project-connect",
       title: "Project Connect",
-      summary: "Light rail plans, station choices, costs, and how transit will change downtown.",
-      status: "Transit Watch",
+      summary: "Austin's future transit network, including downtown station planning, timelines, and resident impact.",
+      status: "City Project",
       sourceUrl: "#"
     },
     {
       id: "downtown-vitality",
-      title: "Downtown Vitality",
-      summary: "More homes, better street life, local businesses, and reasons to know your neighbors.",
-      status: "Everyday Life",
+      title: "Downtown's Future",
+      summary: "Homes, local businesses, walkable streets, public life, and events that make downtown feel like a neighborhood.",
+      status: "Community Conversation",
       sourceUrl: "https://www.downtownaustin.org/toward-a-more-walkable-austin/"
     }
   ],
