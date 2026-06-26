@@ -341,9 +341,38 @@ function setupHeroParallax() {
   );
 }
 
+function setupSponsorShowcase() {
+  const tabs = document.querySelector("[data-sponsor-tabs]");
+  const details = document.querySelector("[data-sponsor-details]");
+  if (!tabs || !details) return;
+
+  const buttons = Array.from(tabs.querySelectorAll("[data-sponsor]"));
+  const panels = Array.from(details.querySelectorAll("[data-sponsor-panel]"));
+
+  const activate = (id) => {
+    buttons.forEach((button) => {
+      const isActive = button.dataset.sponsor === id;
+      button.setAttribute("aria-selected", String(isActive));
+      button.classList.toggle("is-active", isActive);
+      if (isActive) button.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+    });
+
+    panels.forEach((panel) => {
+      const isActive = panel.dataset.sponsorPanel === id;
+      panel.hidden = !isActive;
+      panel.classList.toggle("is-active", isActive);
+    });
+  };
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => activate(button.dataset.sponsor));
+  });
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   setupChrome();
   setupHeroParallax();
+  setupSponsorShowcase();
   const [issues, events, membership] = await Promise.all([
     getJson("data/issues.json", "issues"),
     getJson("data/events.json", "events"),
