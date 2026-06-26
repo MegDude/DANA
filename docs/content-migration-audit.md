@@ -36,7 +36,7 @@ Date: 2026-06-25
 - Homepage structure and copy rewritten for clarity and mobile-first hierarchy.
 - Issue cards rewritten into short resident-facing summaries.
 - Event cards converted to structured JSON.
-- Membership flow rewritten around Join / Member / Sponsorship and transition to Givebutter and Mailchimp.
+- Membership flow rewritten around resident membership, building membership, partner support, and newsletter signup.
 
 ## Content Archived
 
@@ -51,8 +51,8 @@ Date: 2026-06-25
 - Board roster and leadership titles.
 - Bylaws and minutes links.
 - Official email, social channels, and mailing address.
-- Givebutter campaign URLs for member and sponsor paths.
-- Mailchimp audience/signup URL.
+- Final payment and partner-support URLs.
+- Final newsletter audience/signup URL.
 - Final membership and sponsorship pricing.
 - Privacy Policy approved text.
 - WCAG 2.1 AA accessibility statement approved text.
@@ -63,7 +63,7 @@ Date: 2026-06-25
 - Current homepage contains legacy WordPress/Joomla-era assets and plugins.
 - Public REST API page inventory appears incomplete for expected static pages.
 - Google Doc and Sheets sources require authenticated access and should be imported by an authorized DANA user.
-- Placeholder `#` links in the prototype intentionally mark unconfigured Givebutter, Mailchimp, bylaws, minutes, and RSVP URLs.
+- Temporary `#` links in the prototype mark routes that still need final board-approved URLs, bylaws, minutes, and RSVP destinations.
 
 ## Recommended Redirects
 

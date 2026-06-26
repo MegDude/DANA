@@ -2762,3 +2762,379 @@ li {
     grid-auto-columns: minmax(154px, 12.5%);
   }
 }
+
+/* Homepage production lock: premium rhythm, full-bleed hero, compact rails */
+:root {
+  --max: 1040px;
+  --radius: 6px;
+  --shadow-soft: 0 12px 34px rgba(6, 47, 36, 0.1);
+}
+
+body {
+  font-size: 14.75px;
+}
+
+main .shell,
+.site-footer .shell {
+  width: min(calc(100% - 1.25rem), var(--max));
+  padding-left: clamp(0.7rem, 2.4vw, 1rem);
+}
+
+.hero {
+  min-height: clamp(520px, 82svh, 720px);
+  margin: 0;
+  align-items: end;
+}
+
+.hero video {
+  transform: translate3d(0, var(--hero-parallax, 0px), 0) scale(1.04);
+  filter: saturate(0.95) contrast(1.04);
+}
+
+.hero-scrim {
+  background:
+    linear-gradient(180deg, rgba(6, 47, 36, 0.06), rgba(6, 47, 36, 0.72)),
+    linear-gradient(90deg, rgba(6, 47, 36, 0.78), rgba(6, 47, 36, 0.08));
+}
+
+.hero .shell {
+  border-left-color: rgba(255, 255, 255, 0.2);
+}
+
+.hero-content {
+  padding: clamp(4rem, 12vh, 6.2rem) 0 clamp(2.6rem, 8vh, 4.2rem);
+}
+
+.hero-eyebrow {
+  margin-bottom: 0.65rem;
+  color: var(--gold);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+}
+
+.hero-title {
+  max-width: 12ch;
+  margin-bottom: 0.85rem;
+  color: var(--white);
+  font-size: clamp(2.05rem, 9vw, 4rem);
+  line-height: 0.98;
+}
+
+.hero-copy {
+  max-width: 35rem;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(0.92rem, 2.6vw, 1.05rem);
+  line-height: 1.58;
+}
+
+.hero-actions {
+  gap: 0.8rem;
+  margin-top: 1.15rem;
+}
+
+.hero-action-link {
+  min-height: 30px;
+  font-size: 0.84rem;
+  letter-spacing: 0;
+}
+
+.section,
+.landing-signal,
+.newsletter-panel {
+  padding: clamp(2.25rem, 6vw, 3.6rem) 0;
+}
+
+.landing-intro,
+.landing-pathways,
+.landing-feature,
+.landing-issues,
+.landing-calendar,
+.landing-sponsors,
+.newsletter-panel {
+  background: #ffffff;
+}
+
+.landing-signal {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.signal-shell,
+.landing-intro-grid,
+.feature-story,
+.landing-calendar-grid,
+.newsletter-inner {
+  gap: clamp(1.15rem, 3.5vw, 2rem);
+}
+
+.signal-heading h2,
+.section-header h2,
+.landing-intro h2,
+.feature-story h2,
+.landing-calendar h2,
+.leadership-band h2,
+.partner-intro h2,
+.newsletter-inner h2 {
+  max-width: 15ch;
+  font-size: clamp(1.45rem, 4.8vw, 2.2rem);
+  line-height: 1.05;
+}
+
+.section-header,
+.partner-intro {
+  margin-bottom: clamp(1rem, 3vw, 1.55rem);
+}
+
+.landing-intro-grid p:not(.eyebrow),
+.feature-story-copy p,
+.landing-calendar-grid p,
+.leadership-band p,
+.partner-intro p:not(.eyebrow),
+.newsletter-inner p,
+.section-header p {
+  max-width: 55ch;
+  font-size: 0.94rem;
+  line-height: 1.58;
+}
+
+.landing-signal-inner,
+.pathway-grid,
+.issue-grid,
+.event-grid,
+.membership-grid,
+.contact-grid,
+.archive-list,
+.governance-list,
+.feature-story-points,
+.partner-category-rail,
+.sponsor-logo-rail {
+  gap: 0.75rem;
+  padding-bottom: 0.55rem;
+}
+
+.landing-signal-inner {
+  grid-auto-columns: minmax(238px, 76%);
+}
+
+.pathway-grid,
+.issue-grid,
+.event-grid,
+.membership-grid,
+.contact-grid,
+.archive-list,
+.governance-list,
+.feature-story-points {
+  grid-auto-columns: minmax(236px, 76%);
+}
+
+.signal-card {
+  min-height: 172px;
+  padding: 0.9rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.signal-card strong {
+  max-width: 20ch;
+  font-size: 0.98rem;
+}
+
+.signal-card small {
+  margin-top: 0.55rem;
+  font-size: 0.74rem;
+}
+
+.pathway-card,
+.issue-card,
+.event-card,
+.membership-card,
+.feature-story-points article {
+  min-height: auto;
+  padding: 0.1rem 0 0.2rem;
+}
+
+.pathway-card p,
+.issue-card p,
+.event-card p,
+.membership-card p {
+  max-width: 28ch;
+  margin-bottom: 0.75rem;
+  font-size: 0.92rem;
+}
+
+.feature-story-points article {
+  min-height: 108px;
+  padding: 0.95rem 0 0.95rem 0.8rem;
+  border-left: 1px solid var(--hairline);
+}
+
+.feature-story-points strong {
+  font-size: 0.98rem;
+}
+
+.issue-card::before {
+  width: 1.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.issue-card {
+  min-height: 178px;
+}
+
+.issue-card h3 {
+  font-size: 1.04rem;
+}
+
+.event-card {
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.85rem;
+}
+
+.event-date strong {
+  font-size: 0.95rem;
+}
+
+.landing-leadership {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.landing-leadership .shell {
+  border-left-color: rgba(255, 255, 255, 0.18);
+}
+
+.landing-leadership h2,
+.landing-leadership p {
+  color: var(--white);
+}
+
+.landing-leadership p {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.partner-category {
+  min-height: 330px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+.partner-category video {
+  height: 64%;
+}
+
+.partner-category div {
+  padding: 1rem;
+}
+
+.partner-category h3 {
+  font-size: 1.08rem;
+}
+
+.partner-category span {
+  font-size: 0.86rem;
+}
+
+.partner-category-rail {
+  grid-auto-columns: minmax(242px, 78%);
+}
+
+.partner-stats {
+  gap: 0.8rem;
+  padding-block: 0.35rem;
+}
+
+.partner-stats strong {
+  font-size: clamp(1.35rem, 5vw, 2.1rem);
+}
+
+.partner-stats span {
+  font-size: 0.68rem;
+}
+
+.partner-cta h3 {
+  font-size: clamp(1.25rem, 4vw, 1.65rem);
+}
+
+.signup-form {
+  gap: 0.8rem;
+  max-width: 420px;
+}
+
+.form-row input {
+  min-height: 42px;
+}
+
+@media (min-width: 760px) {
+  main .shell,
+  .site-footer .shell,
+  .nav-shell {
+    width: min(calc(100% - 2.75rem), var(--max));
+  }
+
+  .landing-signal-inner {
+    grid-auto-columns: minmax(230px, 29%);
+  }
+
+  .pathway-grid,
+  .landing-issues .issue-grid,
+  .event-grid,
+  .membership-grid,
+  .feature-story-points {
+    grid-auto-columns: minmax(235px, 31%);
+  }
+
+  .partner-category-rail {
+    grid-auto-columns: minmax(260px, 30%);
+  }
+
+  .feature-story,
+  .landing-calendar-grid {
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  }
+
+  .landing-intro-grid,
+  .signal-shell,
+  .newsletter-inner {
+    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 1120px) {
+  .landing-signal-inner,
+  .pathway-grid,
+  .issue-grid,
+  .event-grid,
+  .membership-grid,
+  .feature-story-points,
+  .partner-category-rail {
+    overflow-x: visible;
+  }
+}
+
+@media (max-width: 520px) {
+  main .shell,
+  .site-footer .shell {
+    width: min(calc(100% - 1rem), var(--max));
+  }
+
+  .hero {
+    min-height: 540px;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 10vw, 2.75rem);
+  }
+
+  .landing-signal-inner,
+  .pathway-grid,
+  .issue-grid,
+  .event-grid,
+  .membership-grid,
+  .contact-grid,
+  .archive-list,
+  .governance-list,
+  .feature-story-points,
+  .partner-category-rail {
+    grid-auto-columns: minmax(232px, 82%);
+  }
+}

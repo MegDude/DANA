@@ -1,6 +1,6 @@
 # DANA QA Report
 
-Date: 2026-06-25
+Date: 2026-06-26
 
 ## Completed Checks
 
@@ -20,6 +20,8 @@ Date: 2026-06-25
 - Second-pass content QA added homepage sponsor visibility, Association naming, dedicated Public Safety page, collaborative board profiles, and Vercel rewrites.
 - Swept for outdated phrases including sole-ownership technical framing, old membership CTA language, and obsolete sponsorship price placeholders.
 - Landing-page redesign QA passed on local preview: mobile render at phone width had no horizontal overflow, desktop render had no horizontal overflow, homepage dynamic issue/event sections rendered, and browser console errors were empty.
+- Homepage production-polish pass completed: full-bleed video hero, cleaner landing flow, tighter mobile rhythm, restrained radii/shadows, compact horizontal rails, and reduced section spacing.
+- Old sponsor price placeholders were removed from the data source, JavaScript fallback, and sponsors page stat band.
 
 ## Pending Checks
 
@@ -33,9 +35,9 @@ Date: 2026-06-25
 ## Known Review Items
 
 - Confirm Association remains final naming direction across all brand assets.
-- Palette decision.
+- Palette locked to bright white, deep DANA green, and restrained cool gold.
 - Official contact information.
-- Final pricing and Givebutter URLs.
-- Mailchimp embed/list URL.
+- Final membership contribution language and payment URLs.
+- Newsletter embed/list URL.
 - Privacy and accessibility policy text import.
 - Board, bylaws, minutes, and committee content.

@@ -141,7 +141,7 @@ const fallback = {
     {
       id: "join",
       label: "Live Downtown",
-      price: "$25-$50",
+      price: "Resident membership",
       copy: "For neighbors who want to meet people, get short notes, and help make downtown easier to live in.",
       cta: "Become a member",
       url: "join.html"
@@ -156,8 +156,8 @@ const fallback = {
     },
     {
       id: "sponsor",
-      label: "Sponsorship",
-      price: "$1,000+",
+      label: "Partner Support",
+      price: "Partner support",
       copy: "For local partners who want to help downtown feel better for the people who live here.",
       cta: "Help out",
       url: "sponsors.html"
