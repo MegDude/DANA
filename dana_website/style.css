@@ -9042,9 +9042,53 @@ main .shell,
 }
 
 /* DANA civic card system: scroll morph without horizontal carousel behavior. */
+.dana-civic-intro-section {
+  padding-top: clamp(4.5rem, 8vw, 7rem);
+  padding-bottom: clamp(4.5rem, 8vw, 7rem);
+  background: #ffffff;
+}
+
+.dana-civic-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.dana-civic-intro h2 {
+  max-width: 12ch;
+  margin: 0;
+  color: #062f24;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.75rem, 5.8vw, 5.4rem);
+  font-weight: 400;
+  line-height: 0.96;
+  letter-spacing: 0;
+}
+
+.dana-civic-intro-copy {
+  display: grid;
+  gap: 1.05rem;
+  max-width: 46rem;
+}
+
+.dana-civic-intro-copy p {
+  margin: 0;
+  color: rgba(6, 47, 36, 0.76);
+  font-size: clamp(1.02rem, 1.45vw, 1.18rem);
+  line-height: 1.74;
+}
+
+.intro-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem 1.5rem;
+  margin-top: 0.7rem;
+}
+
 .civic-system-section {
   position: relative;
-  min-height: 260vh;
+  min-height: 190vh;
   overflow: clip;
   color: #0b1f33;
   background:
@@ -9074,8 +9118,8 @@ main .shell,
   max-width: 46rem;
   margin: 0 auto;
   text-align: center;
-  opacity: var(--civic-intro-opacity, 1);
-  transform: translate3d(0, var(--civic-intro-y, 0), 0);
+  opacity: 1;
+  transform: none;
   will-change: transform, opacity;
 }
 
@@ -9117,7 +9161,7 @@ main .shell,
   border: 1px solid rgba(11, 31, 51, 0.09);
   border-radius: 12px;
   box-shadow: 0 24px 80px rgba(11, 31, 51, 0.08);
-  opacity: var(--civic-card-opacity, 1);
+  opacity: var(--civic-card-opacity, 0.38);
   transform:
     translate3d(var(--civic-card-x, 0), var(--civic-card-y, 0), 0)
     rotate(var(--civic-card-rotate, 0deg))
@@ -9176,8 +9220,12 @@ main .shell,
 }
 
 @media (max-width: 900px) {
+  .dana-civic-intro {
+    grid-template-columns: 1fr;
+  }
+
   .civic-system-section {
-    min-height: 240vh;
+    min-height: 180vh;
   }
 
   .civic-card-system {
@@ -9195,13 +9243,18 @@ main .shell,
 }
 
 @media (max-width: 620px) {
+  .dana-civic-intro-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
   .civic-system-section {
-    min-height: 220vh;
+    min-height: auto;
   }
 
   .civic-system-sticky {
-    position: sticky;
-    min-height: 100vh;
+    position: relative;
+    min-height: auto;
     padding: 5rem 0;
   }
 

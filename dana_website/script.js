@@ -430,9 +430,9 @@ function setupCivicCardSystem() {
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const starts = [
-    { x: -260, y: 120, rotate: -10 },
-    { x: 0, y: -80, rotate: 6 },
-    { x: 260, y: 120, rotate: 10 }
+    { x: -120, y: 64, rotate: -5 },
+    { x: 0, y: 92, rotate: 3 },
+    { x: 120, y: 64, rotate: 5 }
   ];
 
   const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
@@ -458,23 +458,19 @@ function setupCivicCardSystem() {
     const rect = section.getBoundingClientRect();
     const travel = Math.max(1, rect.height - window.innerHeight);
     const progress = clamp(-rect.top / travel);
-    const settle = clamp(progress / 0.45);
-    const opacity = clamp(progress / 0.22);
-    const introProgress = clamp(progress / 0.18);
+    const settle = clamp(progress / 0.38);
+    const opacity = mix(0.42, 1, clamp(progress / 0.2));
     const motionScale = window.innerWidth < 620 ? 0.34 : window.innerWidth < 900 ? 0.62 : 1;
-
-    section.style.setProperty("--civic-intro-opacity", String(mix(1, 0, introProgress)));
-    section.style.setProperty("--civic-intro-y", `${mix(0, -40, introProgress)}px`);
 
     cards.forEach((card, index) => {
       const start = starts[index] || starts[0];
-      const finalScale = index === 1 ? mix(1, 1.04, clamp((progress - 0.58) / 0.22)) : 1;
+      const finalScale = index === 1 ? mix(1, 1.035, clamp((progress - 0.48) / 0.22)) : 1;
 
       card.style.setProperty("--civic-card-opacity", String(opacity));
       card.style.setProperty("--civic-card-x", `${mix(start.x * motionScale, 0, settle)}px`);
       card.style.setProperty("--civic-card-y", `${mix(start.y * motionScale, 0, settle)}px`);
       card.style.setProperty("--civic-card-rotate", `${mix(start.rotate * motionScale, 0, settle)}deg`);
-      card.style.setProperty("--civic-card-scale", String(mix(0.86, finalScale, settle)));
+      card.style.setProperty("--civic-card-scale", String(mix(0.94, finalScale, settle)));
     });
   };
 
