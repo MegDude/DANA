@@ -7195,12 +7195,20 @@ main .shell,
   max-width: none !important;
   min-height: 0 !important;
   align-items: flex-start !important;
-  justify-content: space-between !important;
+  justify-content: flex-end !important;
   padding: clamp(0.7rem, 2.4vw, 1.05rem) var(--page-gutter) 0 !important;
   background: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
   pointer-events: none;
+}
+
+.footer-brand {
+  color: #fff !important;
+  font-size: 1rem;
+  font-weight: 560;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .nav-logo-toggle {
@@ -7735,5 +7743,498 @@ b,
 @media (max-width: 759px) {
   .feature-grid {
     grid-auto-columns: minmax(16.75rem, 88%) !important;
+  }
+}
+
+/* Final rail behavior: nothing hidden, every item reachable. */
+.dana-timeline,
+.issue-grid {
+  display: flex !important;
+  flex-flow: row nowrap !important;
+  align-items: stretch !important;
+  gap: clamp(1rem, 2.4vw, 1.35rem) !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: scroll !important;
+  overflow-y: visible !important;
+  padding: 0.35rem 0 clamp(1.1rem, 3vw, 1.6rem) !important;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.dana-timeline::-webkit-scrollbar,
+.issue-grid::-webkit-scrollbar {
+  display: block !important;
+  height: 6px;
+}
+
+.dana-timeline::-webkit-scrollbar-thumb,
+.issue-grid::-webkit-scrollbar-thumb {
+  background: rgba(6, 47, 36, 0.22);
+  border-radius: 999px;
+}
+
+.dana-timeline-card,
+.issue-card {
+  flex: 0 0 clamp(19rem, 38vw, 26rem) !important;
+  width: clamp(19rem, 38vw, 26rem) !important;
+  min-width: clamp(19rem, 38vw, 26rem) !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  scroll-snap-align: start;
+}
+
+.dana-timeline-card::before,
+.issue-card::before {
+  display: none !important;
+}
+
+@media (max-width: 759px) {
+  .dana-timeline-card,
+  .issue-card {
+    flex-basis: min(86vw, 21rem) !important;
+    width: min(86vw, 21rem) !important;
+    min-width: min(86vw, 21rem) !important;
+  }
+}
+
+/* Final footer type scale: labels should feel like footer copy, not page headings. */
+.site-footer h2,
+.footer-column h2 {
+  margin: 0 0 0.55rem !important;
+  color: rgba(255, 255, 255, 0.72) !important;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  font-size: clamp(0.72rem, 1.4vw, 0.82rem) !important;
+  font-weight: 560 !important;
+  letter-spacing: 0.12em !important;
+  line-height: 1.2 !important;
+  text-transform: uppercase !important;
+}
+
+/* Final hamburger surface: crisp white glass, not milky blur. */
+.nav-menu-toggle {
+  border: 1px solid rgba(6, 47, 36, 0.12) !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  box-shadow: 0 10px 28px rgba(6, 47, 36, 0.1) !important;
+  backdrop-filter: blur(7px) saturate(1.06) !important;
+  -webkit-backdrop-filter: blur(7px) saturate(1.06) !important;
+}
+
+.nav-panel {
+  background: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 20px 56px rgba(6, 47, 36, 0.13) !important;
+  backdrop-filter: blur(8px) saturate(1.06) !important;
+  -webkit-backdrop-filter: blur(8px) saturate(1.06) !important;
+}
+
+/* Final centered logo navigation: the logo is the menu trigger. */
+.site-header {
+  position: fixed !important;
+  top: clamp(0.45rem, 1.8vw, 0.85rem) !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 260 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  pointer-events: none;
+}
+
+.nav-shell {
+  display: grid !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  place-items: center !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  pointer-events: none;
+}
+
+.nav-menu-toggle,
+.nav-logo-link {
+  display: none !important;
+}
+
+.nav-logo-toggle {
+  position: relative !important;
+  display: grid !important;
+  width: clamp(4.4rem, 12vw, 6.4rem) !important;
+  height: clamp(4.95rem, 13.2vw, 7.2rem) !important;
+  min-height: 0 !important;
+  place-items: center !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: filter 180ms ease, transform 180ms ease;
+}
+
+.nav-logo-toggle::before {
+  content: "";
+  position: absolute;
+  inset: 7% 7% 13%;
+  z-index: 0;
+  border-radius: 999px 999px 52% 52%;
+  background: #fff;
+  box-shadow: 0 10px 26px rgba(6, 47, 36, 0.1);
+}
+
+.nav-logo-toggle:hover,
+.nav-logo-toggle:focus-visible,
+.nav-logo-toggle[aria-expanded="true"] {
+  transform: translateY(-2px) scale(1.025);
+  filter: drop-shadow(0 14px 24px rgba(6, 47, 36, 0.18));
+}
+
+.nav-logo-toggle .brand-mark,
+.nav-logo-toggle .brand-mark-image {
+  position: relative;
+  z-index: 1;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+.nav-logo-toggle img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+.nav-logo-toggle > span:not(.sr-only):not(.brand-mark):not(.brand-mark-image) {
+  display: none !important;
+}
+
+.nav-panel {
+  position: fixed !important;
+  top: clamp(5.6rem, 14vw, 7.8rem) !important;
+  left: 50% !important;
+  right: auto !important;
+  width: min(calc(100% - (var(--page-gutter) * 2)), 22rem) !important;
+  transform: translateX(-50%) translateY(-0.35rem) !important;
+  display: block !important;
+  padding: 1rem !important;
+  border: 1px solid rgba(6, 47, 36, 0.1) !important;
+  border-radius: 14px !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 20px 56px rgba(6, 47, 36, 0.13) !important;
+  text-align: center !important;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  backdrop-filter: blur(8px) saturate(1.06) !important;
+  -webkit-backdrop-filter: blur(8px) saturate(1.06) !important;
+  transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease;
+}
+
+.nav-panel.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0) !important;
+}
+
+.nav-list,
+.nav-list a,
+.nav-cta {
+  justify-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.nav-list {
+  display: grid !important;
+  gap: 0.18rem !important;
+  margin: 0 0 0.8rem !important;
+}
+
+.nav-list a {
+  min-height: 36px !important;
+  padding: 0.3rem 0 !important;
+  color: var(--emerald) !important;
+  font-size: 0.92rem !important;
+  font-weight: 520 !important;
+  text-decoration: none !important;
+}
+
+/* Final top-center logo placement and shared rail typography system. */
+.site-header {
+  position: fixed !important;
+  top: clamp(0.45rem, 1.8vw, 0.8rem) !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 300 !important;
+  display: grid !important;
+  place-items: start center !important;
+  width: 100% !important;
+  background: transparent !important;
+  pointer-events: none;
+}
+
+.nav-shell {
+  display: grid !important;
+  place-items: center !important;
+  width: 100% !important;
+  padding: 0 !important;
+  pointer-events: none;
+}
+
+.nav-logo-toggle {
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  display: grid !important;
+  width: clamp(4.9rem, 12.5vw, 6.75rem) !important;
+  height: clamp(5.55rem, 14vw, 7.65rem) !important;
+  margin: 0 auto !important;
+  place-items: center !important;
+  pointer-events: auto;
+}
+
+.nav-logo-toggle::before {
+  display: none !important;
+}
+
+.nav-logo-toggle img {
+  content: url("images/dana-green-filled-white-transparent-highres.png");
+  object-fit: contain !important;
+}
+
+.nav-panel {
+  top: clamp(6.3rem, 15.5vw, 8.6rem) !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) translateY(-0.35rem) !important;
+}
+
+.nav-panel.is-open {
+  transform: translateX(-50%) translateY(0) !important;
+}
+
+.feature-grid,
+.pathway-grid,
+.issue-grid,
+.event-grid,
+.membership-grid,
+.partner-category-rail,
+.feature-story-points,
+.dana-timeline {
+  gap: clamp(1rem, 2.1vw, 1.25rem) !important;
+  padding-block: 0.25rem clamp(1.05rem, 2.5vw, 1.4rem) !important;
+}
+
+.feature-card,
+.pathway-card,
+.issue-card,
+.event-card,
+.membership-card,
+.partner-category,
+.feature-story-points article,
+.dana-timeline-card {
+  display: grid !important;
+  align-content: start !important;
+  gap: 0.65rem !important;
+  color: var(--emerald) !important;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+
+.feature-card span,
+.pathway-card span,
+.issue-card .status-pill,
+.event-card .status-pill,
+.membership-card span,
+.partner-category p,
+.feature-story-points span,
+.dana-timeline-card span {
+  color: var(--gold) !important;
+  font-size: clamp(0.64rem, 1.35vw, 0.72rem) !important;
+  font-weight: 560 !important;
+  letter-spacing: 0.14em !important;
+  line-height: 1.2 !important;
+  text-transform: uppercase !important;
+}
+
+.feature-card h3,
+.pathway-card h3,
+.issue-card h3,
+.event-card h3,
+.membership-card h3,
+.partner-category h3,
+.dana-timeline-card h3 {
+  margin: 0 !important;
+  color: var(--emerald) !important;
+  font-size: clamp(1.06rem, 2.15vw, 1.28rem) !important;
+  font-weight: 520 !important;
+  letter-spacing: -0.005em !important;
+  line-height: 1.18 !important;
+}
+
+.feature-card p,
+.pathway-card p,
+.issue-card p,
+.event-card p,
+.membership-card p,
+.partner-category span,
+.feature-story-points strong,
+.dana-timeline-card p {
+  max-width: 34ch !important;
+  margin: 0 !important;
+  color: var(--muted) !important;
+  font-size: clamp(0.92rem, 1.55vw, 0.99rem) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.58 !important;
+}
+
+.feature-card a,
+.pathway-card a,
+.issue-card a,
+.event-card a,
+.membership-card a,
+.partner-category a {
+  margin-top: 0.15rem !important;
+  color: var(--gold) !important;
+  font-size: clamp(0.66rem, 1.35vw, 0.72rem) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.13em !important;
+  line-height: 1.2 !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+}
+
+/* Final footer composition: clear columns, readable brand, centered legal line. */
+.site-footer {
+  padding-block: clamp(2.5rem, 6vw, 4rem) clamp(1.2rem, 3vw, 1.6rem) !important;
+  background: var(--emerald) !important;
+}
+
+.footer-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.35fr) repeat(2, minmax(8rem, 0.45fr)) !important;
+  gap: clamp(1.5rem, 5vw, 4rem) !important;
+  align-items: start !important;
+}
+
+.footer-summary {
+  display: grid !important;
+  grid-template-columns: auto minmax(0, 23rem) !important;
+  gap: 0.9rem 1rem !important;
+  align-items: center !important;
+}
+
+.footer-brand {
+  display: inline-grid !important;
+  grid-template-columns: auto auto !important;
+  gap: 0.62rem !important;
+  align-items: center !important;
+  width: max-content !important;
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.footer-brand strong {
+  color: var(--gold) !important;
+  font-size: 0.9rem !important;
+  font-weight: 620 !important;
+  letter-spacing: 0.14em !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+}
+
+.footer-logo-mark {
+  position: relative;
+  display: grid !important;
+  width: 2.7rem !important;
+  height: 3.05rem !important;
+  place-items: center !important;
+}
+
+.footer-logo-mark::before {
+  display: none !important;
+}
+
+.footer-logo-mark img {
+  position: relative;
+  z-index: 1;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+.footer-summary p {
+  grid-column: 2 !important;
+  max-width: 24rem !important;
+  margin: -0.2rem 0 0 !important;
+  color: rgba(255, 255, 255, 0.78) !important;
+  font-size: clamp(0.88rem, 1.5vw, 0.98rem) !important;
+  line-height: 1.55 !important;
+}
+
+.footer-column {
+  display: grid !important;
+  gap: 0.36rem !important;
+  align-content: start !important;
+}
+
+.site-footer h2,
+.footer-column h2 {
+  margin: 0 0 0.5rem !important;
+  color: var(--gold) !important;
+  font-size: 0.72rem !important;
+}
+
+.site-footer a {
+  color: rgba(255, 255, 255, 0.82) !important;
+  font-size: 0.88rem !important;
+  line-height: 1.45 !important;
+}
+
+.site-footer a:hover {
+  color: #fff !important;
+}
+
+.footer-bottom {
+  display: grid !important;
+  justify-items: center !important;
+  gap: 0.18rem !important;
+  margin-top: clamp(2rem, 5vw, 3rem) !important;
+  padding-top: clamp(0.9rem, 2vw, 1.1rem) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  text-align: center !important;
+}
+
+.footer-bottom p,
+.footer-bottom span {
+  margin: 0 !important;
+  color: rgba(255, 255, 255, 0.66) !important;
+  font-size: 0.78rem !important;
+  line-height: 1.45 !important;
+}
+
+@media (max-width: 759px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.6rem !important;
+  }
+
+  .footer-summary {
+    grid-template-columns: auto minmax(0, 1fr) !important;
   }
 }

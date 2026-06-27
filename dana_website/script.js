@@ -1,13 +1,10 @@
 const SITE_NAV = `
   <nav class="nav-shell" aria-label="Primary navigation">
-    <a class="brand nav-logo-link" href="index.html" aria-label="DANA home">
-      <span class="brand-mark brand-mark-image" aria-hidden="true"><img src="images/dana-logo-transparent.png" alt="" /></span>
-    </a>
-    <button class="nav-toggle nav-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+    <button class="brand nav-toggle nav-logo-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
       <span class="sr-only">Open navigation</span>
-      <span></span>
-      <span></span>
-      <span></span>
+      <span class="brand-mark brand-mark-image" aria-hidden="true">
+        <img src="images/dana-green-filled-white-transparent-highres.png" alt="" />
+      </span>
     </button>
     <div class="nav-panel" id="primary-menu">
       <ul class="nav-list">
@@ -28,7 +25,10 @@ const SITE_FOOTER = `
   <div class="shell footer-grid">
     <div class="footer-column footer-summary">
       <a class="brand footer-brand" href="index.html" aria-label="DANA home">
-        <span class="brand-mark brand-mark-image" aria-hidden="true"><img src="images/dana-logo-transparent.png" alt="" /></span>
+        <span class="footer-logo-mark" aria-hidden="true">
+          <img src="images/dana-green-filled-white-transparent-highres.png" alt="" />
+        </span>
+        <strong>DANA</strong>
       </a>
       <p>Helping neighbors feel informed, connected, and at home downtown.</p>
     </div>
