@@ -9088,25 +9088,10 @@ main .shell,
 
 .civic-system-section {
   position: relative;
-  min-height: 190vh;
   overflow: clip;
+  padding: clamp(5rem, 8vw, 7rem) 0;
   color: #0b1f33;
-  background:
-    radial-gradient(circle at 18% 18%, rgba(200, 169, 106, 0.12), transparent 24rem),
-    linear-gradient(rgba(11, 31, 51, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(11, 31, 51, 0.035) 1px, transparent 1px),
-    #f7f8fb;
-  background-size: auto, 88px 88px, 88px 88px, auto;
-}
-
-.civic-system-sticky {
-  position: sticky;
-  top: 0;
-  min-height: 100vh;
-  display: grid;
-  align-items: center;
-  overflow: hidden;
-  padding: clamp(5rem, 9vw, 8rem) 0;
+  background: #ffffff;
 }
 
 .civic-system-inner {
@@ -9161,13 +9146,11 @@ main .shell,
   border: 1px solid rgba(11, 31, 51, 0.09);
   border-radius: 12px;
   box-shadow: 0 24px 80px rgba(11, 31, 51, 0.08);
-  opacity: var(--civic-card-opacity, 0.38);
-  transform:
-    translate3d(var(--civic-card-x, 0), var(--civic-card-y, 0), 0)
-    rotate(var(--civic-card-rotate, 0deg))
-    scale(var(--civic-card-scale, 1));
+  opacity: 1;
+  transform: translate3d(0, var(--civic-card-y, 0), 0);
   transform-origin: center;
-  will-change: transform, opacity;
+  transition: transform 540ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 220ms ease;
+  will-change: transform;
 }
 
 .civic-morph-card::before {
@@ -9224,10 +9207,6 @@ main .shell,
     grid-template-columns: 1fr;
   }
 
-  .civic-system-section {
-    min-height: 180vh;
-  }
-
   .civic-card-system {
     grid-template-columns: 1fr;
     max-width: 34rem;
@@ -9248,16 +9227,6 @@ main .shell,
     padding-bottom: 4rem;
   }
 
-  .civic-system-section {
-    min-height: auto;
-  }
-
-  .civic-system-sticky {
-    position: relative;
-    min-height: auto;
-    padding: 5rem 0;
-  }
-
   .civic-system-intro {
     text-align: left;
   }
@@ -9270,18 +9239,266 @@ main .shell,
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .civic-system-section {
-    min-height: auto;
-  }
-
-  .civic-system-sticky {
-    position: relative;
-    min-height: auto;
-  }
-
   .civic-system-intro,
   .civic-morph-card {
     opacity: 1 !important;
     transform: none !important;
+  }
+}
+
+/* Final DANA media polish: keep video-led rails readable, calm, and consistent. */
+.civic-system-section {
+  min-height: auto !important;
+  padding: clamp(5rem, 8vw, 7rem) 0 !important;
+  background: #ffffff !important;
+}
+
+.civic-system-inner {
+  min-height: 0 !important;
+}
+
+.civic-morph-card {
+  opacity: 1 !important;
+  transform: translate3d(0, var(--civic-card-y, 0), 0) !important;
+}
+
+.civic-morph-card.is-visible {
+  --civic-card-y: 0px;
+}
+
+.landing-sponsors {
+  background: #ffffff !important;
+}
+
+.partner-section {
+  display: grid !important;
+  gap: clamp(2.25rem, 5vw, 4rem) !important;
+}
+
+.partner-intro {
+  display: grid !important;
+  gap: 1rem !important;
+  max-width: 56rem !important;
+}
+
+.partner-intro h2 {
+  max-width: 13ch !important;
+}
+
+.partner-pulse {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: clamp(0.75rem, 1.5vw, 1rem) !important;
+  margin-top: clamp(1.25rem, 2.5vw, 1.75rem) !important;
+  padding-top: clamp(1rem, 2vw, 1.4rem) !important;
+  border-top: 1px solid rgba(6, 47, 36, 0.09) !important;
+}
+
+.partner-pulse article {
+  min-width: 0 !important;
+  padding: 0 !important;
+  color: #062f24 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.partner-pulse strong {
+  display: block !important;
+  color: #062f24 !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: clamp(2rem, 4vw, 3rem) !important;
+  font-weight: 400 !important;
+  line-height: 0.95 !important;
+}
+
+.partner-pulse span {
+  display: block !important;
+  margin-top: 0.45rem !important;
+  color: rgba(6, 47, 36, 0.68) !important;
+  font-size: 0.72rem !important;
+  font-weight: 650 !important;
+  letter-spacing: 0.16em !important;
+  line-height: 1.45 !important;
+  text-transform: uppercase !important;
+}
+
+.partner-category-rail {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: clamp(1.1rem, 2.5vw, 1.75rem) !important;
+  overflow: visible !important;
+}
+
+.partner-category {
+  display: grid !important;
+  grid-template-rows: auto 1fr !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  color: #062f24 !important;
+  background: #ffffff !important;
+  border: 0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 18px 55px rgba(6, 47, 36, 0.08) !important;
+}
+
+.partner-category::before,
+.partner-category::after {
+  display: none !important;
+}
+
+.partner-category video {
+  position: static !important;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 10 !important;
+  object-fit: cover !important;
+  opacity: 1 !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+.partner-category > div {
+  position: static !important;
+  display: grid !important;
+  gap: 0.72rem !important;
+  align-content: start !important;
+  padding: clamp(1rem, 2vw, 1.35rem) 0 0 !important;
+  color: #062f24 !important;
+  background: #ffffff !important;
+}
+
+.partner-category p {
+  margin: 0 !important;
+  color: #9f7a28 !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.16em !important;
+  line-height: 1.35 !important;
+  text-transform: uppercase !important;
+}
+
+.partner-category h3 {
+  max-width: 18rem !important;
+  margin: 0 !important;
+  color: #062f24 !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: clamp(1.45rem, 2.4vw, 2.05rem) !important;
+  font-weight: 400 !important;
+  line-height: 1.05 !important;
+}
+
+.partner-category span {
+  display: block !important;
+  max-width: 24rem !important;
+  color: rgba(6, 47, 36, 0.72) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.62 !important;
+}
+
+.partner-category a {
+  width: fit-content !important;
+  margin-top: 0.3rem !important;
+  color: #9f7a28 !important;
+  font-size: 0.72rem !important;
+  font-weight: 750 !important;
+  letter-spacing: 0.16em !important;
+  line-height: 1.2 !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+}
+
+.section-navy .membership-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: clamp(1rem, 2vw, 1.35rem) !important;
+}
+
+.section-navy .membership-grid .membership-card {
+  display: grid !important;
+  align-content: start !important;
+  gap: 0.85rem !important;
+  min-height: 0 !important;
+  padding: clamp(0.75rem, 1.6vw, 0.95rem) !important;
+  overflow: hidden !important;
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+}
+
+.section-navy .membership-grid .membership-card video {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9 !important;
+  margin: 0 0 0.35rem !important;
+  object-fit: cover !important;
+  border-radius: 8px !important;
+  opacity: 0.92 !important;
+}
+
+.section-navy .membership-grid .membership-card span {
+  margin: 0 !important;
+  color: #c8a96a !important;
+  font-size: 0.72rem !important;
+  font-weight: 750 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+}
+
+.section-navy .membership-grid .membership-card h3 {
+  margin: 0 !important;
+  color: #ffffff !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: clamp(1.55rem, 2.5vw, 2.2rem) !important;
+  font-weight: 400 !important;
+  line-height: 1.05 !important;
+}
+
+.section-navy .membership-grid .membership-card p {
+  margin: 0 !important;
+  color: rgba(255, 255, 255, 0.78) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+}
+
+.section-navy .membership-grid .membership-card a {
+  width: fit-content !important;
+  margin-top: 0.25rem !important;
+  color: #ffffff !important;
+  font-size: 0.72rem !important;
+  font-weight: 750 !important;
+  letter-spacing: 0.16em !important;
+  line-height: 1.2 !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 900px) {
+  .partner-pulse,
+  .partner-category-rail,
+  .section-navy .membership-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .partner-pulse {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .partner-pulse {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .partner-category > div {
+    padding-top: 0.95rem !important;
   }
 }

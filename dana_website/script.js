@@ -425,76 +425,36 @@ function setupDanaOrbit() {
 }
 
 function setupCivicCardSystem() {
-  const sections = Array.from(document.querySelectorAll("[data-civic-system]"));
-  if (!sections.length) return;
-
+  const cards = Array.from(document.querySelectorAll("[data-civic-card]"));
+  if (!cards.length) return;
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const starts = [
-    { x: -120, y: 64, rotate: -5 },
-    { x: 0, y: 92, rotate: 3 },
-    { x: 120, y: 64, rotate: 5 }
-  ];
 
-  const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
-  const mix = (from, to, progress) => from + (to - from) * progress;
+  cards.forEach((card, index) => {
+    card.style.setProperty("--civic-card-y", prefersReducedMotion ? "0px" : `${24 + index * 10}px`);
+    if (prefersReducedMotion) card.classList.add("is-visible");
+  });
 
-  const updateSection = (section) => {
-    const cards = Array.from(section.querySelectorAll("[data-civic-card]"));
-    if (!cards.length) return;
-
-    if (prefersReducedMotion) {
-      section.style.setProperty("--civic-intro-opacity", "1");
-      section.style.setProperty("--civic-intro-y", "0px");
-      cards.forEach((card) => {
-        card.style.setProperty("--civic-card-opacity", "1");
-        card.style.setProperty("--civic-card-x", "0px");
-        card.style.setProperty("--civic-card-y", "0px");
-        card.style.setProperty("--civic-card-rotate", "0deg");
-        card.style.setProperty("--civic-card-scale", "1");
-      });
-      return;
-    }
-
-    const rect = section.getBoundingClientRect();
-    const travel = Math.max(1, rect.height - window.innerHeight);
-    const progress = clamp(-rect.top / travel);
-    const settle = clamp(progress / 0.38);
-    const opacity = mix(0.42, 1, clamp(progress / 0.2));
-    const motionScale = window.innerWidth < 620 ? 0.34 : window.innerWidth < 900 ? 0.62 : 1;
-
-    cards.forEach((card, index) => {
-      const start = starts[index] || starts[0];
-      const finalScale = index === 1 ? mix(1, 1.035, clamp((progress - 0.48) / 0.22)) : 1;
-
-      card.style.setProperty("--civic-card-opacity", String(opacity));
-      card.style.setProperty("--civic-card-x", `${mix(start.x * motionScale, 0, settle)}px`);
-      card.style.setProperty("--civic-card-y", `${mix(start.y * motionScale, 0, settle)}px`);
-      card.style.setProperty("--civic-card-rotate", `${mix(start.rotate * motionScale, 0, settle)}deg`);
-      card.style.setProperty("--civic-card-scale", String(mix(0.94, finalScale, settle)));
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    cards.forEach((card) => {
+      card.style.setProperty("--civic-card-y", "0px");
+      card.classList.add("is-visible");
     });
-  };
+    return;
+  }
 
-  let ticking = false;
-  const update = () => {
-    sections.forEach(updateSection);
-    ticking = false;
-  };
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.style.setProperty("--civic-card-y", "0px");
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.2, rootMargin: "0px 0px -8% 0px" }
+  );
 
-  const requestUpdate = () => {
-    if (ticking) return;
-    ticking = true;
-    window.requestAnimationFrame(update);
-  };
-
-  const syncLoop = () => {
-    sections.forEach(updateSection);
-    window.requestAnimationFrame(syncLoop);
-  };
-
-  update();
-  window.requestAnimationFrame(syncLoop);
-  window.addEventListener("scroll", requestUpdate, { passive: true });
-  window.addEventListener("resize", requestUpdate);
+  cards.forEach((card) => observer.observe(card));
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
