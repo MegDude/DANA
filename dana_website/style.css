@@ -8813,3 +8813,91 @@ main .shell,
     grid-template-columns: 1fr !important;
   }
 }
+
+/* Final logo placement: centered top mark with a restrained hover pulse. */
+.site-header {
+  position: fixed !important;
+  inset: clamp(0.55rem, 1.6vw, 0.9rem) 0 auto 0 !important;
+  z-index: 500 !important;
+  display: grid !important;
+  width: 100% !important;
+  place-items: start center !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  pointer-events: none !important;
+}
+
+.nav-shell {
+  display: grid !important;
+  width: 100% !important;
+  max-width: none !important;
+  place-items: center !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  pointer-events: none !important;
+}
+
+.nav-logo-toggle {
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  display: grid !important;
+  width: clamp(4.7rem, 11.8vw, 6.45rem) !important;
+  height: clamp(5.3rem, 13.2vw, 7.3rem) !important;
+  margin: 0 auto !important;
+  place-items: center !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  transform-origin: 50% 18%;
+  transition: filter 180ms ease, transform 180ms ease;
+}
+
+.nav-logo-toggle:hover,
+.nav-logo-toggle:focus-visible {
+  animation: danaLogoPulse 920ms ease-in-out both;
+  filter: drop-shadow(0 16px 26px rgba(6, 47, 36, 0.18));
+}
+
+.nav-logo-toggle[aria-expanded="true"] {
+  filter: drop-shadow(0 16px 26px rgba(6, 47, 36, 0.18));
+  transform: translateY(-1px) scale(1.025);
+}
+
+.nav-logo-toggle .brand-mark,
+.nav-logo-toggle .brand-mark-image,
+.nav-logo-toggle img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+.nav-panel {
+  top: clamp(6.05rem, 14.8vw, 8.25rem) !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) translateY(-0.35rem) !important;
+}
+
+.nav-panel.is-open {
+  transform: translateX(-50%) translateY(0) !important;
+}
+
+@keyframes danaLogoPulse {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  42% {
+    transform: translateY(-2px) scale(1.045);
+  }
+  100% {
+    transform: translateY(-1px) scale(1.025);
+  }
+}
