@@ -25,8 +25,6 @@
     { "source": "/archive.html", "destination": "/dana_website/archive.html" },
     { "source": "/privacy", "destination": "/dana_website/privacy.html" },
     { "source": "/privacy.html", "destination": "/dana_website/privacy.html" },
-    { "source": "/accessibility", "destination": "/dana_website/accessibility.html" },
-    { "source": "/accessibility.html", "destination": "/dana_website/accessibility.html" },
     { "source": "/committees", "destination": "/dana_website/committees.html" },
     { "source": "/committees.html", "destination": "/dana_website/committees.html" },
     { "source": "/sponsors", "destination": "/dana_website/sponsors.html" },
@@ -36,6 +34,7 @@
     { "source": "/style.css", "destination": "/dana_website/style.css" },
     { "source": "/script.js", "destination": "/dana_website/script.js" },
     { "source": "/data/:path*", "destination": "/dana_website/data/:path*" },
-    { "source": "/images/:path*", "destination": "/dana_website/images/:path*" }
+    { "source": "/images/:path*", "destination": "/dana_website/images/:path*" },
+    { "source": "/videos/:path*", "destination": "/dana_website/videos/:path*" }
   ]
 }
