@@ -8944,3 +8944,99 @@ main .shell,
     transform: translateX(-50%) translateY(-1px) scale(1.025);
   }
 }
+
+/* Production nav anchor: keep the DANA mark visually centered regardless of prior rail rules. */
+.site-header {
+  position: fixed !important;
+  inset: 0 0 auto 0 !important;
+  width: 100% !important;
+  height: 0 !important;
+  z-index: 600 !important;
+  pointer-events: none !important;
+}
+
+.site-header .nav-shell {
+  position: static !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  pointer-events: none !important;
+}
+
+.site-header .nav-logo-toggle,
+.site-header .nav-logo-toggle.brand,
+.site-header button.nav-logo-toggle {
+  position: fixed !important;
+  top: clamp(0.65rem, 1.8vw, 1rem) !important;
+  left: 50vw !important;
+  right: auto !important;
+  display: grid !important;
+  width: clamp(4.8rem, 11vw, 6.35rem) !important;
+  height: clamp(5.4rem, 12.5vw, 7.2rem) !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  place-items: center !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: translate3d(-50%, 0, 0) !important;
+  transform-origin: 50% 18% !important;
+  pointer-events: auto !important;
+}
+
+.site-header .nav-logo-toggle .brand-mark,
+.site-header .nav-logo-toggle .brand-mark-image,
+.site-header .nav-logo-toggle img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  object-fit: contain !important;
+}
+
+.site-header .nav-logo-toggle:hover,
+.site-header .nav-logo-toggle:focus-visible {
+  animation: danaProductionLogoPulse 920ms ease-in-out both !important;
+}
+
+.site-header .nav-logo-toggle[aria-expanded="true"] {
+  transform: translate3d(-50%, -1px, 0) scale(1.025) !important;
+}
+
+.site-header .nav-panel {
+  position: fixed !important;
+  top: clamp(6.35rem, 14.8vw, 8.55rem) !important;
+  left: 50vw !important;
+  right: auto !important;
+  width: min(calc(100% - var(--page-gutter)), 23rem) !important;
+  transform: translate3d(-50%, -0.35rem, 0) !important;
+  text-align: center !important;
+  pointer-events: auto !important;
+}
+
+.site-header .nav-panel.is-open {
+  transform: translate3d(-50%, 0, 0) !important;
+}
+
+@keyframes danaProductionLogoPulse {
+  0% {
+    transform: translate3d(-50%, 0, 0) scale(1);
+  }
+  42% {
+    transform: translate3d(-50%, -2px, 0) scale(1.045);
+  }
+  100% {
+    transform: translate3d(-50%, -1px, 0) scale(1.025);
+  }
+}
