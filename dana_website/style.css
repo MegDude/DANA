@@ -8901,3 +8901,46 @@ main .shell,
     transform: translateY(-1px) scale(1.025);
   }
 }
+
+/* Absolute final nav correction: center the logo button itself, not the rail. */
+.nav-logo-toggle {
+  position: fixed !important;
+  top: clamp(0.55rem, 1.6vw, 0.9rem) !important;
+  left: 50% !important;
+  right: auto !important;
+  z-index: 510 !important;
+  margin: 0 !important;
+  transform: translateX(-50%) !important;
+}
+
+.nav-logo-toggle:hover,
+.nav-logo-toggle:focus-visible {
+  animation: danaCenteredLogoPulse 920ms ease-in-out both !important;
+}
+
+.nav-logo-toggle[aria-expanded="true"] {
+  transform: translateX(-50%) translateY(-1px) scale(1.025) !important;
+}
+
+.nav-panel {
+  top: clamp(6.15rem, 14.8vw, 8.35rem) !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) translateY(-0.35rem) !important;
+}
+
+.nav-panel.is-open {
+  transform: translateX(-50%) translateY(0) !important;
+}
+
+@keyframes danaCenteredLogoPulse {
+  0% {
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+  42% {
+    transform: translateX(-50%) translateY(-2px) scale(1.045);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-1px) scale(1.025);
+  }
+}
