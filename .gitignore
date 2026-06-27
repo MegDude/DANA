@@ -2,6 +2,7 @@ dana_website.zip
 .DS_Store
 .vercel
 /.vite/
+/dana_website/.vite/
 /image.png
 /dana-*-transparent-highres.png
 /dana-*-filled-white-transparent-highres.png

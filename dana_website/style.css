@@ -9040,3 +9040,195 @@ main .shell,
     transform: translate3d(-50%, -1px, 0) scale(1.025);
   }
 }
+
+/* DANA civic card system: scroll morph without horizontal carousel behavior. */
+.civic-system-section {
+  position: relative;
+  min-height: 260vh;
+  overflow: clip;
+  color: #0b1f33;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(200, 169, 106, 0.12), transparent 24rem),
+    linear-gradient(rgba(11, 31, 51, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 31, 51, 0.035) 1px, transparent 1px),
+    #f7f8fb;
+  background-size: auto, 88px 88px, 88px 88px, auto;
+}
+
+.civic-system-sticky {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  padding: clamp(5rem, 9vw, 8rem) 0;
+}
+
+.civic-system-inner {
+  display: grid;
+  gap: clamp(2.25rem, 5vw, 4.25rem);
+}
+
+.civic-system-intro {
+  max-width: 46rem;
+  margin: 0 auto;
+  text-align: center;
+  opacity: var(--civic-intro-opacity, 1);
+  transform: translate3d(0, var(--civic-intro-y, 0), 0);
+  will-change: transform, opacity;
+}
+
+.civic-system-intro h2 {
+  max-width: 12ch;
+  margin: 0 auto 1rem;
+  color: #0b1f33;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.2rem, 8.4vw, 6.8rem);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: 0;
+}
+
+.civic-system-intro p:not(.eyebrow) {
+  max-width: 38rem;
+  margin: 0 auto;
+  color: rgba(11, 31, 51, 0.72);
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  line-height: 1.68;
+}
+
+.civic-card-system {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.35rem);
+  max-width: 72rem;
+  margin: 0 auto;
+  perspective: 1400px;
+}
+
+.civic-morph-card {
+  position: relative;
+  min-height: clamp(19rem, 32vw, 23rem);
+  overflow: hidden;
+  padding: clamp(1.35rem, 2.4vw, 2rem);
+  color: #0b1f33;
+  background: #ffffff;
+  border: 1px solid rgba(11, 31, 51, 0.09);
+  border-radius: 12px;
+  box-shadow: 0 24px 80px rgba(11, 31, 51, 0.08);
+  opacity: var(--civic-card-opacity, 1);
+  transform:
+    translate3d(var(--civic-card-x, 0), var(--civic-card-y, 0), 0)
+    rotate(var(--civic-card-rotate, 0deg))
+    scale(var(--civic-card-scale, 1));
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+.civic-morph-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 3px;
+  background: #c8a96a;
+}
+
+.civic-morph-card::after {
+  content: "";
+  position: absolute;
+  left: clamp(1.35rem, 2.4vw, 2rem);
+  bottom: clamp(1.35rem, 2.4vw, 2rem);
+  width: 4rem;
+  height: 1px;
+  background: #c8a96a;
+}
+
+.civic-morph-card span {
+  display: block;
+  margin-bottom: clamp(2rem, 5vw, 3.2rem);
+  color: #c8a96a;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.civic-morph-card h3 {
+  max-width: 9ch;
+  margin: 0 0 1.05rem;
+  color: #0b1f33;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.15rem, 4vw, 3.55rem);
+  font-weight: 400;
+  line-height: 0.96;
+  letter-spacing: 0;
+}
+
+.civic-morph-card p {
+  max-width: 28rem;
+  margin: 0;
+  color: rgba(11, 31, 51, 0.72);
+  font-size: clamp(0.96rem, 1.25vw, 1.05rem);
+  line-height: 1.68;
+}
+
+@media (max-width: 900px) {
+  .civic-system-section {
+    min-height: 240vh;
+  }
+
+  .civic-card-system {
+    grid-template-columns: 1fr;
+    max-width: 34rem;
+  }
+
+  .civic-morph-card {
+    min-height: 15.5rem;
+  }
+
+  .civic-morph-card h3 {
+    max-width: 13ch;
+  }
+}
+
+@media (max-width: 620px) {
+  .civic-system-section {
+    min-height: 220vh;
+  }
+
+  .civic-system-sticky {
+    position: sticky;
+    min-height: 100vh;
+    padding: 5rem 0;
+  }
+
+  .civic-system-intro {
+    text-align: left;
+  }
+
+  .civic-system-intro h2,
+  .civic-system-intro p:not(.eyebrow) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .civic-system-section {
+    min-height: auto;
+  }
+
+  .civic-system-sticky {
+    position: relative;
+    min-height: auto;
+  }
+
+  .civic-system-intro,
+  .civic-morph-card {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
