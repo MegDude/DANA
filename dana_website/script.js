@@ -27,10 +27,10 @@ const SITE_FOOTER = `
       <a class="brand footer-brand" href="index.html" aria-label="DANA home">
         <span class="brand-mark brand-mark-image" aria-hidden="true"><img src="images/dana-logo-green-white.png" alt="" /></span>
       </a>
-      <p>Neighbors working together for a downtown that feels good to come home to.</p>
+      <p>Helping neighbors feel informed, connected, and at home downtown.</p>
     </div>
     <div class="footer-column">
-      <h2>Look Around</h2>
+      <h2>Look around</h2>
       <a href="about.html">About</a>
       <a href="board.html">Board</a>
       <a href="public-safety.html">Public Safety</a>
@@ -46,7 +46,8 @@ const SITE_FOOTER = `
     </div>
   </div>
   <div class="shell footer-bottom">
-    <p>© 2026 Downtown Austin Neighborhood Association. Helping neighbors feel at home downtown.</p>
+    <p>© 2026 Downtown Austin Neighborhood Association.</p>
+    <span>Helping neighbors feel at home downtown.</span>
   </div>
 `;
 
@@ -368,10 +369,63 @@ function setupSponsorShowcase() {
   });
 }
 
+function setupDanaOrbit() {
+  const orbit = document.querySelector(".dana-orbit");
+  if (!orbit) return;
+
+  const content = {
+    advocacy: {
+      eyebrow: "Resident Advocacy",
+      title: "Helping residents follow city decisions.",
+      copy: "We track the public meetings, city proposals, and planning choices that affect downtown life, then help neighbors speak clearly when it matters."
+    },
+    events: {
+      eyebrow: "Community Events",
+      title: "Simple ways to meet the people nearby.",
+      copy: "Happy hours, meetings, volunteer projects, and neighborhood gatherings give residents an easy way to show up and feel connected."
+    },
+    issues: {
+      eyebrow: "Neighborhood Issues",
+      title: "The everyday things that shape downtown life.",
+      copy: "Safety, sound, mobility, housing, parks, and public spaces all matter because they affect how downtown feels when you live here."
+    },
+    governance: {
+      eyebrow: "Open Governance",
+      title: "The official pieces, easy to find.",
+      copy: "Board information, bylaws, minutes, committees, and member records stay close at hand so residents do not have to dig."
+    }
+  };
+
+  const panel = orbit.querySelector(".dana-orbit-panel");
+  const buttons = Array.from(orbit.querySelectorAll("[data-orbit-tab]"));
+
+  const activate = (id) => {
+    const item = content[id];
+    if (!item || !panel) return;
+
+    buttons.forEach((button) => {
+      const isActive = button.dataset.orbitTab === id;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
+
+    panel.innerHTML = `
+      <p class="eyebrow">${item.eyebrow}</p>
+      <h3>${item.title}</h3>
+      <p>${item.copy}</p>
+    `;
+  };
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => activate(button.dataset.orbitTab));
+  });
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   setupChrome();
   setupHeroParallax();
   setupSponsorShowcase();
+  setupDanaOrbit();
   const [issues, events, membership] = await Promise.all([
     getJson("data/issues.json", "issues"),
     getJson("data/events.json", "events"),
