@@ -43,7 +43,6 @@ const SITE_FOOTER = `
       <a href="sponsors.html">Community Partners</a>
       <a href="governance.html">Bylaws & Minutes</a>
       <a href="privacy.html">Privacy Policy</a>
-      <a href="accessibility.html">Accessibility</a>
     </div>
   </div>
   <div class="shell footer-bottom">
