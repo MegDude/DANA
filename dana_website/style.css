@@ -6918,3 +6918,259 @@ main .shell,
     grid-auto-columns: minmax(16rem, 84%);
   }
 }
+
+/* Final nav, headline, and rail behavior. */
+.nav-logo-link {
+  position: fixed !important;
+  top: clamp(0.6rem, 2vw, 1rem) !important;
+  left: 50% !important;
+  z-index: 205;
+  display: block !important;
+  width: clamp(4.8rem, 14vw, 7rem) !important;
+  height: clamp(5.5rem, 16vw, 8rem) !important;
+  transform: translateX(-50%);
+  pointer-events: auto;
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.nav-logo-link:hover,
+.nav-logo-link:focus-visible {
+  transform: translateX(-50%) translateY(-2px) scale(1.035);
+  filter: drop-shadow(0 14px 24px rgba(6, 47, 36, 0.18));
+}
+
+.nav-logo-link .brand-mark,
+.nav-logo-link .brand-mark-image {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+.nav-logo-link img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+.nav-menu-toggle {
+  position: fixed !important;
+  top: clamp(1rem, 2.4vw, 1.35rem) !important;
+  right: clamp(1rem, 4vw, 2.25rem) !important;
+  z-index: 210;
+  display: grid !important;
+  width: 42px !important;
+  height: 42px !important;
+  min-height: 42px !important;
+  place-items: center !important;
+  padding: 0 !important;
+  border: 1px solid rgba(6, 47, 36, 0.1) !important;
+  border-radius: 10px !important;
+  background: rgba(255, 255, 255, 0.78) !important;
+  box-shadow: 0 14px 34px rgba(6, 47, 36, 0.12) !important;
+  backdrop-filter: blur(18px) saturate(1.18) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.18) !important;
+  pointer-events: auto;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.nav-menu-toggle:hover,
+.nav-menu-toggle:focus-visible,
+.nav-menu-toggle[aria-expanded="true"] {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 38px rgba(6, 47, 36, 0.16) !important;
+}
+
+.nav-menu-toggle span:not(.sr-only) {
+  display: block !important;
+  width: 18px !important;
+  height: 1.5px !important;
+  margin: 2.3px 0 !important;
+  border-radius: 999px;
+  background: var(--emerald) !important;
+}
+
+.nav-menu-toggle[aria-expanded="true"] span:not(.sr-only):nth-of-type(2) {
+  transform: translateY(3.8px) rotate(45deg);
+}
+
+.nav-menu-toggle[aria-expanded="true"] span:not(.sr-only):nth-of-type(3) {
+  opacity: 0;
+}
+
+.nav-menu-toggle[aria-expanded="true"] span:not(.sr-only):nth-of-type(4) {
+  transform: translateY(-3.8px) rotate(-45deg);
+}
+
+.nav-panel {
+  top: clamp(5.25rem, 12vw, 7rem) !important;
+}
+
+.page-hero h1,
+.section-header h2,
+.split-header h2,
+.partner-intro h2,
+.content-main h2,
+.governance-section h2,
+.feature-story h2,
+.leadership-band h2 {
+  max-width: none !important;
+  text-wrap: balance;
+}
+
+@media (min-width: 760px) {
+  .page-hero h1,
+  .section-header h2,
+  .split-header h2,
+  .partner-intro h2,
+  .content-main h2,
+  .governance-section h2,
+  .feature-story h2,
+  .leadership-band h2 {
+    width: max-content;
+    max-width: 100% !important;
+    white-space: nowrap;
+  }
+}
+
+.feature-grid,
+.pathway-grid,
+.issue-grid,
+.event-grid,
+.membership-grid,
+.contact-grid,
+.archive-list,
+.profile-list,
+.sponsor-place-rail,
+.partner-category-rail,
+.sponsor-logo-rail,
+.partner-name-rail,
+.feature-story-points,
+.dana-timeline {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.feature-grid::-webkit-scrollbar,
+.pathway-grid::-webkit-scrollbar,
+.issue-grid::-webkit-scrollbar,
+.event-grid::-webkit-scrollbar,
+.membership-grid::-webkit-scrollbar,
+.contact-grid::-webkit-scrollbar,
+.archive-list::-webkit-scrollbar,
+.profile-list::-webkit-scrollbar,
+.sponsor-place-rail::-webkit-scrollbar,
+.partner-category-rail::-webkit-scrollbar,
+.sponsor-logo-rail::-webkit-scrollbar,
+.partner-name-rail::-webkit-scrollbar,
+.feature-story-points::-webkit-scrollbar,
+.dana-timeline::-webkit-scrollbar {
+  display: none;
+}
+
+/* Final logo-only header: no card/button fill, centered at top, scrolls away. */
+.site-header {
+  position: absolute !important;
+  top: clamp(0.65rem, 2.2vw, 1.1rem) !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 200;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  pointer-events: none;
+}
+
+.nav-shell {
+  display: grid !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  place-items: center !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  pointer-events: none;
+}
+
+.nav-logo-link,
+.nav-menu-toggle {
+  display: none !important;
+}
+
+.nav-logo-toggle {
+  display: grid !important;
+  width: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  place-items: center !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.nav-logo-toggle:hover,
+.nav-logo-toggle:focus-visible,
+.nav-logo-toggle[aria-expanded="true"] {
+  transform: translateY(-2px) scale(1.03);
+  filter: drop-shadow(0 14px 24px rgba(6, 47, 36, 0.18));
+}
+
+.nav-logo-toggle .brand-mark,
+.nav-logo-toggle .brand-mark-image {
+  display: block !important;
+  width: clamp(4.8rem, 14vw, 7rem) !important;
+  height: clamp(5.5rem, 16vw, 8rem) !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.nav-logo-toggle .brand-mark img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+.nav-logo-toggle > span:not(.sr-only):not(.brand-mark):not(.brand-mark-image),
+.nav-logo-toggle .brand-mark span {
+  display: none !important;
+}
+
+.nav-panel {
+  top: clamp(6.45rem, 16vw, 9rem) !important;
+  left: 50% !important;
+  right: auto !important;
+  width: min(calc(100% - var(--page-gutter)), 23rem) !important;
+  transform: translateX(-50%) !important;
+  text-align: center;
+}
+
+.nav-list,
+.nav-list a,
+.nav-cta {
+  justify-items: center;
+  justify-content: center;
+  text-align: center;
+}
