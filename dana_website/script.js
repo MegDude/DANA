@@ -16,7 +16,7 @@ const SITE_NAV = `
         <li><a href="newsletter.html">Newsletter</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <a class="button button-primary nav-cta" href="join.html">Join us</a>
+      <a class="button button-primary nav-cta" href="join.html">Join DANA</a>
     </div>
   </nav>
 `;
@@ -140,26 +140,26 @@ const fallback = {
   membership: [
     {
       id: "join",
-      label: "Live Downtown",
-      price: "Resident membership",
-      copy: "For neighbors who want to meet people, get short notes, and help make downtown easier to live in.",
+      label: "Resident Membership",
+      price: "For downtown residents",
+      copy: "For neighbors who want to meet people, receive useful updates, and support DANA's work.",
       cta: "Become a member",
       url: "join.html"
     },
     {
       id: "member",
       label: "Building Membership",
-      price: "Building membership",
-      copy: "For buildings that want residents to know more people and feel more at home downtown.",
-      cta: "Start building membership",
+      price: "For residential buildings",
+      copy: "For buildings that want residents to know about DANA, attend events, and feel more connected downtown.",
+      cta: "Bring DANA to your building",
       url: "contact.html"
     },
     {
       id: "sponsor",
-      label: "Partner Support",
-      price: "Partner support",
-      copy: "For local partners who want to help downtown feel better for the people who live here.",
-      cta: "Help out",
+      label: "Community Partner",
+      price: "For businesses and organizations",
+      copy: "For local partners who want to support resident events, outreach, and neighborhood advocacy.",
+      cta: "Support DANA",
       url: "sponsors.html"
     }
   ]
@@ -245,7 +245,7 @@ function eventCard(event) {
         <h3>${event.title}</h3>
         ${meta ? `<p class="event-meta">${meta}</p>` : ""}
         <p>${event.description}</p>
-        <a href="${event.rsvpUrl || "#"}">Take a look</a>
+        <a href="${event.rsvpUrl || "#"}">View details</a>
       </div>
     </article>
   `;
