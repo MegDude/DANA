@@ -1,14 +1,12 @@
 const SITE_NAV = `
   <nav class="nav-shell" aria-label="Primary navigation">
-    <a class="brand" href="index.html" aria-label="DANA home">
-      <span class="brand-mark brand-mark-image" aria-hidden="true"><img src="images/dana-logo-green-white.png" alt="" /></span>
-    </a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+    <button class="brand nav-toggle nav-logo-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
       <span class="sr-only">Open navigation</span>
-      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      <span class="brand-mark brand-mark-image" aria-hidden="true"><img src="images/dana-logo-transparent.png" alt="" /></span>
     </button>
     <div class="nav-panel" id="primary-menu">
       <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="issues.html">Issues</a></li>
         <li><a href="events.html">Events</a></li>
@@ -25,7 +23,7 @@ const SITE_FOOTER = `
   <div class="shell footer-grid">
     <div class="footer-column footer-summary">
       <a class="brand footer-brand" href="index.html" aria-label="DANA home">
-        <span class="brand-mark brand-mark-image" aria-hidden="true"><img src="images/dana-logo-green-white.png" alt="" /></span>
+        <span class="brand-mark brand-mark-image" aria-hidden="true"><img src="images/dana-logo-transparent.png" alt="" /></span>
       </a>
       <p>Helping neighbors feel informed, connected, and at home downtown.</p>
     </div>

@@ -6465,9 +6465,14 @@ small,
 }
 
 .footer-brand .brand-mark {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.16);
+  width: 3rem;
+  height: 3.45rem;
+  border: 0;
+  border-radius: 0 !important;
+  background: transparent;
   box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .footer-bottom {
@@ -6511,5 +6516,226 @@ small,
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+}
+
+/* Centered logo navigation: no bar, no hamburger, just the glass DANA mark. */
+.site-header {
+  position: fixed;
+  top: clamp(0.55rem, 2vw, 0.9rem);
+  left: 0;
+  right: 0;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.nav-shell {
+  width: min(calc(100% - var(--page-gutter)), var(--max));
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  pointer-events: none;
+}
+
+.nav-logo-toggle {
+  width: auto;
+  height: auto;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.nav-logo-toggle .brand-mark {
+  width: clamp(3.6rem, 11vw, 5rem);
+  height: clamp(4.1rem, 12vw, 5.7rem);
+  border: 0;
+  border-radius: 0 !important;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.nav-logo-toggle .brand-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.nav-logo-toggle span:not(.sr-only):not(.brand-mark) {
+  display: none;
+}
+
+.nav-panel {
+  top: clamp(4.35rem, 12vw, 5.55rem);
+  left: 50%;
+  right: auto;
+  width: min(calc(100% - var(--page-gutter)), 23rem);
+  transform: translateX(-50%);
+  border: 1px solid rgba(6, 47, 36, 0.09);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 24px 70px rgba(6, 47, 36, 0.14);
+  backdrop-filter: blur(20px) saturate(1.18);
+  -webkit-backdrop-filter: blur(20px) saturate(1.18);
+  pointer-events: auto;
+}
+
+.nav-panel.is-open {
+  display: block;
+}
+
+.nav-list {
+  margin-bottom: 0.7rem;
+}
+
+/* Final eyebrow standard: small, uppercase, cool gold, never heavy. */
+.eyebrow,
+.hero-eyebrow,
+.status-pill,
+.membership-card span,
+.pathway-card span,
+.sponsor-place-rail span,
+.partner-category p,
+.event-date span,
+.sponsor-detail .eyebrow {
+  color: var(--gold) !important;
+  font-size: clamp(0.62rem, 1.4vw, 0.7rem);
+  font-weight: 560;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+/* Final page rhythm: clean editorial spacing and one consistent left edge. */
+:root {
+  --page-gutter: clamp(1.05rem, 4.4vw, 2.65rem);
+  --section-space: clamp(3rem, 8vw, 5.8rem);
+  --section-space-tight: clamp(2rem, 5.5vw, 3.5rem);
+}
+
+.shell,
+main .shell,
+.site-footer .shell,
+.hero .shell,
+.landing-signal .shell,
+.landing-leadership .shell {
+  width: min(calc(100% - var(--page-gutter)), var(--max));
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.page-hero {
+  padding-top: clamp(7rem, 17vw, 9.5rem);
+  padding-bottom: var(--section-space-tight);
+}
+
+.section,
+.newsletter-panel {
+  padding-block: var(--section-space);
+}
+
+.section + .section {
+  padding-top: 0;
+}
+
+.section-header,
+.split-header,
+.section-header-row,
+.partner-intro {
+  max-width: 48rem;
+  margin-bottom: clamp(1.25rem, 3.5vw, 2.2rem);
+}
+
+.section-header-row,
+.split-header {
+  align-items: end;
+}
+
+.page-hero h1,
+.section-header h2,
+.split-header h2,
+.partner-intro h2,
+.content-main h2,
+.governance-section h2 {
+  max-width: 14ch;
+}
+
+.page-hero p:not(.eyebrow),
+.section-header p:not(.eyebrow),
+.split-header p:not(.eyebrow),
+.partner-intro p:not(.eyebrow),
+.content-main p,
+.content-main li,
+.governance-section p {
+  max-width: 62ch;
+}
+
+.feature-grid,
+.pathway-grid,
+.issue-grid,
+.event-grid,
+.membership-grid,
+.contact-grid,
+.archive-list,
+.profile-list,
+.sponsor-place-rail,
+.partner-category-rail {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.governance-page {
+  padding-top: var(--section-space-tight);
+}
+
+.governance-sections {
+  display: grid;
+  gap: 0;
+  max-width: 62rem;
+}
+
+.governance-section {
+  display: grid;
+  gap: 0.72rem;
+  padding-block: clamp(1.7rem, 4.5vw, 2.6rem);
+  border-top: 1px solid var(--hairline);
+}
+
+.governance-section:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.governance-section h2,
+.governance-section p {
+  margin: 0;
+}
+
+.governance-section .text-link {
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 759px) {
+  .section-header-row,
+  .split-header {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .page-hero h1,
+  .section-header h2,
+  .split-header h2,
+  .partner-intro h2,
+  .content-main h2,
+  .governance-section h2 {
+    max-width: 11.5ch;
   }
 }
