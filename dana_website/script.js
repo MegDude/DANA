@@ -652,6 +652,8 @@ function setupDanaWhatCarousel() {
     const cards = Array.from(track?.querySelectorAll("article") || []);
     const prev = carousel.querySelector("[data-dana-what-prev]");
     const next = carousel.querySelector("[data-dana-what-next]");
+    const mediaVideo = carousel.querySelector(".dana-what-media video");
+    const mediaSource = mediaVideo?.querySelector("source");
     if (!track || !cards.length) return;
 
     let index = 0;
@@ -670,6 +672,21 @@ function setupDanaWhatCarousel() {
       cards.forEach((card, cardIndex) => {
         card.classList.toggle("is-active", cardIndex === index);
       });
+
+      const activeCard = cards[index];
+      const nextVideo = activeCard?.dataset.video;
+      const nextPoster = activeCard?.dataset.poster;
+      if (mediaVideo && mediaSource && nextVideo && !mediaSource.src.endsWith(nextVideo)) {
+        mediaVideo.classList.add("is-switching");
+        mediaSource.src = nextVideo;
+        mediaVideo.poster = nextPoster || "";
+        mediaVideo.load();
+        const playPromise = mediaVideo.play();
+        if (playPromise) playPromise.catch(() => {});
+        window.setTimeout(() => mediaVideo.classList.remove("is-switching"), 220);
+      } else if (mediaVideo && nextPoster) {
+        mediaVideo.poster = nextPoster;
+      }
 
       if (prev) prev.disabled = index === 0;
       if (next) next.disabled = index === maxIndex();

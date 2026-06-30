@@ -16,7 +16,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:image" content="images/austin.jpg" />
     <link rel="canonical" href="https://danawebsite-tawny.vercel.app/" />
-    <link rel="stylesheet" href="style.css?v=20260630-civic1" />
+    <link rel="stylesheet" href="style.css?v=20260630-civic2" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -101,13 +101,18 @@
             <div class="dana-what-board" data-dana-what-carousel aria-label="How DANA works and where that work shows up">
               <div class="dana-what-media">
                 <video autoplay muted loop playsinline poster="images/dana-resident-balcony.jpg">
-                  <source src="videos/dana-civic.mp4" type="video/mp4" />
+                  <source src="videos/dana-resident-balcony.mp4" type="video/mp4" />
                 </video>
               </div>
 
               <div class="dana-what-carousel-viewport">
                 <div class="dana-what-pillars dana-what-pillars--carousel">
-                  <article class="is-active" data-focus="resident-outreach">
+                  <article
+                    class="is-active"
+                    data-focus="resident-outreach"
+                    data-video="videos/dana-resident-balcony.mp4"
+                    data-poster="images/dana-resident-balcony.jpg"
+                  >
                     <span>01</span>
                     <p class="pillar-label">How DANA Works</p>
                     <h3>We listen first.</h3>
@@ -119,7 +124,11 @@
                     </div>
                   </article>
 
-                  <article data-focus="civic-clarity">
+                  <article
+                    data-focus="civic-clarity"
+                    data-video="videos/dana-civic.mp4"
+                    data-poster="images/austin.jpg"
+                  >
                     <span>02</span>
                     <p class="pillar-label">How DANA Works</p>
                     <h3>We make change easier to understand.</h3>
@@ -131,7 +140,11 @@
                     </div>
                   </article>
 
-                  <article data-focus="community-events">
+                  <article
+                    data-focus="community-events"
+                    data-video="videos/dana-community-event.mp4"
+                    data-poster="images/dana-community-event.jpg"
+                  >
                     <span>03</span>
                     <p class="pillar-label">How DANA Works</p>
                     <h3>We connect neighbors.</h3>
@@ -143,7 +156,11 @@
                     </div>
                   </article>
 
-                  <article data-focus="public-spaces">
+                  <article
+                    data-focus="public-spaces"
+                    data-video="videos/dana-park-walkway.mp4"
+                    data-poster="images/dana-park-walkway.jpg"
+                  >
                     <span>04</span>
                     <p class="pillar-label">How DANA Works</p>
                     <h3>We represent residents.</h3>
@@ -630,6 +647,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=20260630-civic1"></script>
+    <script src="script.js?v=20260630-civic2"></script>
   </body>
 </html>
