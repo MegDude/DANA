@@ -498,24 +498,144 @@ function eventCard(event) {
   `;
 }
 
+function eventRow(event) {
+  const date = dateParts(event.date);
+  const meta = [event.startTime, event.location].filter(Boolean).join(" · ");
+  const href = event.rsvpUrl || "events.html";
+  return `
+    <article class="event-card event-row js-reveal is-revealed" data-status="${event.status}" data-date="${event.date}" tabindex="0">
+      <a class="event-row-link" href="${href}" aria-label="View details for ${event.title}">
+        <div class="event-date"><strong>${date.day}</strong><span>${date.month}</span></div>
+        <div class="event-card-copy">
+          <div class="event-row-topline">
+            <span class="status-pill">${event.category}</span>
+            ${meta ? `<p class="event-meta">${meta}</p>` : ""}
+          </div>
+          <h3>${event.title}</h3>
+          <p>${event.description}</p>
+          <span class="event-link">View details <span aria-hidden="true">↗</span></span>
+        </div>
+      </a>
+    </article>
+  `;
+}
+
 function renderEvents(events) {
   const preview = document.querySelector("[data-events-preview]");
   const all = document.querySelector("[data-events-all]");
   const upcoming = events.filter((event) => event.status === "upcoming");
 
   if (preview) preview.innerHTML = (upcoming.length ? upcoming : events.slice(0, 3)).map(eventCard).join("");
-  if (all) all.innerHTML = events.map(eventCard).join("");
+  if (all) all.innerHTML = events.map(eventRow).join("");
+  setupEventTimeline();
+}
 
-  document.querySelectorAll("[data-event-filter]").forEach((button) => {
-    button.addEventListener("click", () => {
-      document.querySelectorAll("[data-event-filter]").forEach((item) => item.classList.remove("is-active"));
-      button.classList.add("is-active");
-      const filter = button.dataset.eventFilter;
-      document.querySelectorAll("[data-events-all] .event-card").forEach((card) => {
-        card.hidden = filter !== "all" && card.dataset.status !== filter;
-      });
-    });
+function setupEventTimeline() {
+  const eventButtons = document.querySelectorAll("[data-event-filter]");
+  const eventRows = document.querySelectorAll("[data-events-all] .event-card");
+  const calendarToggle = document.querySelector("[data-calendar-toggle]");
+  const calendarPanel = document.querySelector("[data-calendar-panel]");
+  const calendarGrid = document.querySelector("[data-calendar-grid]");
+  const calendarTitle = document.querySelector("[data-calendar-title]");
+  const calendarPrev = document.querySelector("[data-calendar-prev]");
+  const calendarNext = document.querySelector("[data-calendar-next]");
+
+  if (!eventRows.length) return;
+
+  const eventItems = Array.from(eventRows).map((row) => {
+    const title = row.querySelector("h3")?.textContent?.trim() || "";
+    const href = row.querySelector("a")?.getAttribute("href") || "#";
+    const status = row.dataset.status || "all";
+    const date = row.dataset.date || "";
+    return { row, title, href, status, date };
   });
+
+  const setEventFilter = (filter, shouldScroll = true) => {
+    eventButtons.forEach((button) => {
+      const isActive = button.dataset.eventFilter === filter;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
+
+    eventItems.forEach((event) => {
+      const shouldShow = filter === "all" || event.status === filter;
+      event.row.hidden = !shouldShow;
+    });
+
+    if (!shouldScroll) return;
+    const firstVisible = eventItems.find((event) => !event.row.hidden);
+    firstVisible?.row.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  };
+
+  eventButtons.forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.classList.contains("is-active")));
+    button.addEventListener("click", () => setEventFilter(button.dataset.eventFilter));
+  });
+
+  let activeMonth = new Date(2026, 7, 1);
+
+  const renderCalendar = () => {
+    if (!calendarGrid || !calendarTitle) return;
+
+    const year = activeMonth.getFullYear();
+    const month = activeMonth.getMonth();
+    calendarTitle.textContent = activeMonth.toLocaleString("en-US", { month: "long", year: "numeric" });
+    calendarGrid.innerHTML = "";
+
+    const startOffset = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    for (let i = 0; i < startOffset; i += 1) {
+      const empty = document.createElement("div");
+      empty.className = "event-calendar-day is-empty";
+      calendarGrid.appendChild(empty);
+    }
+
+    for (let day = 1; day <= daysInMonth; day += 1) {
+      const dateString = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+      const dayEvents = eventItems.filter((event) => event.date === dateString);
+      const cell = document.createElement("div");
+      cell.className = `event-calendar-day${dayEvents.length ? " has-event" : ""}`;
+      cell.innerHTML = `<strong>${day}</strong>`;
+
+      dayEvents.forEach((event) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = event.title;
+        button.addEventListener("click", () => {
+          event.row.hidden = false;
+          event.row.scrollIntoView({ behavior: "smooth", block: "center" });
+          event.row.focus?.();
+        });
+        cell.appendChild(button);
+      });
+
+      calendarGrid.appendChild(cell);
+    }
+  };
+
+  calendarToggle?.addEventListener("click", () => {
+    if (!calendarPanel) return;
+    const isHidden = calendarPanel.hasAttribute("hidden");
+    calendarPanel.toggleAttribute("hidden", !isHidden);
+    calendarToggle.classList.toggle("is-active", isHidden);
+    calendarToggle.textContent = isHidden ? "List view" : "Calendar view";
+    calendarToggle.setAttribute("aria-expanded", String(isHidden));
+    if (isHidden) renderCalendar();
+  });
+
+  calendarPrev?.addEventListener("click", () => {
+    activeMonth = new Date(activeMonth.getFullYear(), activeMonth.getMonth() - 1, 1);
+    renderCalendar();
+  });
+
+  calendarNext?.addEventListener("click", () => {
+    activeMonth = new Date(activeMonth.getFullYear(), activeMonth.getMonth() + 1, 1);
+    renderCalendar();
+  });
+
+  calendarToggle?.setAttribute("aria-expanded", "false");
+  setEventFilter("upcoming", false);
 }
 
 function renderMembership(items) {
