@@ -8,7 +8,7 @@
     "location": "Downtown Austin",
     "description": "A board meeting for neighborhood notes, resident questions, and what is next.",
     "category": "Governance",
-    "rsvpUrl": "#",
+    "rsvpUrl": "events.html",
     "featured": true,
     "status": "upcoming"
   },

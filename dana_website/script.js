@@ -22,35 +22,48 @@ const SITE_NAV = `
 `;
 
 const SITE_FOOTER = `
-  <div class="shell footer-grid">
-    <div class="footer-column footer-summary">
-      <a class="brand footer-brand" href="index.html" aria-label="DANA home">
+  <div class="shell footer-layout">
+    <div class="footer-brand-block">
+      <a class="footer-brand" href="index.html" aria-label="Downtown Austin Neighborhood Association home">
         <span class="footer-logo-mark" aria-hidden="true">
-          <img src="images/dana-green-filled-white-transparent-highres.png" alt="" />
+          <img src="images/dana-green-filled-white-transparent-highres.png" alt="">
         </span>
-        <strong>DANA</strong>
+        <span class="footer-brand-text">
+          <strong>Downtown Austin Neighborhood Association</strong>
+          <span class="footer-brand-copy">Helping downtown Austin residents stay informed, connected, and involved in the neighborhood they call home.</span>
+        </span>
       </a>
-      <p>Helping neighbors feel informed, connected, and at home downtown.</p>
     </div>
-    <div class="footer-column">
-      <h2>Look around</h2>
-      <a href="about.html">About</a>
-      <a href="board.html">Board</a>
-      <a href="public-safety.html">Public Safety</a>
-      <a href="issues.html">Issues</a>
-    </div>
-    <div class="footer-column">
-      <h2>Connect</h2>
-      <a href="join.html">Join DANA</a>
-      <a href="newsletter.html">Newsletter</a>
-      <a href="sponsors.html">Community Partners</a>
-      <a href="governance.html">Bylaws & Minutes</a>
-      <a href="privacy.html">Privacy Policy</a>
-    </div>
+
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <div class="footer-column">
+        <h2>Explore</h2>
+        <a href="about.html">About DANA</a>
+        <a href="board.html">Board</a>
+        <a href="issues.html">Issues</a>
+        <a href="public-safety.html">Public Safety</a>
+        <a href="events.html">Events</a>
+      </div>
+
+      <div class="footer-column">
+        <h2>Participate</h2>
+        <a href="join.html">Join DANA</a>
+        <a href="newsletter.html">Newsletter</a>
+        <a href="sponsors.html">Community Partners</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-column">
+        <h2>Records</h2>
+        <a href="governance.html">Bylaws &amp; Minutes</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </nav>
   </div>
+
   <div class="shell footer-bottom">
     <p>© 2026 Downtown Austin Neighborhood Association.</p>
-    <span>Helping neighbors feel at home downtown.</span>
+    <span>Resident-led. Downtown-focused.</span>
   </div>
 `;
 
@@ -68,7 +81,7 @@ const fallback = {
       title: "Housing & Development",
       summary: "New homes, new buildings, and planning conversations that shape how downtown grows.",
       status: "In Planning",
-      sourceUrl: "#"
+      sourceUrl: "issues.html"
     },
     {
       id: "parks-shoal-creek",
@@ -82,14 +95,14 @@ const fallback = {
       title: "I-35",
       summary: "Construction, traffic changes, air quality, and how the reconstruction may affect downtown residents.",
       status: "Long-Term Project",
-      sourceUrl: "#"
+      sourceUrl: "issues.html"
     },
     {
       id: "project-connect",
       title: "Project Connect",
       summary: "Austin's future transit network, including downtown station planning, timelines, and resident impact.",
       status: "City Project",
-      sourceUrl: "#"
+      sourceUrl: "issues.html"
     },
     {
       id: "downtown-vitality",
@@ -135,7 +148,7 @@ const fallback = {
       location: "Downtown Austin",
       description: "A board meeting for neighborhood notes, resident questions, and what is next.",
       category: "Governance",
-      rsvpUrl: "#",
+      rsvpUrl: "events.html",
       featured: true,
       status: "upcoming"
     }
@@ -169,6 +182,8 @@ const fallback = {
 };
 
 async function getJson(path, key) {
+  if (window.location.protocol === "file:") return fallback[key];
+
   try {
     const response = await fetch(path);
     if (!response.ok) throw new Error(`Unable to load ${path}`);
@@ -205,6 +220,118 @@ function setupChrome() {
   });
 }
 
+const editorialIssueCovers = [
+  {
+    id: "sound-quality-of-life",
+    label: "Active Issue",
+    title: "Sound & Quality of Life",
+    copy: "Reasonable standards for residents and venues. From late-night noise to outdoor events, DANA works toward a downtown people can enjoy and live in comfortably.",
+    cta: "Explore Issue",
+    href: "public-safety.html",
+    icon: "sound"
+  },
+  {
+    id: "housing-growth",
+    label: "Long-Term Planning",
+    title: "Housing & Growth",
+    copy: "More homes, thoughtful urban design, and balanced development help create a downtown people can actually live in, not simply visit.",
+    cta: "Read Background",
+    href: "https://www.downtownaustin.org/toward-a-more-walkable-austin/",
+    icon: "housing"
+  },
+  {
+    id: "parks-public-spaces",
+    label: "Community Priority",
+    title: "Parks & Public Spaces",
+    copy: "Parks, trails, trees, plazas, and cared-for open spaces shape how downtown feels when people spend real time here.",
+    cta: "See Current Projects",
+    href: "https://www.downtownaustin.org/june-shoal-creek-clean-up/",
+    icon: "parks"
+  },
+  {
+    id: "i-35-transformation",
+    label: "Major Project",
+    title: "I-35 Transformation",
+    copy: "Construction, mobility, air quality, and reconnecting neighborhoods all matter. Residents deserve to understand what changes mean before they happen.",
+    cta: "Follow Project",
+    href: "issues.html",
+    icon: "highway"
+  },
+  {
+    id: "project-connect",
+    label: "Infrastructure",
+    title: "Project Connect",
+    copy: "Transit planning will reshape how residents move through downtown. DANA follows station planning, timelines, and chances to participate.",
+    cta: "View Updates",
+    href: "issues.html",
+    icon: "transit"
+  },
+  {
+    id: "downtown-future",
+    label: "Community Vision",
+    title: "Downtown's Future",
+    copy: "Housing, parks, public spaces, local business, and community life all work together to create a stronger downtown neighborhood.",
+    cta: "Join Conversation",
+    href: "https://www.downtownaustin.org/dana-letter-c20-2024-018-ddbp-updates-2026-05-14/",
+    icon: "future"
+  }
+];
+
+function issueCoverIcon(type) {
+  const paths = {
+    sound: `
+      <path d="M7 38h50" /><path d="M12 38V26l8-6 8 6v12" /><path d="M28 38V18l9-6 9 6v20" />
+      <path d="M47 38V25l6-4 5 4v13" /><path d="M14 14c5-5 13-5 18 0" /><path d="M10 9c8-8 20-8 28 0" />
+    `,
+    streets: `
+      <path d="M32 10v44" /><path d="M18 54l9-44" /><path d="M46 54l-9-44" />
+      <path d="M14 34h36" /><path d="M17 42h30" /><path d="M22 18h20" />
+      <path d="M51 16h7v18" /><path d="M50 16c0-4 2-7 5-7s5 3 5 7" />
+    `,
+    housing: `
+      <path d="M10 54h44" /><path d="M16 54V18h15v36" /><path d="M31 54V10h18v44" />
+      <path d="M21 25h5M21 34h5M21 43h5" /><path d="M37 18h6M37 27h6M37 36h6M37 45h6" />
+    `,
+    parks: `
+      <path d="M10 54h44" /><path d="M18 54c3-8 8-13 14-16s12-8 14-16" />
+      <path d="M31 54V25" /><path d="M22 28c0-7 5-13 10-17 5 4 10 10 10 17 0 6-4 10-10 10s-10-4-10-10Z" />
+      <path d="M15 42c7-3 13-3 20 0s12 3 17 0" />
+    `,
+    transit: `
+      <path d="M17 13h30c4 0 7 3 7 7v19c0 4-3 7-7 7H17c-4 0-7-3-7-7V20c0-4 3-7 7-7Z" />
+      <path d="M17 23h30" /><path d="M20 46l-6 8M44 46l6 8" /><path d="M22 36h.1M42 36h.1" /><path d="M18 54h28" />
+    `,
+    highway: `
+      <path d="M12 54c8-12 13-26 15-44" /><path d="M52 54C44 42 39 28 37 10" />
+      <path d="M32 16v8M32 32v8M32 48v6" /><path d="M13 30h38" /><path d="M18 21c5-4 9-4 14 0s9 4 14 0" />
+    `,
+    future: `
+      <path d="M8 54h48" /><path d="M13 54V31l7-5 7 5v23" /><path d="M28 54V18h12v36" />
+      <path d="M41 54V29h10v25" /><path d="M12 22c7-6 14-6 21 0s13 6 19 0" /><path d="M19 45c5-5 11-5 16 0s10 5 14 0" />
+    `
+  };
+
+  return `
+    <svg class="issue-shelf-icon" viewBox="0 0 64 64" aria-hidden="true">
+      ${paths[type] || paths.future}
+    </svg>
+  `;
+}
+
+function renderIssueShelfCard(issue) {
+  return `
+    <article class="issue-shelf-card" id="${issue.id}">
+      <div class="issue-shelf-topline">
+        <span>${issue.label}</span>
+        ${issueCoverIcon(issue.icon)}
+      </div>
+      <h3>${issue.title}</h3>
+      <p>${issue.copy}</p>
+      <a href="${issue.href}">${issue.cta} <span aria-hidden="true">↗</span></a>
+    </article>
+  `;
+}
+
 function renderIssues(issues) {
   const targets = [
     [document.querySelector("[data-issues-preview]"), issues.slice(0, 6)],
@@ -213,6 +340,22 @@ function renderIssues(issues) {
 
   targets.forEach(([target, list]) => {
     if (!target) return;
+    if (target.matches("[data-issues-preview]")) {
+      target.className = "issue-grid";
+      target.innerHTML = list
+        .map(
+          (issue) => `
+            <article class="issue-card" id="${issue.id}">
+              ${issue.status ? `<span class="status-pill">${issue.status}</span>` : ""}
+              <h3>${issue.title}</h3>
+              <p>${issue.summary}</p>
+              ${issue.sourceUrl && issue.sourceUrl !== "#" ? `<a href="${issue.sourceUrl}">${issue.sourceUrl.endsWith(".html") ? "Read the issue" : "See the background"}</a>` : ""}
+            </article>
+          `
+        )
+        .join("");
+      return;
+    }
     target.innerHTML = list
       .map(
         (issue) => `
@@ -226,6 +369,107 @@ function renderIssues(issues) {
       )
       .join("");
   });
+}
+
+function setupIssueShelf() {
+  document.querySelectorAll(".issue-shelf").forEach((shelf) => {
+    const track = shelf.querySelector(".issue-shelf-track");
+    const prev = shelf.querySelector("[data-issue-scroll-prev]");
+    const next = shelf.querySelector("[data-issue-scroll-next]");
+    const progress = shelf.querySelector("[data-issue-progress]");
+    const count = shelf.querySelector("[data-issue-count]");
+    if (!track || !prev || !next || !progress) return;
+    const cards = Array.from(track.querySelectorAll(".issue-shelf-card"));
+    if (!cards.length) return;
+
+    const update = () => {
+      const max = Math.max(track.scrollWidth - track.clientWidth, 1);
+      const ratio = track.scrollLeft / max;
+      const card = cards[0];
+      const gap = parseFloat(getComputedStyle(track).columnGap || "0");
+      const amount = card ? card.getBoundingClientRect().width + gap : track.clientWidth;
+      const current = Math.min(cards.length - 1, Math.max(0, Math.round(track.scrollLeft / Math.max(amount, 1))));
+      progress.style.setProperty("transform", `scaleX(${Math.max(0.12, ratio || 0.12)})`, "important");
+      if (count) count.textContent = `${String(current + 1).padStart(2, "0")} / ${String(cards.length).padStart(2, "0")}`;
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft >= max - 2;
+    };
+
+    const scrollByCard = (direction) => {
+      const card = cards[0];
+      const gap = parseFloat(getComputedStyle(track).columnGap || "0");
+      const amount = card ? card.getBoundingClientRect().width + gap : track.clientWidth * 0.85;
+      track.scrollBy({ left: amount * direction, behavior: "smooth" });
+      window.setTimeout(update, 360);
+      window.setTimeout(update, 720);
+    };
+
+    prev.addEventListener("click", () => scrollByCard(-1));
+    next.addEventListener("click", () => scrollByCard(1));
+    track.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  });
+}
+
+function initStartHereStack() {
+  const root = document.querySelector("[data-start-carousel]");
+  if (!root) return;
+
+  const cards = Array.from(root.querySelectorAll("[data-start-card]"));
+  const prev = root.querySelector("[data-start-prev]");
+  const next = root.querySelector("[data-start-next]");
+  const dots = Array.from(root.querySelectorAll("[data-start-dot]"));
+  if (!cards.length || !prev || !next) return;
+
+  let active = 0;
+
+  const render = () => {
+    cards.forEach((card, index) => {
+      const position = (index - active + cards.length) % cards.length;
+      card.dataset.stackPosition = String(position);
+      card.classList.toggle("is-active", position === 0);
+      card.tabIndex = position === 0 ? 0 : -1;
+      card.setAttribute("aria-current", position === 0 ? "true" : "false");
+      card.removeAttribute("aria-hidden");
+    });
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("is-active", index === active);
+      dot.setAttribute("aria-current", index === active ? "true" : "false");
+    });
+  };
+
+  const go = (direction) => {
+    active = (active + direction + cards.length) % cards.length;
+    render();
+  };
+
+  prev.addEventListener("click", () => go(-1));
+  next.addEventListener("click", () => go(1));
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      active = index;
+      render();
+    });
+  });
+
+  cards.forEach((card, index) => {
+    card.addEventListener("click", (event) => {
+      if (index === active) return;
+      event.preventDefault();
+      active = index;
+      render();
+    });
+  });
+
+  root.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowRight") go(1);
+    if (event.key === "ArrowLeft") go(-1);
+  });
+
+  render();
 }
 
 function dateParts(dateString) {
@@ -243,12 +487,12 @@ function eventCard(event) {
   return `
     <article class="event-card" data-status="${event.status}">
       <div class="event-date"><strong>${date.day}</strong><span>${date.month}</span></div>
-      <div>
+      <div class="event-card-copy">
         <span class="status-pill">${event.category}</span>
         <h3>${event.title}</h3>
         ${meta ? `<p class="event-meta">${meta}</p>` : ""}
         <p>${event.description}</p>
-        <a href="${event.rsvpUrl || "#"}">View details</a>
+        <a href="${event.rsvpUrl || "events.html"}">View details</a>
       </div>
     </article>
   `;
@@ -344,6 +588,108 @@ function setupHeroParallax() {
   );
 }
 
+function setupEditorialReveals() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+
+  const items = Array.from(
+    document.querySelectorAll(
+      [
+        ".section > .shell",
+        ".issue-shelf-card",
+        ".event-card",
+        ".story-feature",
+        ".story-list article",
+        ".journal-side-list article",
+        ".partner-pathways article",
+        ".join-action-card"
+      ].join(",")
+    )
+  );
+
+  if (!items.length) return;
+
+  items.forEach((item) => item.classList.add("js-reveal"));
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-revealed");
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+  );
+
+  items.forEach((item) => observer.observe(item));
+}
+
+function setupDanaWhatPillarMorph() {
+  const pillars = document.querySelector(".dana-what-pillars--morph");
+  if (!pillars) return;
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    pillars.classList.add("is-morphed");
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (!entry.isIntersecting) return;
+      pillars.classList.add("is-morphed");
+      observer.disconnect();
+    },
+    { threshold: 0.3 }
+  );
+
+  observer.observe(pillars);
+}
+
+function setupDanaWhatCarousel() {
+  document.querySelectorAll("[data-dana-what-carousel]").forEach((carousel) => {
+    const track = carousel.querySelector(".dana-what-pillars--carousel");
+    const cards = Array.from(track?.querySelectorAll("article") || []);
+    const prev = carousel.querySelector("[data-dana-what-prev]");
+    const next = carousel.querySelector("[data-dana-what-next]");
+    if (!track || !cards.length) return;
+
+    let index = 0;
+
+    const visibleCount = () => 1;
+
+    const maxIndex = () => Math.max(0, cards.length - visibleCount());
+
+    const updateCarousel = () => {
+      index = Math.min(index, maxIndex());
+      const gap = parseFloat(window.getComputedStyle(track).gap || "0");
+      const cardWidth = cards[0].getBoundingClientRect().width;
+      const step = cardWidth + gap;
+
+      track.style.transform = `translateX(${-index * step}px)`;
+      cards.forEach((card, cardIndex) => {
+        card.classList.toggle("is-active", cardIndex === index);
+      });
+
+      if (prev) prev.disabled = index === 0;
+      if (next) next.disabled = index === maxIndex();
+    };
+
+    prev?.addEventListener("click", () => {
+      index = Math.max(0, index - 1);
+      updateCarousel();
+    });
+
+    next?.addEventListener("click", () => {
+      index = Math.min(maxIndex(), index + 1);
+      updateCarousel();
+    });
+
+    window.addEventListener("resize", updateCarousel);
+    updateCarousel();
+  });
+}
+
 function setupSponsorShowcase() {
   const tabs = document.querySelector("[data-sponsor-tabs]");
   const details = document.querySelector("[data-sponsor-details]");
@@ -351,13 +697,19 @@ function setupSponsorShowcase() {
 
   const buttons = Array.from(tabs.querySelectorAll("[data-sponsor]"));
   const panels = Array.from(details.querySelectorAll("[data-sponsor-panel]"));
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let activeIndex = Math.max(0, buttons.findIndex((button) => button.getAttribute("aria-selected") === "true"));
+  let timer = null;
 
   const activate = (id) => {
     buttons.forEach((button) => {
       const isActive = button.dataset.sponsor === id;
       button.setAttribute("aria-selected", String(isActive));
       button.classList.toggle("is-active", isActive);
-      if (isActive) button.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      if (isActive) {
+        activeIndex = buttons.indexOf(button);
+        button.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", inline: "center", block: "nearest" });
+      }
     });
 
     panels.forEach((panel) => {
@@ -367,9 +719,114 @@ function setupSponsorShowcase() {
     });
   };
 
+  const stopAuto = () => {
+    if (timer) window.clearInterval(timer);
+    timer = null;
+  };
+
+  const startAuto = () => {
+    if (reduceMotion || timer || buttons.length < 2) return;
+    timer = window.setInterval(() => {
+      activeIndex = (activeIndex + 1) % buttons.length;
+      activate(buttons[activeIndex].dataset.sponsor);
+    }, 4200);
+  };
+
   buttons.forEach((button) => {
-    button.addEventListener("click", () => activate(button.dataset.sponsor));
+    button.addEventListener("click", () => {
+      stopAuto();
+      activate(button.dataset.sponsor);
+      startAuto();
+    });
   });
+
+  [tabs, details].forEach((element) => {
+    element.addEventListener("mouseenter", stopAuto);
+    element.addEventListener("mouseleave", startAuto);
+    element.addEventListener("focusin", stopAuto);
+    element.addEventListener("focusout", startAuto);
+  });
+
+  startAuto();
+}
+
+function initPartnerPathwaysCarousel() {
+  const carousel = document.querySelector("[data-partner-pathways-carousel]");
+  if (!carousel) return;
+
+  const track = carousel.querySelector(".partner-pathways-track");
+  const prev = carousel.querySelector("[data-partner-prev]");
+  const next = carousel.querySelector("[data-partner-next]");
+  const progress = carousel.querySelector("[data-partner-progress]");
+  const slides = Array.from(carousel.querySelectorAll(".partner-pathway-slide"));
+
+  if (!track || !slides.length) return;
+
+  const updateProgress = () => {
+    if (!progress) return;
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    const ratio = maxScroll > 0 ? track.scrollLeft / maxScroll : 0;
+    const base = 1 / slides.length;
+    const width = base + ratio * (1 - base);
+    progress.style.setProperty("width", `${width * 100}%`, "important");
+  };
+
+  const scrollBySlide = (direction) => {
+    const slide = slides[0];
+    const gap = parseFloat(window.getComputedStyle(track).columnGap || "0");
+    const amount = slide.getBoundingClientRect().width + gap;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    track.scrollBy({
+      left: direction * amount,
+      behavior: reduceMotion ? "auto" : "smooth"
+    });
+  };
+
+  prev?.addEventListener("click", () => scrollBySlide(-1));
+  next?.addEventListener("click", () => scrollBySlide(1));
+  track.addEventListener("scroll", updateProgress, { passive: true });
+  window.addEventListener("resize", updateProgress);
+  updateProgress();
+}
+
+function initJournalStoryRail() {
+  const rail = document.querySelector("[data-journal-rail]");
+  if (!rail) return;
+
+  const track = rail.querySelector(".journal-story-track");
+  const prev = rail.querySelector("[data-journal-prev]");
+  const next = rail.querySelector("[data-journal-next]");
+  const progress = rail.querySelector("[data-journal-progress]");
+  const cards = Array.from(rail.querySelectorAll(".journal-story-card"));
+  if (!track || !cards.length) return;
+
+  const updateProgress = () => {
+    if (!progress) return;
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    const ratio = maxScroll > 0 ? track.scrollLeft / maxScroll : 0;
+    const base = 1 / cards.length;
+    const width = base + ratio * (1 - base);
+    progress.style.setProperty("width", `${width * 100}%`, "important");
+  };
+
+  const scrollByCard = (direction) => {
+    const card = cards[0];
+    const gap = parseFloat(window.getComputedStyle(track).columnGap || "0");
+    const amount = card.getBoundingClientRect().width + gap;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    track.scrollBy({
+      left: direction * amount,
+      behavior: reduceMotion ? "auto" : "smooth"
+    });
+  };
+
+  prev?.addEventListener("click", () => scrollByCard(-1));
+  next?.addEventListener("click", () => scrollByCard(1));
+  track.addEventListener("scroll", updateProgress, { passive: true });
+  window.addEventListener("resize", updateProgress);
+  updateProgress();
 }
 
 function setupDanaOrbit() {
@@ -428,15 +885,22 @@ function setupCivicCardSystem() {
   const cards = Array.from(document.querySelectorAll("[data-civic-card]"));
   if (!cards.length) return;
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const startX = [-180, 0, 180];
+  const startY = [80, -50, 80];
+  const startRotate = [-7, 4, 7];
 
   cards.forEach((card, index) => {
-    card.style.setProperty("--civic-card-y", prefersReducedMotion ? "0px" : `${24 + index * 10}px`);
+    card.style.setProperty("--civic-card-x", prefersReducedMotion ? "0px" : `${startX[index] || 0}px`);
+    card.style.setProperty("--civic-card-y", prefersReducedMotion ? "0px" : `${startY[index] || 0}px`);
+    card.style.setProperty("--civic-card-rotate", prefersReducedMotion ? "0deg" : `${startRotate[index] || 0}deg`);
     if (prefersReducedMotion) card.classList.add("is-visible");
   });
 
   if (prefersReducedMotion || !("IntersectionObserver" in window)) {
     cards.forEach((card) => {
+      card.style.setProperty("--civic-card-x", "0px");
       card.style.setProperty("--civic-card-y", "0px");
+      card.style.setProperty("--civic-card-rotate", "0deg");
       card.classList.add("is-visible");
     });
     return;
@@ -446,7 +910,9 @@ function setupCivicCardSystem() {
     (entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
+        entry.target.style.setProperty("--civic-card-x", "0px");
         entry.target.style.setProperty("--civic-card-y", "0px");
+        entry.target.style.setProperty("--civic-card-rotate", "0deg");
         entry.target.classList.add("is-visible");
         observer.unobserve(entry.target);
       });
@@ -461,16 +927,23 @@ document.addEventListener("DOMContentLoaded", async () => {
   setupChrome();
   setupHeroParallax();
   setupSponsorShowcase();
+  initPartnerPathwaysCarousel();
+  initJournalStoryRail();
   setupDanaOrbit();
   setupCivicCardSystem();
+  setupDanaWhatPillarMorph();
+  setupDanaWhatCarousel();
+  initStartHereStack();
   const [issues, events, membership] = await Promise.all([
     getJson("data/issues.json", "issues"),
     getJson("data/events.json", "events"),
     getJson("data/site.json", "membership").then((data) => data.membership || fallback.membership)
   ]);
   renderIssues(issues);
+  setupIssueShelf();
   renderEvents(events);
   renderMembership(membership);
   renderArchive();
   setupForms();
+  setupEditorialReveals();
 });
