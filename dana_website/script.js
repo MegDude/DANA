@@ -767,46 +767,6 @@ function setupSponsorShowcase() {
   startAuto();
 }
 
-function initPartnerPathwaysCarousel() {
-  const carousel = document.querySelector("[data-partner-pathways-carousel]");
-  if (!carousel) return;
-
-  const track = carousel.querySelector(".partner-pathways-track");
-  const prev = carousel.querySelector("[data-partner-prev]");
-  const next = carousel.querySelector("[data-partner-next]");
-  const progress = carousel.querySelector("[data-partner-progress]");
-  const slides = Array.from(carousel.querySelectorAll(".partner-pathway-slide"));
-
-  if (!track || !slides.length) return;
-
-  const updateProgress = () => {
-    if (!progress) return;
-    const maxScroll = track.scrollWidth - track.clientWidth;
-    const ratio = maxScroll > 0 ? track.scrollLeft / maxScroll : 0;
-    const base = 1 / slides.length;
-    const width = base + ratio * (1 - base);
-    progress.style.setProperty("width", `${width * 100}%`, "important");
-  };
-
-  const scrollBySlide = (direction) => {
-    const slide = slides[0];
-    const gap = parseFloat(window.getComputedStyle(track).columnGap || "0");
-    const amount = slide.getBoundingClientRect().width + gap;
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    track.scrollBy({
-      left: direction * amount,
-      behavior: reduceMotion ? "auto" : "smooth"
-    });
-  };
-
-  prev?.addEventListener("click", () => scrollBySlide(-1));
-  next?.addEventListener("click", () => scrollBySlide(1));
-  track.addEventListener("scroll", updateProgress, { passive: true });
-  window.addEventListener("resize", updateProgress);
-  updateProgress();
-}
-
 function initJournalStoryRail() {
   const rail = document.querySelector("[data-journal-rail]");
   if (!rail) return;
@@ -944,7 +904,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   setupChrome();
   setupHeroParallax();
   setupSponsorShowcase();
-  initPartnerPathwaysCarousel();
   initJournalStoryRail();
   setupDanaOrbit();
   setupCivicCardSystem();
