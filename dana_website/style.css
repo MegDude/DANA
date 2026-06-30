@@ -17311,6 +17311,32 @@ body .sponsor-detail.is-active h3 {
   }
 }
 
+/* Final eyebrow color lock: all eyebrow-style copy is gold. */
+body .eyebrow,
+body .hero-eyebrow,
+body .hero .eyebrow,
+body .hero .hero-eyebrow,
+body .hero-editorial .hero-eyebrow,
+body .start-stack-eyebrow,
+body .start-pathway-eyebrow,
+body .pillar-label,
+body .sponsor-detail .eyebrow,
+body .event-panel-header .eyebrow,
+body .journal-carousel-head .eyebrow,
+body .journal-story-rail-head .eyebrow,
+body .landing-leadership .eyebrow,
+body .landing-calendar .eyebrow,
+body .join-lede .eyebrow,
+body .join-router-section .eyebrow,
+body .newsletter-panel .eyebrow,
+body .partner-pathways-section .eyebrow,
+body .sponsor-showcase-section .sponsor-detail .eyebrow,
+body p.pillar-label,
+body .dana-what-section .dana-what-pillars .pillar-label,
+body .dana-what-section .dana-what-pillars.dana-what-pillars--carousel article p.pillar-label {
+  color: #C2AB7A !important;
+}
+
 /* Civic OS section keeps its editorial scale after global caps. */
 body main .dana-what-section .dana-what-intro h2 {
   max-width: 760px !important;
