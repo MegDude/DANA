@@ -16763,6 +16763,385 @@ li,
   }
 }
 
+/* True final typography guardrail. Keep this at the end of the file. */
+body main h1,
+body main .hero-title,
+body .page-hero h1 {
+  max-width: 16ch !important;
+  font-size: clamp(2rem, 5.6vw, 4.15rem) !important;
+  line-height: 1.02 !important;
+  letter-spacing: 0 !important;
+}
+
+body .hero-editorial .hero-title {
+  max-width: 13ch !important;
+  font-size: clamp(2.35rem, 7.5vw, 4.75rem) !important;
+  line-height: 1 !important;
+  letter-spacing: 0 !important;
+}
+
+body main h2,
+body .section h2,
+body .section-header h2,
+body .split-header h2,
+body .content-main h2,
+body .landing-calendar h2,
+body .landing-leadership h2,
+body .newsletter-panel h2,
+body .dana-what-copy h2,
+body .start-here-header h2,
+body .downtown-action-intro h2,
+body .downtown-action-header h2,
+body .partner-pathways-intro h2,
+body .partner-pathways-section .partner-pathways-intro h2,
+body .neighborhood-journal-header h2,
+body .issues-editorial .section-header-row h2,
+body .sponsor-guide-grid h2,
+body .sponsor-connection-grid h2,
+body .sponsor-map-section h2,
+body .sponsor-connections h2,
+body .sponsor-showcase-section h2 {
+  max-width: 18ch !important;
+  font-size: clamp(1.65rem, 3.7vw, 3rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: 0 !important;
+}
+
+body main h3,
+body .section h3,
+body .card h3,
+body .issue-card h3,
+body .event-card h3,
+body .membership-card h3,
+body .journal-story-card h3,
+body .partner-pathway-copy h3,
+body .partner-spotlight-copy h3,
+body .partner-pathways-section .partner-pathway-card h3,
+body .downtown-event-copy h3,
+body .sponsor-place-rail h3,
+body .sponsor-detail h3,
+body .sponsor-showcase-section .sponsor-detail h3 {
+  font-size: clamp(1.25rem, 2.1vw, 2rem) !important;
+  line-height: 1.14 !important;
+  letter-spacing: 0 !important;
+}
+
+body .start-stack-card strong,
+body .start-stack-content strong,
+body .start-here-carousel .start-stack-content strong {
+  max-width: 11ch !important;
+  font-size: clamp(2.15rem, 6.8vw, 3.65rem) !important;
+  line-height: 0.98 !important;
+  letter-spacing: 0 !important;
+}
+
+body .journal-feature-copy h3,
+body .partner-spotlight-stats strong,
+body .community-pulse strong,
+body .sponsor-hero h1,
+body .partner-support-list strong,
+body .sponsor-connection-list h3,
+body .sponsor-card h3,
+body .sponsor-detail-card h3,
+body [data-sponsor-panel] h3 {
+  font-size: clamp(1.45rem, 2.8vw, 2.55rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: 0 !important;
+}
+
+body .partner-spotlight-stats strong,
+body .community-pulse strong {
+  font-size: clamp(2rem, 4vw, 3.6rem) !important;
+}
+
+@media (max-width: 700px) {
+  body main h1,
+  body main .hero-title,
+  body .page-hero h1 {
+    max-width: 14ch !important;
+    font-size: clamp(1.85rem, 8vw, 2.55rem) !important;
+    line-height: 1.05 !important;
+  }
+
+  body .hero-editorial .hero-title {
+    max-width: 12ch !important;
+    font-size: clamp(2rem, 9.5vw, 3rem) !important;
+    line-height: 1.02 !important;
+  }
+
+  body main h2,
+  body .section h2,
+  body .section-header h2,
+  body .split-header h2,
+  body .content-main h2,
+  body .landing-calendar h2,
+  body .landing-leadership h2,
+  body .newsletter-panel h2,
+  body .dana-what-copy h2,
+  body .start-here-header h2,
+  body .downtown-action-intro h2,
+  body .downtown-action-header h2,
+  body .partner-pathways-intro h2,
+  body .partner-pathways-section .partner-pathways-intro h2,
+  body .neighborhood-journal-header h2,
+  body .issues-editorial .section-header-row h2,
+  body .sponsor-guide-grid h2,
+  body .sponsor-connection-grid h2,
+  body .sponsor-map-section h2,
+  body .sponsor-connections h2,
+  body .sponsor-showcase-section h2 {
+    max-width: 15ch !important;
+    font-size: clamp(1.45rem, 6.2vw, 2.15rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  body main h3,
+  body .section h3,
+  body .card h3,
+  body .issue-card h3,
+  body .event-card h3,
+  body .membership-card h3,
+  body .journal-story-card h3,
+  body .partner-pathway-copy h3,
+  body .partner-spotlight-copy h3,
+  body .partner-pathways-section .partner-pathway-card h3,
+  body .downtown-event-copy h3,
+  body .sponsor-place-rail h3,
+  body .sponsor-detail h3,
+  body .sponsor-showcase-section .sponsor-detail h3 {
+    font-size: clamp(1.16rem, 5vw, 1.75rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  body .start-stack-card strong,
+  body .start-stack-content strong,
+  body .start-here-carousel .start-stack-content strong {
+    max-width: 10ch !important;
+    font-size: clamp(1.9rem, 8.4vw, 2.65rem) !important;
+    line-height: 1.02 !important;
+  }
+
+  body .journal-feature-copy h3,
+  body .partner-spotlight-stats strong,
+  body .community-pulse strong,
+  body .sponsor-hero h1,
+  body .partner-support-list strong,
+  body .sponsor-connection-list h3,
+  body .sponsor-card h3,
+  body .sponsor-detail-card h3,
+  body [data-sponsor-panel] h3 {
+    font-size: clamp(1.25rem, 5.4vw, 2rem) !important;
+    line-height: 1.12 !important;
+  }
+}
+
+/* Extra-specific final caps for legacy oversized homepage and sponsor selectors. */
+body .start-here-carousel .start-here-header h2,
+body .section.start-here-carousel .start-here-header h2,
+body .sponsor-showcase .section-header h2,
+body .sponsor-showcase-section .section-header h2,
+body .sponsor-showcase-section h2 {
+  max-width: 18ch !important;
+  font-size: clamp(1.55rem, 3.4vw, 2.75rem) !important;
+  line-height: 1.1 !important;
+  letter-spacing: 0 !important;
+}
+
+body .sponsor-map-section .sponsor-place-rail h3,
+body .sponsor-connections .sponsor-connection-list h3,
+body .sponsor-showcase-section .sponsor-detail h3,
+body .sponsor-detail.is-active h3 {
+  font-size: clamp(1.3rem, 2.4vw, 2.2rem) !important;
+  line-height: 1.12 !important;
+  letter-spacing: 0 !important;
+}
+
+@media (max-width: 700px) {
+  body .hero-editorial .hero-title {
+    font-size: clamp(1.9rem, 8.4vw, 2.6rem) !important;
+  }
+
+  body .start-here-carousel .start-here-header h2,
+  body .section.start-here-carousel .start-here-header h2,
+  body .sponsor-showcase .section-header h2,
+  body .sponsor-showcase-section .section-header h2,
+  body .sponsor-showcase-section h2 {
+    max-width: 15ch !important;
+    font-size: clamp(1.35rem, 5.5vw, 1.95rem) !important;
+    line-height: 1.12 !important;
+  }
+
+  body .sponsor-map-section .sponsor-place-rail h3,
+  body .sponsor-connections .sponsor-connection-list h3,
+  body .sponsor-showcase-section .sponsor-detail h3,
+  body .sponsor-detail.is-active h3 {
+    font-size: clamp(1.18rem, 4.8vw, 1.65rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  body .start-stack-card strong,
+  body .start-stack-content strong,
+  body .start-here-carousel .start-stack-content strong {
+    font-size: clamp(1.75rem, 7.6vw, 2.35rem) !important;
+  }
+}
+
+/* Sitewide typography correction: keep the editorial voice, remove oversized type. */
+main h1,
+main .hero-title,
+.page-hero h1 {
+  max-width: 16ch !important;
+  font-size: clamp(2rem, 5.6vw, 4.15rem) !important;
+  line-height: 1.02 !important;
+  letter-spacing: 0 !important;
+}
+
+.hero-editorial .hero-title {
+  max-width: 13ch !important;
+  font-size: clamp(2.35rem, 7.5vw, 4.75rem) !important;
+  line-height: 1 !important;
+  letter-spacing: 0 !important;
+}
+
+main h2,
+.section h2,
+.section-header h2,
+.split-header h2,
+.content-main h2,
+.landing-calendar h2,
+.landing-leadership h2,
+.newsletter-panel h2,
+.dana-what-copy h2,
+.start-here-header h2,
+.downtown-action-intro h2,
+.downtown-action-header h2,
+.partner-pathways-intro h2,
+.partner-pathways-section .partner-pathways-intro h2,
+.neighborhood-journal-header h2,
+.issues-editorial .section-header-row h2,
+.sponsor-guide-grid h2,
+.sponsor-connection-grid h2 {
+  max-width: 18ch !important;
+  font-size: clamp(1.65rem, 3.7vw, 3rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: 0 !important;
+}
+
+main h3,
+.section h3,
+.card h3,
+.issue-card h3,
+.event-card h3,
+.membership-card h3,
+.journal-story-card h3,
+.partner-pathway-copy h3,
+.partner-spotlight-copy h3,
+.partner-pathways-section .partner-pathway-card h3,
+.downtown-event-copy h3 {
+  font-size: clamp(1.25rem, 2.1vw, 2rem) !important;
+  line-height: 1.14 !important;
+  letter-spacing: 0 !important;
+}
+
+.start-stack-card strong {
+  max-width: 11ch !important;
+  font-size: clamp(2.15rem, 6.8vw, 3.65rem) !important;
+  line-height: 0.98 !important;
+  letter-spacing: 0 !important;
+}
+
+.journal-feature-copy h3,
+.partner-spotlight-stats strong,
+.community-pulse strong,
+.sponsor-hero h1,
+.partner-support-list strong,
+.sponsor-connection-list h3,
+.sponsor-card h3,
+.sponsor-detail-card h3,
+[data-sponsor-panel] h3 {
+  font-size: clamp(1.45rem, 2.8vw, 2.55rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: 0 !important;
+}
+
+.partner-spotlight-stats strong,
+.community-pulse strong {
+  font-size: clamp(2rem, 4vw, 3.6rem) !important;
+}
+
+@media (max-width: 700px) {
+  main h1,
+  main .hero-title,
+  .page-hero h1 {
+    max-width: 14ch !important;
+    font-size: clamp(1.85rem, 8vw, 2.55rem) !important;
+    line-height: 1.05 !important;
+  }
+
+  .hero-editorial .hero-title {
+    max-width: 12ch !important;
+    font-size: clamp(2rem, 9.5vw, 3rem) !important;
+    line-height: 1.02 !important;
+  }
+
+  main h2,
+  .section h2,
+  .section-header h2,
+  .split-header h2,
+  .content-main h2,
+  .landing-calendar h2,
+  .landing-leadership h2,
+  .newsletter-panel h2,
+  .dana-what-copy h2,
+  .start-here-header h2,
+  .downtown-action-intro h2,
+  .downtown-action-header h2,
+  .partner-pathways-intro h2,
+  .partner-pathways-section .partner-pathways-intro h2,
+  .neighborhood-journal-header h2,
+  .issues-editorial .section-header-row h2,
+  .sponsor-guide-grid h2,
+  .sponsor-connection-grid h2 {
+    max-width: 15ch !important;
+    font-size: clamp(1.45rem, 6.2vw, 2.15rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  main h3,
+  .section h3,
+  .card h3,
+  .issue-card h3,
+  .event-card h3,
+  .membership-card h3,
+  .journal-story-card h3,
+  .partner-pathway-copy h3,
+  .partner-spotlight-copy h3,
+  .partner-pathways-section .partner-pathway-card h3,
+  .downtown-event-copy h3 {
+    font-size: clamp(1.16rem, 5vw, 1.75rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  .start-stack-card strong {
+    max-width: 10ch !important;
+    font-size: clamp(1.9rem, 8.4vw, 2.65rem) !important;
+    line-height: 1.02 !important;
+  }
+
+  .journal-feature-copy h3,
+  .partner-spotlight-stats strong,
+  .community-pulse strong,
+  .sponsor-hero h1,
+  .partner-support-list strong,
+  .sponsor-connection-list h3,
+  .sponsor-card h3,
+  .sponsor-detail-card h3,
+  [data-sponsor-panel] h3 {
+    font-size: clamp(1.25rem, 5.4vw, 2rem) !important;
+    line-height: 1.12 !important;
+  }
+}
+
 /* Final Issues grid + Downtown Today support lock */
 .landing-issues .issue-grid {
   display: grid !important;
@@ -20424,5 +20803,228 @@ li,
   .downtown-action-section .downtown-action-support a {
     border-right: 0 !important;
     border-bottom: 1px solid rgba(7, 47, 36, 0.10) !important;
+  }
+}
+
+/* True final typography guardrail. Keep this at the end of the file. */
+body main h1,
+body main .hero-title,
+body .page-hero h1 {
+  max-width: 16ch !important;
+  font-size: clamp(2rem, 5.6vw, 4.15rem) !important;
+  line-height: 1.02 !important;
+  letter-spacing: 0 !important;
+}
+
+body .hero-editorial .hero-title {
+  max-width: 13ch !important;
+  font-size: clamp(2.35rem, 7.5vw, 4.75rem) !important;
+  line-height: 1 !important;
+  letter-spacing: 0 !important;
+}
+
+body main h2,
+body .section h2,
+body .section-header h2,
+body .split-header h2,
+body .content-main h2,
+body .landing-calendar h2,
+body .landing-leadership h2,
+body .newsletter-panel h2,
+body .dana-what-copy h2,
+body .start-here-header h2,
+body .downtown-action-intro h2,
+body .downtown-action-header h2,
+body .partner-pathways-intro h2,
+body .partner-pathways-section .partner-pathways-intro h2,
+body .neighborhood-journal-header h2,
+body .issues-editorial .section-header-row h2,
+body .sponsor-guide-grid h2,
+body .sponsor-connection-grid h2,
+body .sponsor-map-section h2,
+body .sponsor-connections h2,
+body .sponsor-showcase-section h2 {
+  max-width: 18ch !important;
+  font-size: clamp(1.65rem, 3.7vw, 3rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: 0 !important;
+}
+
+body main h3,
+body .section h3,
+body .card h3,
+body .issue-card h3,
+body .event-card h3,
+body .membership-card h3,
+body .journal-story-card h3,
+body .partner-pathway-copy h3,
+body .partner-spotlight-copy h3,
+body .partner-pathways-section .partner-pathway-card h3,
+body .downtown-event-copy h3,
+body .sponsor-place-rail h3,
+body .sponsor-detail h3,
+body .sponsor-showcase-section .sponsor-detail h3 {
+  font-size: clamp(1.25rem, 2.1vw, 2rem) !important;
+  line-height: 1.14 !important;
+  letter-spacing: 0 !important;
+}
+
+body .start-stack-card strong,
+body .start-stack-content strong,
+body .start-here-carousel .start-stack-content strong {
+  max-width: 11ch !important;
+  font-size: clamp(2.15rem, 6.8vw, 3.65rem) !important;
+  line-height: 0.98 !important;
+  letter-spacing: 0 !important;
+}
+
+body .journal-feature-copy h3,
+body .partner-spotlight-stats strong,
+body .community-pulse strong,
+body .sponsor-hero h1,
+body .partner-support-list strong,
+body .sponsor-connection-list h3,
+body .sponsor-card h3,
+body .sponsor-detail-card h3,
+body [data-sponsor-panel] h3 {
+  font-size: clamp(1.45rem, 2.8vw, 2.55rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: 0 !important;
+}
+
+body .partner-spotlight-stats strong,
+body .community-pulse strong {
+  font-size: clamp(2rem, 4vw, 3.6rem) !important;
+}
+
+@media (max-width: 700px) {
+  body main h1,
+  body main .hero-title,
+  body .page-hero h1 {
+    max-width: 14ch !important;
+    font-size: clamp(1.85rem, 8vw, 2.55rem) !important;
+    line-height: 1.05 !important;
+  }
+
+  body .hero-editorial .hero-title {
+    max-width: 12ch !important;
+    font-size: clamp(2rem, 9.5vw, 3rem) !important;
+    line-height: 1.02 !important;
+  }
+
+  body main h2,
+  body .section h2,
+  body .section-header h2,
+  body .split-header h2,
+  body .content-main h2,
+  body .landing-calendar h2,
+  body .landing-leadership h2,
+  body .newsletter-panel h2,
+  body .dana-what-copy h2,
+  body .start-here-header h2,
+  body .downtown-action-intro h2,
+  body .downtown-action-header h2,
+  body .partner-pathways-intro h2,
+  body .partner-pathways-section .partner-pathways-intro h2,
+  body .neighborhood-journal-header h2,
+  body .issues-editorial .section-header-row h2,
+  body .sponsor-guide-grid h2,
+  body .sponsor-connection-grid h2,
+  body .sponsor-map-section h2,
+  body .sponsor-connections h2,
+  body .sponsor-showcase-section h2 {
+    max-width: 15ch !important;
+    font-size: clamp(1.45rem, 6.2vw, 2.15rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  body main h3,
+  body .section h3,
+  body .card h3,
+  body .issue-card h3,
+  body .event-card h3,
+  body .membership-card h3,
+  body .journal-story-card h3,
+  body .partner-pathway-copy h3,
+  body .partner-spotlight-copy h3,
+  body .partner-pathways-section .partner-pathway-card h3,
+  body .downtown-event-copy h3,
+  body .sponsor-place-rail h3,
+  body .sponsor-detail h3,
+  body .sponsor-showcase-section .sponsor-detail h3 {
+    font-size: clamp(1.16rem, 5vw, 1.75rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  body .start-stack-card strong,
+  body .start-stack-content strong,
+  body .start-here-carousel .start-stack-content strong {
+    max-width: 10ch !important;
+    font-size: clamp(1.9rem, 8.4vw, 2.65rem) !important;
+    line-height: 1.02 !important;
+  }
+
+  body .journal-feature-copy h3,
+  body .partner-spotlight-stats strong,
+  body .community-pulse strong,
+  body .sponsor-hero h1,
+  body .partner-support-list strong,
+  body .sponsor-connection-list h3,
+  body .sponsor-card h3,
+  body .sponsor-detail-card h3,
+  body [data-sponsor-panel] h3 {
+    font-size: clamp(1.25rem, 5.4vw, 2rem) !important;
+    line-height: 1.12 !important;
+  }
+}
+
+/* Extra-specific final caps for legacy oversized homepage and sponsor selectors. */
+body .start-here-carousel .start-here-header h2,
+body .section.start-here-carousel .start-here-header h2,
+body .sponsor-showcase .section-header h2,
+body .sponsor-showcase-section .section-header h2,
+body .sponsor-showcase-section h2 {
+  max-width: 18ch !important;
+  font-size: clamp(1.55rem, 3.4vw, 2.75rem) !important;
+  line-height: 1.1 !important;
+  letter-spacing: 0 !important;
+}
+
+body .sponsor-map-section .sponsor-place-rail h3,
+body .sponsor-connections .sponsor-connection-list h3,
+body .sponsor-showcase-section .sponsor-detail h3,
+body .sponsor-detail.is-active h3 {
+  font-size: clamp(1.3rem, 2.4vw, 2.2rem) !important;
+  line-height: 1.12 !important;
+  letter-spacing: 0 !important;
+}
+
+@media (max-width: 700px) {
+  body .hero-editorial .hero-title {
+    font-size: clamp(1.9rem, 8.4vw, 2.6rem) !important;
+  }
+
+  body .start-here-carousel .start-here-header h2,
+  body .section.start-here-carousel .start-here-header h2,
+  body .sponsor-showcase .section-header h2,
+  body .sponsor-showcase-section .section-header h2,
+  body .sponsor-showcase-section h2 {
+    max-width: 15ch !important;
+    font-size: clamp(1.35rem, 5.5vw, 1.95rem) !important;
+    line-height: 1.12 !important;
+  }
+
+  body .sponsor-map-section .sponsor-place-rail h3,
+  body .sponsor-connections .sponsor-connection-list h3,
+  body .sponsor-showcase-section .sponsor-detail h3,
+  body .sponsor-detail.is-active h3 {
+    font-size: clamp(1.18rem, 4.8vw, 1.65rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  body .start-stack-card strong,
+  body .start-stack-content strong,
+  body .start-here-carousel .start-stack-content strong {
+    font-size: clamp(1.75rem, 7.6vw, 2.35rem) !important;
   }
 }
