@@ -16811,6 +16811,276 @@ li,
   }
 }
 
+/* DANA Civic Operating System section */
+body .dana-what-section {
+  background: #F7F8FB !important;
+  padding: clamp(80px, 10vw, 140px) 0 !important;
+}
+
+body .dana-what-shell {
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+}
+
+body .dana-what-intro {
+  max-width: 840px !important;
+  margin-bottom: clamp(40px, 6vw, 56px) !important;
+}
+
+body .dana-what-intro h2 {
+  max-width: 760px !important;
+  margin: 0 !important;
+  color: #0B1F33 !important;
+  font-family: "Instrument Serif", Georgia, serif !important;
+  font-size: clamp(42px, 6vw, 76px) !important;
+  font-weight: 400 !important;
+  line-height: 0.94 !important;
+  letter-spacing: 0 !important;
+}
+
+body .dana-what-intro p:not(.eyebrow) {
+  max-width: 680px !important;
+  margin: 22px 0 0 !important;
+  color: rgba(11, 31, 51, 0.72) !important;
+  font-size: clamp(1.02rem, 1.4vw, 1.125rem) !important;
+  line-height: 1.65 !important;
+}
+
+body .dana-what-system {
+  display: grid !important;
+  grid-template-columns: 0.78fr 1.22fr !important;
+  gap: clamp(32px, 5vw, 72px) !important;
+  align-items: start !important;
+}
+
+body .dana-what-copy {
+  position: sticky !important;
+  top: 120px !important;
+  max-width: 36rem !important;
+}
+
+body .dana-what-copy p {
+  max-width: 42ch !important;
+  margin: 0 0 1.1rem !important;
+  color: rgba(11, 31, 51, 0.72) !important;
+  font-size: clamp(1rem, 1.25vw, 1.0625rem) !important;
+  line-height: 1.7 !important;
+}
+
+body .dana-what-copy .intro-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 18px 28px !important;
+  margin-top: 28px !important;
+}
+
+body .dana-what-board {
+  min-width: 0 !important;
+  overflow: hidden !important;
+  background: #FFFFFF !important;
+  border: 1px solid rgba(11, 31, 51, 0.08) !important;
+  box-shadow: none !important;
+}
+
+body .dana-what-media {
+  height: clamp(300px, 38vw, 480px) !important;
+  overflow: hidden !important;
+  background: #0B1F33 !important;
+}
+
+body .dana-what-media video,
+body .dana-what-media img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+body .dana-what-carousel-viewport {
+  width: 100% !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+}
+
+body .dana-what-pillars.dana-what-pillars--carousel {
+  display: flex !important;
+  width: 100% !important;
+  gap: 0 !important;
+  border: 0 !important;
+  will-change: transform !important;
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+body .dana-what-pillars.dana-what-pillars--carousel article {
+  position: relative !important;
+  display: block !important;
+  flex: 0 0 100% !important;
+  min-width: 100% !important;
+  min-height: 0 !important;
+  padding: clamp(28px, 4vw, 44px) !important;
+  color: #0B1F33 !important;
+  background: #FFFFFF !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+body .dana-what-pillars.dana-what-pillars--carousel article::before {
+  display: none !important;
+}
+
+body .dana-what-pillars.dana-what-pillars--carousel article > span {
+  display: block !important;
+  margin: 0 0 18px !important;
+  color: #C8A96A !important;
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+}
+
+body .dana-what-pillars .pillar-label {
+  margin: 0 0 10px !important;
+  color: rgba(11, 31, 51, 0.48) !important;
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 750 !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+}
+
+body .dana-what-pillars.dana-what-pillars--carousel article h3 {
+  max-width: 13ch !important;
+  margin: 0 0 18px !important;
+  color: #0B1F33 !important;
+  font-family: "Instrument Serif", Georgia, serif !important;
+  font-size: clamp(32px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  line-height: 0.98 !important;
+  letter-spacing: 0 !important;
+}
+
+body .dana-what-pillars.dana-what-pillars--carousel article p {
+  max-width: 58ch !important;
+  margin: 0 !important;
+  color: rgba(11, 31, 51, 0.72) !important;
+  font-size: clamp(1rem, 1.25vw, 1.0625rem) !important;
+  line-height: 1.65 !important;
+}
+
+body .dana-focus-card {
+  margin-top: 28px !important;
+  padding-top: 22px !important;
+  border-top: 1px solid rgba(11, 31, 51, 0.10) !important;
+}
+
+body .dana-focus-card strong {
+  display: block !important;
+  color: #0B1F33 !important;
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  line-height: 1.2 !important;
+  text-transform: uppercase !important;
+}
+
+body .dana-focus-card p {
+  margin-top: 8px !important;
+}
+
+body .dana-what-carousel-head {
+  display: flex !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+  margin: 0 !important;
+  padding: 0 28px 28px !important;
+}
+
+body .dana-carousel-button {
+  display: inline-grid !important;
+  width: 44px !important;
+  height: 44px !important;
+  place-items: center !important;
+  color: #0B1F33 !important;
+  background: #FFFFFF !important;
+  border: 1px solid rgba(11, 31, 51, 0.16) !important;
+  border-radius: 0 !important;
+  cursor: pointer !important;
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 18px !important;
+  line-height: 1 !important;
+}
+
+body .dana-carousel-button:disabled {
+  cursor: not-allowed !important;
+  opacity: 0.35 !important;
+}
+
+body .dana-carousel-button:not(:disabled):hover,
+body .dana-carousel-button:focus-visible {
+  border-color: rgba(200, 169, 106, 0.72) !important;
+  outline: 0 !important;
+  transform: none !important;
+}
+
+@media (max-width: 900px) {
+  body .dana-what-system {
+    grid-template-columns: 1fr !important;
+  }
+
+  body .dana-what-copy {
+    position: relative !important;
+    top: auto !important;
+    max-width: 46rem !important;
+  }
+
+  body .dana-what-media {
+    height: clamp(260px, 55vw, 420px) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  body .dana-what-section {
+    padding: clamp(64px, 16vw, 92px) 0 !important;
+  }
+
+  body .dana-what-intro h2 {
+    font-size: clamp(34px, 10vw, 46px) !important;
+    line-height: 1 !important;
+  }
+
+  body .dana-what-media {
+    height: clamp(220px, 70vw, 300px) !important;
+  }
+
+  body .dana-what-pillars.dana-what-pillars--carousel article {
+    padding: 26px 22px !important;
+  }
+
+  body .dana-what-pillars.dana-what-pillars--carousel article h3 {
+    max-width: 14ch !important;
+    font-size: clamp(30px, 9vw, 40px) !important;
+  }
+
+  body .dana-what-carousel-head {
+    justify-content: flex-start !important;
+    padding: 0 22px 24px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body .dana-what-pillars.dana-what-pillars--carousel,
+  body .dana-carousel-button {
+    transition: none !important;
+  }
+}
+
 /* True final typography guardrail. Keep this at the end of the file. */
 body main h1,
 body main .hero-title,
@@ -17031,6 +17301,36 @@ body .sponsor-detail.is-active h3 {
   body .start-stack-content strong,
   body .start-here-carousel .start-stack-content strong {
     font-size: clamp(1.75rem, 7.6vw, 2.35rem) !important;
+  }
+}
+
+/* Civic OS section keeps its editorial scale after global caps. */
+body main .dana-what-section .dana-what-intro h2 {
+  max-width: 760px !important;
+  font-family: "Instrument Serif", Georgia, serif !important;
+  font-size: clamp(42px, 6vw, 76px) !important;
+  font-weight: 400 !important;
+  line-height: 0.94 !important;
+  letter-spacing: 0 !important;
+}
+
+body main .dana-what-section .dana-what-pillars h3 {
+  max-width: 13ch !important;
+  font-family: "Instrument Serif", Georgia, serif !important;
+  font-size: clamp(32px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  line-height: 0.98 !important;
+  letter-spacing: 0 !important;
+}
+
+@media (max-width: 700px) {
+  body main .dana-what-section .dana-what-intro h2 {
+    font-size: clamp(34px, 10vw, 46px) !important;
+    line-height: 1 !important;
+  }
+
+  body main .dana-what-section .dana-what-pillars h3 {
+    font-size: clamp(30px, 9vw, 40px) !important;
   }
 }
 
