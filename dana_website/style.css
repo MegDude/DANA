@@ -22097,3 +22097,226 @@ body .section-navy.join-router-section .membership-grid .membership-card h3 {
     grid-auto-columns: minmax(280px, 88%) !important;
   }
 }
+
+/* Civic Action System IA: Issues -> Today -> Support -> Trust -> Commit. */
+body .landing-issues.issues-editorial {
+  background: #F7F8FB !important;
+}
+
+body .partner-pathways-section {
+  background: #F7F8FB !important;
+}
+
+body .downtown-action-panel {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.72fr) !important;
+  gap: 1px !important;
+  overflow: hidden !important;
+  background: rgba(11, 31, 51, 0.10) !important;
+  border: 1px solid rgba(11, 31, 51, 0.10) !important;
+}
+
+body .downtown-action-panel .downtown-feature-event {
+  background: #FFFFFF !important;
+}
+
+body .downtown-live-actions {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 1px !important;
+  background: rgba(11, 31, 51, 0.10) !important;
+}
+
+body .downtown-live-actions article {
+  display: grid !important;
+  grid-template-columns: 14px minmax(0, 1fr) !important;
+  gap: 12px 16px !important;
+  align-items: start !important;
+  min-height: 112px !important;
+  padding: clamp(20px, 3vw, 28px) !important;
+  background: #FFFFFF !important;
+}
+
+body .downtown-live-actions article span {
+  width: 9px !important;
+  height: 9px !important;
+  margin-top: 6px !important;
+  border: 1px solid #C2AB7A !important;
+  border-radius: 999px !important;
+}
+
+body .downtown-live-actions article p {
+  margin: 0 !important;
+  color: #0B1F33 !important;
+  font-family: "Instrument Serif", Georgia, serif !important;
+  font-size: clamp(24px, 2.2vw, 32px) !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+}
+
+body .downtown-live-actions article strong {
+  grid-column: 2 !important;
+  color: rgba(11, 31, 51, 0.58) !important;
+  font-size: 13px !important;
+  font-weight: 750 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+body .partner-pathways-section .partner-impact-layout {
+  display: grid !important;
+  gap: 1px !important;
+  background: rgba(11, 31, 51, 0.10) !important;
+  border: 1px solid rgba(11, 31, 51, 0.10) !important;
+}
+
+body .partner-pathways-section .partner-role-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 1px !important;
+  background: rgba(11, 31, 51, 0.10) !important;
+  border: 0 !important;
+}
+
+body .partner-pathways-section .partner-role-card {
+  min-height: 0 !important;
+  padding: clamp(24px, 3vw, 36px) !important;
+  background: #FFFFFF !important;
+}
+
+body .partner-pathways-section .partner-role-card-featured,
+body .partner-pathways-section .partner-role-card-sponsor {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.72fr) !important;
+  gap: clamp(28px, 5vw, 64px) !important;
+  align-items: stretch !important;
+  padding: clamp(24px, 4vw, 44px) !important;
+}
+
+body .partner-pathways-section .partner-role-card-sponsor {
+  grid-template-columns: minmax(320px, 0.72fr) minmax(0, 1.08fr) !important;
+}
+
+body .partner-pathways-section .partner-role-card-sponsor .partner-role-media {
+  order: 2 !important;
+}
+
+body .partner-pathways-section .partner-role-card-featured > div,
+body .partner-pathways-section .partner-role-card-sponsor > div {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+body .partner-pathways-section .partner-role-media {
+  position: relative !important;
+  min-height: 260px !important;
+  margin: 0 0 24px !important;
+  overflow: hidden !important;
+  background: #0B1F33 !important;
+}
+
+body .partner-pathways-section .partner-role-card-featured .partner-role-media,
+body .partner-pathways-section .partner-role-card-sponsor .partner-role-media {
+  min-height: clamp(360px, 36vw, 520px) !important;
+  margin: 0 !important;
+}
+
+body .partner-pathways-section .partner-role-media video,
+body .partner-pathways-section .partner-role-media img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+body .partner-pathways-section .partner-role-card h3 {
+  max-width: 13ch !important;
+}
+
+body .partner-pathways-section .partner-role-card-featured h3,
+body .partner-pathways-section .partner-role-card-sponsor h3 {
+  font-size: clamp(34px, 4.4vw, 58px) !important;
+}
+
+body .partner-pathways-section .partner-role-card a {
+  margin-top: auto !important;
+}
+
+@media (max-width: 980px) {
+  body .downtown-action-panel,
+  body .partner-pathways-section .partner-role-card-featured,
+  body .partner-pathways-section .partner-role-card-sponsor {
+    grid-template-columns: 1fr !important;
+  }
+
+  body .partner-pathways-section .partner-role-card-sponsor .partner-role-media {
+    order: 0 !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body .partner-pathways-section .partner-impact-layout {
+    gap: 16px !important;
+    overflow: hidden !important;
+    background: transparent !important;
+    border: 0 !important;
+  }
+
+  body .partner-pathways-section .partner-role-grid {
+    grid-template-columns: none !important;
+    grid-auto-flow: column !important;
+    grid-auto-columns: minmax(286px, 86%) !important;
+    gap: 16px !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    padding-bottom: 10px !important;
+    background: transparent !important;
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  body .partner-pathways-section .partner-role-grid::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  body .partner-pathways-section .partner-role-card {
+    scroll-snap-align: start !important;
+  }
+
+  body .partner-pathways-section .partner-role-card-featured,
+  body .partner-pathways-section .partner-role-card-sponsor {
+    display: grid !important;
+    gap: 22px !important;
+    padding: 24px !important;
+    border: 1px solid rgba(11, 31, 51, 0.10) !important;
+  }
+
+  body .partner-pathways-section .partner-role-media,
+  body .partner-pathways-section .partner-role-card-featured .partner-role-media,
+  body .partner-pathways-section .partner-role-card-sponsor .partner-role-media {
+    min-height: 220px !important;
+  }
+
+  body .downtown-live-actions {
+    grid-template-columns: none !important;
+    grid-auto-flow: column !important;
+    grid-auto-columns: minmax(240px, 78%) !important;
+    gap: 12px !important;
+    overflow-x: auto !important;
+    background: transparent !important;
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important;
+  }
+
+  body .downtown-live-actions::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  body .downtown-live-actions article {
+    border: 1px solid rgba(11, 31, 51, 0.10) !important;
+    scroll-snap-align: start !important;
+  }
+}
