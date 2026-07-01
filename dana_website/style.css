@@ -25229,3 +25229,99 @@ body .section.landing-issues.issues-editorial .issue-rail-progress span {
     max-width: 100% !important;
   }
 }
+
+/* Subpage editorial media bands */
+body .subpage-media-section {
+  background: #f7f8fb;
+  color: #072f24;
+  padding-block: clamp(56px, 7vw, 96px);
+}
+
+body .subpage-media-section + .section {
+  padding-top: clamp(56px, 7vw, 96px);
+}
+
+body .subpage-media-band {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
+  gap: clamp(24px, 4vw, 56px);
+  align-items: center;
+}
+
+body .subpage-media-band-reverse figure {
+  order: 2;
+}
+
+body .subpage-media-band figure {
+  position: relative;
+  min-width: 0;
+  min-height: clamp(260px, 34vw, 440px);
+  margin: 0;
+  overflow: hidden;
+  background: #072f24;
+}
+
+body .subpage-media-band figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(7, 47, 36, 0.08), rgba(7, 47, 36, 0.28)),
+    linear-gradient(to top, rgba(7, 47, 36, 0.18), transparent 55%);
+  pointer-events: none;
+}
+
+body .subpage-media-band img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body .subpage-media-band h2 {
+  margin: 0;
+  color: #072f24;
+  font-family: var(--font-serif, "Instrument Serif", serif);
+  font-size: clamp(2.2rem, 4.4vw, 4.25rem);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+
+body .subpage-media-band p:not(.eyebrow) {
+  max-width: 38rem;
+  margin: 1rem 0 0;
+  color: rgba(7, 47, 36, 0.72);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 820px) {
+  body .subpage-media-band,
+  body .subpage-media-band-reverse {
+    grid-template-columns: 1fr;
+  }
+
+  body .subpage-media-band-reverse figure {
+    order: 0;
+  }
+
+  body .subpage-media-band figure {
+    min-height: auto;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 430px) {
+  body .subpage-media-section {
+    padding-block: 3rem;
+  }
+
+  body .subpage-media-band h2 {
+    font-size: clamp(1.85rem, 9vw, 2.45rem);
+  }
+
+  body .subpage-media-band p:not(.eyebrow) {
+    font-size: 0.96rem;
+  }
+}
