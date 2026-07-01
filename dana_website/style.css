@@ -26058,3 +26058,412 @@ body .dana-what-board.dana-what-carousel .dana-what-media img {
   height: 100% !important;
   object-fit: cover !important;
 }
+
+/* Sponsors page carousel polish and approved subpage palette */
+body:not(.home) main,
+body main {
+  background:
+    radial-gradient(circle at 50% 18%, rgba(194, 171, 122, 0.09), transparent 32rem),
+    #ffffff !important;
+}
+
+body .page-hero,
+body .sponsor-guide-intro,
+body .sponsor-connections,
+body .sponsor-showcase-section,
+body .sponsor-community,
+body .contact-section,
+body .governance-page,
+body .board-intro,
+body .board-governance,
+body .resident-resource-section {
+  background: transparent !important;
+}
+
+body .section-muted,
+body .sponsor-map-section,
+body .subpage-media-section,
+body .events-section,
+body .governance-record-overview,
+body .board-roster-section {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(194, 171, 122, 0.12), transparent 30rem),
+    #f7f8fb !important;
+}
+
+body .sponsor-page-carousel {
+  display: grid !important;
+  gap: 1rem !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+body .sponsor-page-carousel-track,
+body .sponsor-place-rail.sponsor-page-carousel-track,
+body .sponsor-connection-list.sponsor-page-carousel-track,
+body .partner-support-list.sponsor-page-carousel-track {
+  display: grid !important;
+  grid-auto-flow: column !important;
+  grid-auto-columns: minmax(340px, 460px) !important;
+  grid-template-columns: none !important;
+  gap: clamp(16px, 2.4vw, 24px) !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  overscroll-behavior-x: contain !important;
+  scroll-snap-type: x mandatory !important;
+  scrollbar-width: none !important;
+  padding: 0 0 0.4rem !important;
+}
+
+body .sponsor-page-carousel-track::-webkit-scrollbar {
+  display: none !important;
+}
+
+body .sponsor-page-carousel-track article,
+body .sponsor-place-rail.sponsor-page-carousel-track article,
+body .sponsor-connection-list.sponsor-page-carousel-track article,
+body .partner-support-list.sponsor-page-carousel-track article {
+  scroll-snap-align: start !important;
+  min-width: 0 !important;
+  min-height: 260px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: #ffffff !important;
+  box-shadow: 0 22px 70px rgba(7, 47, 36, 0.07) !important;
+  padding: clamp(24px, 4vw, 38px) !important;
+}
+
+body .sponsor-page-carousel-track article span,
+body .partner-support-list.sponsor-page-carousel-track article span {
+  color: #c2ab7a !important;
+  font-size: 0.73rem !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+}
+
+body .sponsor-page-carousel-track article h3,
+body .partner-support-list.sponsor-page-carousel-track article strong {
+  margin-top: clamp(1.2rem, 3vw, 2rem) !important;
+  color: #072f24 !important;
+  font-family: var(--font-serif, "Instrument Serif", Georgia, serif) !important;
+  font-size: clamp(1.7rem, 3.5vw, 2.7rem) !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.03em !important;
+}
+
+body .sponsor-page-carousel-track article p {
+  margin-top: 1rem !important;
+  color: rgba(7, 47, 36, 0.72) !important;
+  line-height: 1.62 !important;
+}
+
+body .sponsor-page-carousel-controls {
+  display: grid !important;
+  grid-template-columns: auto minmax(84px, 180px) auto !important;
+  gap: 0.75rem !important;
+  align-items: center !important;
+  justify-content: start !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+}
+
+body .sponsor-page-carousel-controls button {
+  min-height: 40px !important;
+  padding: 0.62rem 0.85rem !important;
+  border: 1px solid rgba(7, 47, 36, 0.12) !important;
+  border-radius: 0 !important;
+  background: rgba(255, 255, 255, 0.84) !important;
+  color: #072f24 !important;
+  box-shadow: 0 12px 34px rgba(7, 47, 36, 0.055) !important;
+  font-size: 0.7rem !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.11em !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+}
+
+body .sponsor-page-carousel-controls button:hover,
+body .sponsor-page-carousel-controls button:focus-visible {
+  background:
+    linear-gradient(135deg, rgba(194, 171, 122, 0.22), transparent 48%),
+    #072f24 !important;
+  border-color: rgba(194, 171, 122, 0.44) !important;
+  color: #ffffff !important;
+}
+
+body .sponsor-page-carousel-controls button:disabled {
+  opacity: 0.44 !important;
+  cursor: not-allowed !important;
+}
+
+body .sponsor-page-carousel-progress {
+  position: relative !important;
+  height: 2px !important;
+  width: min(180px, 32vw) !important;
+  overflow: hidden !important;
+  background: rgba(7, 47, 36, 0.16) !important;
+}
+
+body .sponsor-page-carousel-progress span {
+  display: block !important;
+  width: 25% !important;
+  height: 100% !important;
+  background: #c2ab7a !important;
+}
+
+@media (max-width: 760px) {
+  body .sponsor-page-carousel-track,
+  body .sponsor-place-rail.sponsor-page-carousel-track,
+  body .sponsor-connection-list.sponsor-page-carousel-track,
+  body .partner-support-list.sponsor-page-carousel-track {
+    grid-auto-columns: calc(100vw - 48px) !important;
+  }
+
+  body .sponsor-page-carousel-track article {
+    min-height: 235px !important;
+  }
+
+  body .sponsor-page-carousel-controls {
+    grid-template-columns: auto minmax(72px, 1fr) auto !important;
+    width: 100% !important;
+  }
+
+  body .sponsor-page-carousel-progress {
+    width: 100% !important;
+  }
+}
+
+/* Homepage Issues CTA relocation and editorial cadence polish */
+body .section.landing-issues.issues-editorial {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(194, 171, 122, 0.11), transparent 34rem),
+    #f7f8fb !important;
+  padding-block: clamp(76px, 10vw, 136px) !important;
+}
+
+body .section.landing-issues.issues-editorial > .shell {
+  max-width: 1180px !important;
+}
+
+body .section.landing-issues.issues-editorial .section-header.section-header-row {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: end !important;
+  gap: clamp(24px, 5vw, 64px) !important;
+}
+
+body .section.landing-issues.issues-editorial .section-header h2 {
+  max-width: 760px !important;
+}
+
+body .section.landing-issues.issues-editorial .section-header p:not(.eyebrow) {
+  max-width: 660px !important;
+  margin-top: 1rem !important;
+}
+
+body .issues-header-actions {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 0.9rem !important;
+  flex-wrap: wrap !important;
+}
+
+body .issues-header-actions .text-link,
+body .issues-header-actions .hero-secondary-link {
+  min-height: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  color: #8f7132 !important;
+  font-size: 0.78rem !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  text-decoration-color: rgba(194, 171, 122, 0.85) !important;
+  text-underline-offset: 0.28em !important;
+}
+
+body .issues-header-actions .text-link::after,
+body .issues-header-actions .hero-secondary-link::after {
+  content: none !important;
+  display: none !important;
+}
+
+body .issues-header-actions .button {
+  min-height: 44px !important;
+  padding: 0.82rem 1.05rem !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.13em !important;
+}
+
+body .section.landing-issues.issues-editorial .issue-rail {
+  gap: clamp(1rem, 2vw, 1.35rem) !important;
+}
+
+body .section.landing-issues.issues-editorial .issue-rail-status {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.55rem !important;
+  flex-wrap: wrap !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  color: #c2ab7a !important;
+}
+
+body .section.landing-issues.issues-editorial .issue-rail-status span {
+  min-height: 34px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 0.48rem 0.68rem !important;
+  background: rgba(255, 255, 255, 0.74) !important;
+  box-shadow: 0 12px 38px rgba(7, 47, 36, 0.055) !important;
+  color: #8f7132 !important;
+  font-size: 0.68rem !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.12em !important;
+  line-height: 1.15 !important;
+  text-transform: uppercase !important;
+}
+
+body .section.landing-issues.issues-editorial .issue-card {
+  border: 0 !important;
+  box-shadow: 0 24px 80px rgba(7, 47, 36, 0.075) !important;
+}
+
+body .section.landing-issues.issues-editorial .issue-card-visual {
+  background:
+    linear-gradient(135deg, rgba(194, 171, 122, 0.22), transparent 54%),
+    #072f24 !important;
+}
+
+body .section.landing-issues.issues-editorial .issue-rail-controls {
+  justify-content: flex-start !important;
+  margin-inline: 0 !important;
+}
+
+@media (max-width: 760px) {
+  body .section.landing-issues.issues-editorial .section-header.section-header-row {
+    grid-template-columns: 1fr !important;
+    align-items: start !important;
+  }
+
+  body .issues-header-actions {
+    justify-content: flex-start !important;
+    width: 100% !important;
+  }
+
+  body .issues-header-actions .button,
+  body .issues-header-actions .text-link {
+    flex: 0 0 auto !important;
+  }
+
+  body .section.landing-issues.issues-editorial .issue-rail-status {
+    padding-inline: 20px !important;
+  }
+
+  body .section.landing-issues.issues-editorial .issue-rail-controls {
+    margin-inline: auto !important;
+    justify-content: center !important;
+  }
+}
+
+/* Subpage alignment and white-background polish lock */
+body:has(.page-hero) {
+  background: #ffffff !important;
+}
+
+body:has(.page-hero) main {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(194, 171, 122, 0.075), transparent 34rem),
+    #ffffff !important;
+}
+
+body:has(.page-hero) .shell,
+body:has(.page-hero) .nav-shell,
+body:has(.page-hero) .footer-layout,
+body:has(.page-hero) .footer-bottom {
+  width: min(1180px, calc(100% - clamp(40px, 7vw, 96px))) !important;
+  max-width: none !important;
+  margin-inline: auto !important;
+}
+
+body:has(.page-hero) .page-hero {
+  padding-top: clamp(116px, 13vw, 156px) !important;
+  padding-bottom: clamp(52px, 7vw, 88px) !important;
+  background: transparent !important;
+}
+
+body:has(.page-hero) .page-hero .shell {
+  display: block !important;
+}
+
+body:has(.page-hero) .page-hero .eyebrow,
+body:has(.page-hero) .page-hero h1,
+body:has(.page-hero) .page-hero p {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+body:has(.page-hero) .page-hero h1 {
+  max-width: 880px !important;
+}
+
+body:has(.page-hero) .page-hero p:not(.eyebrow) {
+  max-width: 680px !important;
+}
+
+body:has(.page-hero) .subpage-back-link {
+  margin-top: 0.15rem !important;
+  margin-bottom: clamp(1.15rem, 2.8vw, 1.85rem) !important;
+}
+
+body:has(.page-hero) .section,
+body:has(.page-hero) .section-muted,
+body:has(.page-hero) .subpage-media-section,
+body:has(.page-hero) .sponsor-map-section,
+body:has(.page-hero) .events-section,
+body:has(.page-hero) .governance-record-overview,
+body:has(.page-hero) .board-roster-section {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(194, 171, 122, 0.055), transparent 28rem),
+    #ffffff !important;
+}
+
+body:has(.page-hero) .section > .shell,
+body:has(.page-hero) .page-hero > .shell {
+  transform: none !important;
+}
+
+body:has(.page-hero) .section-header,
+body:has(.page-hero) .section-header-row,
+body:has(.page-hero) .sponsor-guide-grid,
+body:has(.page-hero) .sponsor-connection-grid,
+body:has(.page-hero) .newsletter-inner,
+body:has(.page-hero) .contact-layout,
+body:has(.page-hero) .governance-grid,
+body:has(.page-hero) .board-grid,
+body:has(.page-hero) .event-feature-layout {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+@media (max-width: 760px) {
+  body:has(.page-hero) .shell,
+  body:has(.page-hero) .nav-shell,
+  body:has(.page-hero) .footer-layout,
+  body:has(.page-hero) .footer-bottom {
+    width: calc(100% - 40px) !important;
+  }
+
+  body:has(.page-hero) .page-hero {
+    padding-top: 108px !important;
+    padding-bottom: 48px !important;
+  }
+}

@@ -8,16 +8,17 @@ const SITE_NAV = `
     </button>
     <div class="nav-panel" id="primary-menu">
       <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="issues.html">Issues</a></li>
         <li><a href="public-safety.html">Public Safety</a></li>
         <li><a href="events.html">Events</a></li>
-        <li><a href="join.html">Join</a></li>
         <li><a href="sponsors.html">Partners</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
         <li><a href="board.html">Leadership</a></li>
         <li><a href="governance.html">Governance</a></li>
         <li><a href="committees.html">Committees</a></li>
-        <li><a href="volunteer.html">Volunteer</a></li>
         <li><a href="newsletter.html">Newsletter</a></li>
         <li><a href="archive.html">Archive</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -1005,6 +1006,95 @@ function setupPartnerPathwaysCarousel() {
   });
 }
 
+function setupSponsorPageCarousels() {
+  document.querySelectorAll("[data-sponsor-page-carousel]").forEach((carousel) => {
+    const track = carousel.querySelector(".sponsor-page-carousel-track");
+    const cards = Array.from(track?.querySelectorAll("article") || []);
+    const prev = carousel.querySelector("[data-sponsor-page-prev]");
+    const next = carousel.querySelector("[data-sponsor-page-next]");
+    const progress = carousel.querySelector("[data-sponsor-page-progress]");
+    if (!track || !cards.length) return;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let intervalId = null;
+
+    const update = () => {
+      const maxScroll = Math.max(track.scrollWidth - track.clientWidth, 1);
+      const ratio = Math.min(1, Math.max(0, track.scrollLeft / maxScroll));
+      const base = 1 / cards.length;
+      if (progress) progress.style.width = `${(base + ratio * (1 - base)) * 100}%`;
+      if (prev) prev.disabled = track.scrollLeft <= 2;
+      if (next) next.disabled = track.scrollLeft >= maxScroll - 2;
+    };
+
+    const scrollByCard = (direction) => {
+      const card = cards[0];
+      const gap = parseFloat(window.getComputedStyle(track).columnGap || window.getComputedStyle(track).gap || "0");
+      const amount = card.getBoundingClientRect().width + gap;
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      const atEnd = track.scrollLeft >= maxScroll - 2;
+      const atStart = track.scrollLeft <= 2;
+
+      if (direction > 0 && atEnd) {
+        track.scrollTo({ left: 0, behavior: reduceMotion ? "auto" : "smooth" });
+        return;
+      }
+
+      if (direction < 0 && atStart) {
+        track.scrollTo({ left: maxScroll, behavior: reduceMotion ? "auto" : "smooth" });
+        return;
+      }
+
+      track.scrollBy({ left: amount * direction, behavior: reduceMotion ? "auto" : "smooth" });
+    };
+
+    const stopAuto = () => {
+      if (!intervalId) return;
+      window.clearInterval(intervalId);
+      intervalId = null;
+    };
+
+    prev?.addEventListener("click", () => {
+      stopAuto();
+      scrollByCard(-1);
+    });
+
+    next?.addEventListener("click", () => {
+      stopAuto();
+      scrollByCard(1);
+    });
+
+    track.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        stopAuto();
+        scrollByCard(-1);
+      }
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        stopAuto();
+        scrollByCard(1);
+      }
+    });
+
+    track.addEventListener("pointerdown", stopAuto, { passive: true });
+    track.addEventListener("focusin", stopAuto);
+    track.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+
+    if (!reduceMotion && cards.length > 1) {
+      intervalId = window.setInterval(() => {
+        const rect = carousel.getBoundingClientRect();
+        if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+        scrollByCard(1);
+      }, 5200);
+    }
+
+    update();
+  });
+}
+
 function setupSponsorShowcase() {
   const tabs = document.querySelector("[data-sponsor-tabs]");
   const details = document.querySelector("[data-sponsor-details]");
@@ -1255,6 +1345,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   setupDanaWhatPillarMorph();
   setupDanaWhatCarousel();
   setupPartnerPathwaysCarousel();
+  setupSponsorPageCarousels();
   initStartHereStack();
   const [issues, events, membership] = await Promise.all([
     getJson("data/issues.json", "issues"),
