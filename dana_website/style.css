@@ -26467,3 +26467,573 @@ body:has(.page-hero) .event-feature-layout {
     padding-bottom: 48px !important;
   }
 }
+
+/* Civic Editorial Desk: homepage Issues Briefing */
+body .civic-briefing-section {
+  background:
+    radial-gradient(circle at 78% 8%, rgba(194, 171, 122, 0.08), transparent 28rem),
+    #f7f8fb !important;
+  color: #1f2a27 !important;
+  overflow: hidden !important;
+  padding-block: clamp(80px, 10vw, 140px) !important;
+}
+
+body .civic-briefing-shell {
+  display: grid !important;
+  gap: clamp(28px, 4vw, 48px) !important;
+  max-width: 1180px !important;
+}
+
+body .civic-briefing-header {
+  align-items: end !important;
+  gap: clamp(24px, 5vw, 64px) !important;
+}
+
+body .civic-briefing-header h2 {
+  max-width: 760px !important;
+  color: #072f24 !important;
+  font-family: var(--font-serif, "Instrument Serif", Georgia, serif) !important;
+  font-size: clamp(2.25rem, 4.5vw, 3.75rem) !important;
+  font-weight: 500 !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.035em !important;
+  text-wrap: balance !important;
+}
+
+body .civic-briefing-header p:not(.eyebrow) {
+  max-width: 700px !important;
+  color: rgba(7, 47, 36, 0.68) !important;
+  line-height: 1.65 !important;
+}
+
+body .civic-briefing-stats {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  border-block: 1px solid rgba(7, 47, 36, 0.12) !important;
+}
+
+body .civic-briefing-stats span {
+  display: grid !important;
+  gap: 0.35rem !important;
+  padding: 1rem clamp(0.8rem, 1.5vw, 1.25rem) !important;
+  color: rgba(7, 47, 36, 0.68) !important;
+  font-size: 0.92rem !important;
+  line-height: 1.35 !important;
+}
+
+body .civic-briefing-stats span + span {
+  border-left: 1px solid rgba(7, 47, 36, 0.12) !important;
+}
+
+body .civic-briefing-stats strong {
+  color: #c2ab7a !important;
+  font-size: 0.68rem !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+}
+
+body .civic-briefing-layout {
+  display: grid !important;
+  grid-template-columns: minmax(280px, 0.38fr) minmax(0, 0.62fr) !important;
+  gap: clamp(28px, 5vw, 64px) !important;
+  align-items: start !important;
+}
+
+body .civic-issue-index {
+  display: grid !important;
+  border-top: 1px solid rgba(7, 47, 36, 0.12) !important;
+}
+
+body .civic-issue-button {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: 44px minmax(0, 1fr) !important;
+  gap: 0.9rem !important;
+  align-items: baseline !important;
+  width: 100% !important;
+  min-height: 82px !important;
+  padding: 1.1rem 0 1.1rem 1rem !important;
+  border: 0 !important;
+  border-bottom: 1px solid rgba(7, 47, 36, 0.12) !important;
+  background: transparent !important;
+  color: rgba(7, 47, 36, 0.62) !important;
+  text-align: left !important;
+  cursor: pointer !important;
+}
+
+body .civic-issue-button::before {
+  position: absolute !important;
+  inset: 0 auto 0 0 !important;
+  width: 2px !important;
+  background: #c2ab7a !important;
+  opacity: 0 !important;
+  content: "" !important;
+  transform: scaleY(0.48) !important;
+  transition:
+    opacity 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+body .civic-issue-button span {
+  color: rgba(194, 171, 122, 0.75) !important;
+  font-size: 0.78rem !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.14em !important;
+}
+
+body .civic-issue-button strong {
+  display: block !important;
+  color: inherit !important;
+  font-family: var(--font-serif, "Instrument Serif", Georgia, serif) !important;
+  font-size: clamp(1.45rem, 2.4vw, 2.25rem) !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.025em !important;
+  transition:
+    color 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+body .civic-issue-button em {
+  grid-column: 2 !important;
+  margin-top: 0.3rem !important;
+  color: rgba(7, 47, 36, 0.52) !important;
+  font-size: 0.68rem !important;
+  font-style: normal !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+}
+
+body .civic-issue-button:hover::before,
+body .civic-issue-button:focus-visible::before,
+body .civic-issue-button.is-active::before {
+  opacity: 1 !important;
+  transform: scaleY(1) !important;
+}
+
+body .civic-issue-button:hover strong,
+body .civic-issue-button:focus-visible strong,
+body .civic-issue-button.is-active strong {
+  color: #072f24 !important;
+  transform: translateX(8px) !important;
+}
+
+body .civic-issue-button.is-active span {
+  color: #c2ab7a !important;
+}
+
+body .civic-issue-detail {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr) !important;
+  min-height: 680px !important;
+  overflow: hidden !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(7, 47, 36, 0.08) !important;
+  color: #1f2a27 !important;
+  box-shadow: 0 28px 90px rgba(7, 47, 36, 0.08) !important;
+  isolation: isolate !important;
+}
+
+body .civic-issue-detail.is-updated {
+  animation: civicDetailIn 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body .civic-map-lines {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: -1 !important;
+  opacity: 0.62 !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(36deg, transparent 0 31%, rgba(7, 47, 36, 0.10) 31.2% 31.5%, transparent 31.7%),
+    linear-gradient(126deg, transparent 0 42%, rgba(7, 47, 36, 0.10) 42.2% 42.5%, transparent 42.7%),
+    linear-gradient(88deg, transparent 0 57%, rgba(7, 47, 36, 0.08) 57.2% 57.4%, transparent 57.6%),
+    radial-gradient(circle at 18% 24%, #c2ab7a 0 3px, transparent 4px),
+    radial-gradient(circle at 44% 58%, #072f24 0 4px, transparent 5px),
+    radial-gradient(circle at 78% 34%, #c2ab7a 0 3px, transparent 4px),
+    radial-gradient(circle at 64% 78%, #c2ab7a 0 3px, transparent 4px) !important;
+}
+
+body .civic-issue-media {
+  position: relative !important;
+  min-height: 100% !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  background: #072f24 !important;
+}
+
+body .civic-issue-media::after {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(180deg, rgba(7, 47, 36, 0), rgba(7, 47, 36, 0.22)) !important;
+  content: "" !important;
+  pointer-events: none !important;
+}
+
+body .civic-issue-media img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+body .civic-issue-detail:hover .civic-issue-media img {
+  transform: scale(1.03) !important;
+}
+
+body .civic-issue-copy {
+  position: relative !important;
+  z-index: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: clamp(28px, 4vw, 46px) !important;
+}
+
+body .civic-issue-copy .status-pill {
+  width: fit-content !important;
+  margin-bottom: 1.15rem !important;
+  border: 0 !important;
+  color: #072f24 !important;
+  background: rgba(7, 47, 36, 0.08) !important;
+}
+
+body .civic-issue-copy .status-in-planning {
+  background: transparent !important;
+  border: 1px solid rgba(194, 171, 122, 0.45) !important;
+}
+
+body .civic-issue-copy .status-community-project,
+body .civic-issue-copy .status-community-conversation {
+  background: rgba(194, 171, 122, 0.08) !important;
+}
+
+body .civic-issue-copy .status-long-term-project {
+  background: transparent !important;
+  border: 1px solid rgba(7, 47, 36, 0.18) !important;
+}
+
+body .civic-issue-copy .status-city-project {
+  background: rgba(7, 47, 36, 0.04) !important;
+  border: 1px solid rgba(7, 47, 36, 0.12) !important;
+}
+
+body .civic-issue-copy h3 {
+  margin: 0 !important;
+  color: #072f24 !important;
+  font-family: var(--font-serif, "Instrument Serif", Georgia, serif) !important;
+  font-size: clamp(2.2rem, 4vw, 4rem) !important;
+  font-weight: 500 !important;
+  line-height: 0.96 !important;
+  letter-spacing: -0.04em !important;
+  text-wrap: balance !important;
+}
+
+body .civic-issue-summary,
+body .civic-resident-impact {
+  max-width: 38rem !important;
+  margin: 1rem 0 0 !important;
+  color: rgba(7, 47, 36, 0.68) !important;
+  font-size: 1rem !important;
+  line-height: 1.65 !important;
+}
+
+body .civic-resident-impact strong {
+  color: #072f24 !important;
+}
+
+body .civic-meta-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 1px !important;
+  margin-top: 1.5rem !important;
+  background: rgba(7, 47, 36, 0.08) !important;
+}
+
+body .civic-meta-grid div {
+  display: grid !important;
+  gap: 0.35rem !important;
+  min-width: 0 !important;
+  padding: 0.9rem !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+}
+
+body .civic-meta-grid span {
+  color: rgba(7, 47, 36, 0.52) !important;
+  font-size: 0.66rem !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+}
+
+body .civic-meta-grid strong {
+  color: #072f24 !important;
+  font-size: 0.96rem !important;
+  line-height: 1.25 !important;
+}
+
+body .civic-meta-grid div:nth-child(1) strong,
+body .civic-meta-grid div:nth-child(3) strong,
+body .civic-meta-grid div:nth-child(6) strong {
+  color: #c2ab7a !important;
+}
+
+body .civic-progress {
+  display: grid !important;
+  gap: 0 !important;
+  margin-top: 1.4rem !important;
+}
+
+body .civic-progress-step {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: 18px minmax(0, 1fr) !important;
+  gap: 0.75rem !important;
+  min-height: 32px !important;
+  color: rgba(7, 47, 36, 0.48) !important;
+}
+
+body .civic-progress-step::before {
+  position: absolute !important;
+  top: 15px !important;
+  bottom: -15px !important;
+  left: 6px !important;
+  width: 1px !important;
+  background: rgba(7, 47, 36, 0.16) !important;
+  content: "" !important;
+}
+
+body .civic-progress-step:last-child::before {
+  display: none !important;
+}
+
+body .civic-progress-step span {
+  width: 13px !important;
+  height: 13px !important;
+  margin-top: 0.2rem !important;
+  border: 1px solid rgba(7, 47, 36, 0.16) !important;
+  border-radius: 999px !important;
+  background: #ffffff !important;
+}
+
+body .civic-progress-step strong {
+  color: inherit !important;
+  font-size: 0.78rem !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+}
+
+body .civic-progress-step.is-complete::before,
+body .civic-progress-step.is-complete span {
+  background: #c2ab7a !important;
+  border-color: #c2ab7a !important;
+}
+
+body .civic-progress-step.is-current {
+  color: #072f24 !important;
+}
+
+body .civic-progress-step.is-current span {
+  background: #072f24 !important;
+  border-color: #072f24 !important;
+}
+
+body .civic-update-note {
+  margin-top: 1.4rem !important;
+  padding: 1rem !important;
+  border: 1px solid rgba(7, 47, 36, 0.08) !important;
+  background: rgba(7, 47, 36, 0.04) !important;
+}
+
+body .civic-update-note span {
+  color: #c2ab7a !important;
+  font-size: 0.68rem !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+}
+
+body .civic-update-note p {
+  margin: 0.5rem 0 0 !important;
+  color: rgba(7, 47, 36, 0.68) !important;
+  line-height: 1.55 !important;
+}
+
+body .civic-issue-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 0.95rem !important;
+  margin-top: auto !important;
+  padding-top: 1.6rem !important;
+}
+
+body .civic-issue-actions .button {
+  background: #072f24 !important;
+  color: #ffffff !important;
+}
+
+body .civic-issue-actions .button:hover,
+body .civic-issue-actions .button:focus-visible {
+  background: #0b3b2e !important;
+}
+
+body .civic-issue-actions .text-link {
+  color: #072f24 !important;
+  text-decoration-color: #c2ab7a !important;
+}
+
+body .civic-briefing-mobile {
+  display: none !important;
+}
+
+@keyframes civicDetailIn {
+  from {
+    opacity: 0.84;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 960px) {
+  body .civic-briefing-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  body .civic-briefing-stats span + span {
+    border-left: 0 !important;
+  }
+
+  body .civic-briefing-stats span:nth-child(even) {
+    border-left: 1px solid rgba(7, 47, 36, 0.12) !important;
+  }
+
+  body .civic-briefing-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  body .civic-issue-detail {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+
+  body .civic-issue-media {
+    min-height: 340px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body .civic-briefing-section {
+    padding-block: 72px !important;
+  }
+
+  body .civic-briefing-header {
+    grid-template-columns: 1fr !important;
+    align-items: start !important;
+  }
+
+  body .civic-briefing-stats {
+    grid-template-columns: 1fr !important;
+  }
+
+  body .civic-briefing-stats span,
+  body .civic-briefing-stats span:nth-child(even) {
+    border-left: 0 !important;
+    border-top: 1px solid rgba(7, 47, 36, 0.12) !important;
+  }
+
+  body .civic-briefing-stats span:first-child {
+    border-top: 0 !important;
+  }
+
+  body .civic-briefing-layout {
+    display: none !important;
+  }
+
+  body .civic-briefing-mobile {
+    display: grid !important;
+    gap: 1rem !important;
+  }
+
+  body .civic-mobile-issue {
+    overflow: hidden !important;
+    background: #ffffff !important;
+    box-shadow: 0 22px 70px rgba(7, 47, 36, 0.07) !important;
+  }
+
+  body .civic-mobile-heading {
+    display: grid !important;
+    grid-template-columns: 44px minmax(0, 1fr) !important;
+    gap: 0.8rem !important;
+    align-items: baseline !important;
+    padding: 1.25rem 1.25rem 0 !important;
+  }
+
+  body .civic-mobile-heading span {
+    color: #c2ab7a !important;
+    font-size: 0.78rem !important;
+    font-weight: 850 !important;
+    letter-spacing: 0.14em !important;
+  }
+
+  body .civic-mobile-heading h3 {
+    margin: 0 !important;
+    color: #072f24 !important;
+    font-family: var(--font-serif, "Instrument Serif", Georgia, serif) !important;
+    font-size: clamp(1.7rem, 8vw, 2.35rem) !important;
+    font-weight: 500 !important;
+    line-height: 1 !important;
+    letter-spacing: -0.03em !important;
+  }
+
+  body .civic-mobile-issue .civic-issue-media {
+    min-height: 210px !important;
+    margin-top: 1.2rem !important;
+  }
+
+  body .civic-mobile-issue .civic-issue-copy {
+    padding: 1.25rem !important;
+  }
+
+  body .civic-mobile-issue .civic-meta-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  body .civic-mobile-issue .civic-issue-actions {
+    margin-top: 1rem !important;
+  }
+
+  body .civic-map-lines,
+  body .civic-progress {
+    display: none !important;
+  }
+}
+
+@media (max-width: 430px) {
+  body .civic-mobile-issue .civic-meta-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body .civic-issue-button::before,
+  body .civic-issue-button strong,
+  body .civic-issue-media img,
+  body .civic-issue-detail,
+  body .civic-issue-detail.is-updated {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  body .civic-issue-detail:hover .civic-issue-media img {
+    transform: none !important;
+  }
+}

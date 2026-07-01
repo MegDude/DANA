@@ -16,7 +16,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:image" content="images/austin.jpg" />
     <link rel="canonical" href="https://danawebsite-tawny.vercel.app/" />
-    <link rel="stylesheet" href="style.css?v=20260701-subpagealign1" />
+    <link rel="stylesheet" href="style.css?v=20260701-civicdesk1" />
+    <link rel="icon" href="images/dana-pin.png" type="image/png" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -461,40 +462,38 @@
         </div>
       </section>
 
-      <section class="section landing-issues issues-editorial" aria-labelledby="homepage-issues-title">
-        <div class="shell">
-          <div class="section-header section-header-row">
+      <section class="section landing-issues issues-editorial civic-briefing-section" aria-labelledby="homepage-issues-title">
+        <div class="shell civic-briefing-shell js-reveal">
+          <div class="civic-briefing-header section-header section-header-row">
             <div>
               <p class="eyebrow">Issues Briefing</p>
-              <h2 id="homepage-issues-title">Issues that shape daily life downtown.</h2>
+              <h2 id="homepage-issues-title">Issues shaping downtown today.</h2>
               <p>
-                A clear look at the projects, decisions, and neighborhood priorities DANA is following for downtown residents.
+                A clear look at the projects, decisions, and neighborhood priorities DANA is following for downtown residents &mdash; with the short version, the resident impact, and the next useful step.
               </p>
             </div>
             <div class="issues-header-actions" aria-label="Issues section actions">
-              <a class="text-link hero-secondary-link" href="issues.html">Read Updates</a>
-              <a class="button button-primary" href="issues.html">Explore Issues</a>
+              <a class="button button-primary" href="issues.html">Explore all issues</a>
             </div>
           </div>
 
-          <div class="issue-rail" data-issues-rail>
-            <div class="issue-rail-status" aria-label="Issue briefing status">
-              <span>Recently Updated</span>
-              <span>Resident Input Needed</span>
-              <span>Long-Term Projects</span>
-            </div>
-            <div class="issue-rail-viewport">
-              <div class="issue-grid issue-rail-track" data-issues-preview tabindex="0" aria-label="Issues DANA is following"></div>
-            </div>
-            <div class="issue-rail-controls" aria-label="Issue card controls">
-              <button type="button" data-issues-prev aria-label="Scroll to previous issue">Prev</button>
-              <div class="issue-rail-progress" aria-hidden="true">
-                <span data-issues-progress></span>
-              </div>
-              <button type="button" data-issues-next aria-label="Scroll to next issue">Next</button>
-            </div>
+          <div class="civic-briefing-stats" aria-label="Current civic briefing summary">
+            <span><strong>Currently following</strong> 6 issues</span>
+            <span><strong>Public meetings</strong> 3 upcoming</span>
+            <span><strong>Open feedback</strong> 2 active</span>
+            <span><strong>Volunteer needs</strong> 1 this month</span>
+            <span><strong>Last updated</strong> This week</span>
           </div>
-        </div>
+
+          <div class="civic-briefing-layout" data-civic-briefing>
+            <div class="civic-issue-index" role="tablist" aria-label="Issues DANA is following" data-civic-issue-index></div>
+            <article class="civic-issue-detail" aria-live="polite" data-civic-issue-detail>
+              <div class="civic-map-lines" aria-hidden="true"></div>
+            </article>
+          </div>
+
+          <div class="civic-briefing-mobile" data-civic-briefing-mobile aria-label="Issues DANA is following"></div>
+          </div>
       </section>
 
       <section class="section downtown-action-section" aria-labelledby="downtown-action-title">
@@ -673,6 +672,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=20260701-subpagealign1"></script>
+    <script src="script.js?v=20260701-civicdesk1"></script>
   </body>
 </html>

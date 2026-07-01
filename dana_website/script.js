@@ -424,6 +424,285 @@ function renderIssuePreviewCard(issue) {
   `;
 }
 
+const civicBriefingIssues = [
+  {
+    id: "public-safety",
+    title: "Public Safety & Quality of Life",
+    shortTitle: "Public Safety",
+    status: "Recently Updated",
+    priority: "High",
+    stage: "Implementation",
+    progressStage: "Implementation",
+    updated: "This week",
+    residentsFollowing: "742",
+    nextMilestone: "Board discussion",
+    nextDate: "August 4",
+    summary: "Helping downtown feel safer, quieter, better lit, and easier to enjoy at different times of day.",
+    residentImpact: "Lighting, noise, late-night activity, walkability, street conditions, and daily comfort.",
+    latestUpdate: "DANA is tracking resident concerns around public safety, quality of life, lighting, and street-level conditions.",
+    primaryCta: "Read the issue",
+    url: "public-safety.html",
+    secondaryCta: "Share a concern",
+    secondaryUrl: "issues.html",
+    image: "images/dana-community-event.jpg",
+    imageAlt: "Downtown residents walking near lit streets at night."
+  },
+  {
+    id: "housing-development",
+    title: "Housing & Development",
+    shortTitle: "Housing",
+    status: "In Planning",
+    priority: "Medium",
+    stage: "Public review",
+    progressStage: "Review",
+    updated: "Recently",
+    residentsFollowing: "518",
+    nextMilestone: "Planning update",
+    nextDate: "TBD",
+    summary: "New homes, new buildings, and planning conversations that shape how downtown grows.",
+    residentImpact: "Construction, affordability, building scale, walkability, streetscape quality, and neighborhood character.",
+    latestUpdate: "DANA is watching how new development affects residents, mobility, street life, and downtown livability.",
+    primaryCta: "See the background",
+    url: "https://www.downtownaustin.org/toward-a-more-walkable-austin/",
+    secondaryCta: "Follow updates",
+    secondaryUrl: "issues.html",
+    image: "images/editorial/seaholm-district.jpg",
+    imageAlt: "Downtown Austin construction and mixed-use residential development."
+  },
+  {
+    id: "parks-public-spaces",
+    title: "Parks & Public Spaces",
+    shortTitle: "Parks",
+    status: "Community Project",
+    priority: "Medium",
+    stage: "Community action",
+    progressStage: "Public input",
+    updated: "This month",
+    residentsFollowing: "604",
+    nextMilestone: "Cleanup opportunity",
+    nextDate: "TBD",
+    summary: "Parks, trails, trees, plazas, and open spaces where people actually want to spend time.",
+    residentImpact: "Shade, comfort, trail access, creek health, public seating, and cleaner shared spaces.",
+    latestUpdate: "DANA is following public space improvements and opportunities for residents to support cleaner, greener downtown spaces.",
+    primaryCta: "See the background",
+    url: "https://www.downtownaustin.org/june-shoal-creek-clean-up/",
+    secondaryCta: "Volunteer",
+    secondaryUrl: "join.html",
+    image: "images/dana-trail-walkway.jpg",
+    imageAlt: "People walking along a downtown creek trail and public green space."
+  },
+  {
+    id: "i-35",
+    title: "I-35",
+    shortTitle: "I-35",
+    status: "Long-Term Project",
+    priority: "High",
+    stage: "Construction planning",
+    progressStage: "Planning",
+    updated: "Ongoing",
+    residentsFollowing: "689",
+    nextMilestone: "Mobility impact update",
+    nextDate: "TBD",
+    summary: "Construction, traffic changes, air quality, and how reconstruction may affect downtown residents.",
+    residentImpact: "Noise, traffic detours, crossings, commute times, air quality, and neighborhood connectivity.",
+    latestUpdate: "DANA is monitoring long-term construction impacts and how downtown residents may be affected by traffic and access changes.",
+    primaryCta: "Read the issue",
+    url: "issues.html",
+    secondaryCta: "Follow updates",
+    secondaryUrl: "issues.html",
+    image: "images/dana-mobility-highway.jpg",
+    imageAlt: "Downtown highway infrastructure and construction planning."
+  },
+  {
+    id: "project-connect",
+    title: "Project Connect",
+    shortTitle: "Transit",
+    status: "City Project",
+    priority: "Medium",
+    stage: "Planning",
+    progressStage: "Planning",
+    updated: "Ongoing",
+    residentsFollowing: "563",
+    nextMilestone: "Station planning",
+    nextDate: "TBD",
+    summary: "Austin's future transit network, including downtown station planning, timelines, and resident impact.",
+    residentImpact: "Transit access, station locations, construction timing, street changes, and future mobility.",
+    latestUpdate: "DANA is watching how transit planning connects with downtown residents, buildings, sidewalks, and daily movement.",
+    primaryCta: "Read the issue",
+    url: "issues.html",
+    secondaryCta: "View meetings",
+    secondaryUrl: "events.html",
+    image: "images/dana-waterloo-aerial.jpg",
+    imageAlt: "Downtown transit planning, rail corridor, and station area context."
+  },
+  {
+    id: "downtown-future",
+    title: "Downtown's Future",
+    shortTitle: "Downtown Future",
+    status: "Community Conversation",
+    priority: "Medium",
+    stage: "Resident feedback",
+    progressStage: "Public input",
+    updated: "Recently",
+    residentsFollowing: "801",
+    nextMilestone: "Resident input",
+    nextDate: "Open now",
+    summary: "Homes, local businesses, walkable streets, public life, and community events that help downtown feel like a neighborhood.",
+    residentImpact: "Local businesses, housing, events, public life, tourism pressure, and the day-to-day experience of living downtown.",
+    latestUpdate: "DANA is helping translate downtown planning conversations into practical updates residents can understand and respond to.",
+    primaryCta: "See the background",
+    url: "https://www.downtownaustin.org/dana-letter-c20-2024-018-ddbp-updates-2026-05-14/",
+    secondaryCta: "Join DANA",
+    secondaryUrl: "join.html",
+    image: "images/editorial/republic-square-lawn.jpg",
+    imageAlt: "Residents walking downtown near outdoor dining and active public life."
+  }
+];
+
+const civicBriefingStages = ["Planning", "Public input", "Review", "Implementation", "Ongoing"];
+
+function civicStatusClass(status) {
+  return `status-${status.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`;
+}
+
+function renderCivicTimeline(issue) {
+  const currentIndex = civicBriefingStages.indexOf(issue.progressStage);
+  return `
+    <div class="civic-progress" aria-label="Current issue phase">
+      ${civicBriefingStages.map((stage, index) => {
+        const state = index < currentIndex ? "is-complete" : index === currentIndex ? "is-current" : "is-future";
+        return `
+          <div class="civic-progress-step ${state}">
+            <span aria-hidden="true"></span>
+            <strong>${stage}</strong>
+          </div>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function civicIssueDetailTemplate(issue) {
+  return `
+    <div class="civic-map-lines" aria-hidden="true"></div>
+    <figure class="civic-issue-media">
+      <img src="${issue.image}" alt="${issue.imageAlt}" loading="eager" decoding="async" />
+    </figure>
+    <div class="civic-issue-copy">
+      <span class="status-pill ${civicStatusClass(issue.status)}">${issue.status}</span>
+      <h3>${issue.title}</h3>
+      <p class="civic-issue-summary">${issue.summary}</p>
+      <p class="civic-resident-impact"><strong>Resident impact:</strong> ${issue.residentImpact}</p>
+      <div class="civic-meta-grid">
+        <div><span>Priority</span><strong>${issue.priority}</strong></div>
+        <div><span>Updated</span><strong>${issue.updated}</strong></div>
+        <div><span>Residents following</span><strong>${issue.residentsFollowing}</strong></div>
+        <div><span>Current phase</span><strong>${issue.stage}</strong></div>
+        <div><span>Next milestone</span><strong>${issue.nextMilestone}</strong></div>
+        <div><span>Next date</span><strong>${issue.nextDate}</strong></div>
+      </div>
+      ${renderCivicTimeline(issue)}
+      <div class="civic-update-note">
+        <span>Latest update</span>
+        <p>${issue.latestUpdate}</p>
+      </div>
+      <div class="civic-issue-actions">
+        <a class="button button-primary" href="${issue.url}">${issue.primaryCta}</a>
+        <a class="text-link" href="${issue.secondaryUrl}">${issue.secondaryCta}</a>
+      </div>
+    </div>
+  `;
+}
+
+function renderCivicMobileIssue(issue, index) {
+  return `
+    <article class="civic-mobile-issue">
+      <div class="civic-mobile-heading">
+        <span>${String(index + 1).padStart(2, "0")}</span>
+        <h3>${issue.title}</h3>
+      </div>
+      <figure class="civic-issue-media">
+        <img src="${issue.image}" alt="${issue.imageAlt}" loading="eager" decoding="async" />
+      </figure>
+      <div class="civic-issue-copy">
+        <span class="status-pill ${civicStatusClass(issue.status)}">${issue.status}</span>
+        <p class="civic-issue-summary">${issue.summary}</p>
+        <p class="civic-resident-impact"><strong>Resident impact:</strong> ${issue.residentImpact}</p>
+        <div class="civic-meta-grid">
+          <div><span>Priority</span><strong>${issue.priority}</strong></div>
+          <div><span>Updated</span><strong>${issue.updated}</strong></div>
+          <div><span>Phase</span><strong>${issue.stage}</strong></div>
+          <div><span>Next</span><strong>${issue.nextDate}</strong></div>
+        </div>
+        <div class="civic-update-note">
+          <span>Latest update</span>
+          <p>${issue.latestUpdate}</p>
+        </div>
+        <div class="civic-issue-actions">
+          <a class="button button-primary" href="${issue.url}">${issue.primaryCta}</a>
+          <a class="text-link" href="${issue.secondaryUrl}">${issue.secondaryCta}</a>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function setupCivicBriefingDesk() {
+  const root = document.querySelector("[data-civic-briefing]");
+  const index = document.querySelector("[data-civic-issue-index]");
+  const detail = document.querySelector("[data-civic-issue-detail]");
+  const mobile = document.querySelector("[data-civic-briefing-mobile]");
+  if (!root || !index || !detail) return;
+
+  let activeIssueIndex = 0;
+  const buttons = [];
+
+  const setActiveIssue = (nextIndex) => {
+    activeIssueIndex = nextIndex;
+    buttons.forEach((button, buttonIndex) => {
+      const isActive = buttonIndex === activeIssueIndex;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-selected", String(isActive));
+      button.setAttribute("tabindex", isActive ? "0" : "-1");
+    });
+
+    detail.classList.remove("is-updated");
+    detail.innerHTML = civicIssueDetailTemplate(civicBriefingIssues[activeIssueIndex]);
+    window.requestAnimationFrame(() => detail.classList.add("is-updated"));
+  };
+
+  index.innerHTML = civicBriefingIssues.map((issue, issueIndex) => `
+    <button class="civic-issue-button${issueIndex === 0 ? " is-active" : ""}" type="button" role="tab" aria-selected="${issueIndex === 0 ? "true" : "false"}" tabindex="${issueIndex === 0 ? "0" : "-1"}" data-civic-issue="${issueIndex}">
+      <span>${String(issueIndex + 1).padStart(2, "0")}</span>
+      <strong>${issue.shortTitle}</strong>
+      <em>${issue.status}</em>
+    </button>
+  `).join("");
+
+  buttons.push(...index.querySelectorAll("[data-civic-issue]"));
+  buttons.forEach((button, buttonIndex) => {
+    button.addEventListener("mouseenter", () => setActiveIssue(buttonIndex));
+    button.addEventListener("focus", () => setActiveIssue(buttonIndex));
+    button.addEventListener("click", () => setActiveIssue(buttonIndex));
+    button.addEventListener("keydown", (event) => {
+      if (!["ArrowDown", "ArrowRight", "ArrowUp", "ArrowLeft", "Home", "End"].includes(event.key)) return;
+      event.preventDefault();
+      let nextIndex = buttonIndex;
+      if (event.key === "ArrowDown" || event.key === "ArrowRight") nextIndex = (buttonIndex + 1) % buttons.length;
+      if (event.key === "ArrowUp" || event.key === "ArrowLeft") nextIndex = (buttonIndex - 1 + buttons.length) % buttons.length;
+      if (event.key === "Home") nextIndex = 0;
+      if (event.key === "End") nextIndex = buttons.length - 1;
+      buttons[nextIndex]?.focus();
+    });
+  });
+
+  if (mobile) {
+    mobile.innerHTML = civicBriefingIssues.map(renderCivicMobileIssue).join("");
+  }
+
+  setActiveIssue(0);
+}
+
 function renderIssues(issues) {
   const targets = [
     [document.querySelector("[data-issues-preview]"), issues.slice(0, 6)],
@@ -1346,6 +1625,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   setupDanaWhatCarousel();
   setupPartnerPathwaysCarousel();
   setupSponsorPageCarousels();
+  setupCivicBriefingDesk();
   initStartHereStack();
   const [issues, events, membership] = await Promise.all([
     getJson("data/issues.json", "issues"),
