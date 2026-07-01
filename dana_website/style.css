@@ -22043,6 +22043,40 @@ body .section-navy.join-router-section .membership-grid .membership-card p {
   line-height: 1.55 !important;
 }
 
+/* Join cards: no frame lines, no generated duplicate arrows. */
+body .section-navy.join-router-section .membership-grid,
+body .join-router-section .membership-grid {
+  gap: clamp(14px, 2vw, 22px) !important;
+  background: transparent !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+body .section-navy.join-router-section .membership-grid .membership-card,
+body .join-router-section .membership-grid .membership-card {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+body .section-navy.join-router-section .membership-grid .membership-card a,
+body .join-router-section .membership-grid .membership-card a {
+  border: 0 !important;
+  padding-top: 0 !important;
+}
+
+body .section-navy.join-router-section .membership-grid .membership-card a::after,
+body .join-router-section .membership-grid .membership-card a::after {
+  content: none !important;
+  display: none !important;
+}
+
+body .section-navy.join-router-section .membership-grid .membership-card a span,
+body .join-router-section .membership-grid .membership-card a span {
+  color: #C2AB7A !important;
+}
+
 @media (max-width: 980px) {
   body .section-navy.join-router-section .membership-grid .membership-card {
     min-height: 420px !important;
