@@ -70,7 +70,7 @@ const fallback = {
     {
       id: "public-safety",
       title: "Public Safety & Quality of Life",
-      summary: "Helping downtown feel safer, quieter, better lit, and easier to enjoy.",
+      summary: "Helping downtown feel safer, quieter, better lit, and easier to enjoy at different times of day.",
       status: "Recently Updated",
       sourceUrl: "public-safety.html"
     },
@@ -79,19 +79,19 @@ const fallback = {
       title: "Housing & Development",
       summary: "New homes, new buildings, and planning conversations that shape how downtown grows.",
       status: "In Planning",
-      sourceUrl: "issues.html"
+      sourceUrl: "https://www.downtownaustin.org/toward-a-more-walkable-austin/"
     },
     {
       id: "parks-shoal-creek",
       title: "Parks & Public Spaces",
-      summary: "Parks, trails, trees, plazas, and open spaces where people want to spend time.",
+      summary: "Parks, trails, trees, plazas, and open spaces where people actually want to spend time.",
       status: "Community Project",
       sourceUrl: "https://www.downtownaustin.org/june-shoal-creek-clean-up/"
     },
     {
       id: "i-35-expansion",
       title: "I-35",
-      summary: "Construction, traffic changes, air quality, and how the reconstruction may affect downtown residents.",
+      summary: "Construction, traffic changes, air quality, and how reconstruction may affect downtown residents.",
       status: "Long-Term Project",
       sourceUrl: "issues.html"
     },
@@ -105,9 +105,9 @@ const fallback = {
     {
       id: "downtown-vitality",
       title: "Downtown's Future",
-      summary: "Homes, local businesses, walkable streets, public life, and events that make downtown feel like a neighborhood.",
+      summary: "Homes, local businesses, walkable streets, public life, and community events that help downtown feel like a neighborhood.",
       status: "Community Conversation",
-      sourceUrl: "https://www.downtownaustin.org/toward-a-more-walkable-austin/"
+      sourceUrl: "https://www.downtownaustin.org/dana-letter-c20-2024-018-ddbp-updates-2026-05-14/"
     }
   ],
   events: [
@@ -330,6 +330,73 @@ function renderIssueShelfCard(issue) {
   `;
 }
 
+const issuePreviewIcons = {
+  "public-safety": `
+    <path d="M12 48h40"></path>
+    <path d="M20 48V24l12-8 12 8v24"></path>
+    <path d="M26 34h12"></path>
+    <path d="M32 16V8"></path>
+    <path d="M18 14l5 5"></path>
+    <path d="M46 14l-5 5"></path>
+  `,
+  "transportation-housing": `
+    <path d="M10 54h44"></path>
+    <path d="M16 54V18h14v36"></path>
+    <path d="M30 54V10h18v44"></path>
+    <path d="M21 26h4M21 36h4M21 46h4"></path>
+    <path d="M36 20h6M36 30h6M36 40h6"></path>
+  `,
+  "parks-shoal-creek": `
+    <path d="M10 54h44"></path>
+    <path d="M32 54V28"></path>
+    <path d="M22 30c0-8 5-14 10-18 5 4 10 10 10 18 0 6-4 10-10 10s-10-4-10-10Z"></path>
+    <path d="M14 44c7-3 13-3 20 0s12 3 16 0"></path>
+  `,
+  "i-35-expansion": `
+    <path d="M16 54c7-13 11-27 13-44"></path>
+    <path d="M48 54C41 41 37 27 35 10"></path>
+    <path d="M32 16v8M32 32v8M32 48v6"></path>
+    <path d="M14 32h36"></path>
+  `,
+  "project-connect": `
+    <path d="M17 13h30c4 0 7 3 7 7v19c0 4-3 7-7 7H17c-4 0-7-3-7-7V20c0-4 3-7 7-7Z"></path>
+    <path d="M17 23h30"></path>
+    <path d="M20 46l-6 8M44 46l6 8"></path>
+    <path d="M22 36h.1M42 36h.1"></path>
+  `,
+  "downtown-vitality": `
+    <path d="M8 54h48"></path>
+    <path d="M13 54V31l7-5 7 5v23"></path>
+    <path d="M28 54V18h12v36"></path>
+    <path d="M41 54V29h10v25"></path>
+    <path d="M12 22c7-6 14-6 21 0s13 6 19 0"></path>
+  `
+};
+
+function issuePreviewCta(issue) {
+  if (!issue.sourceUrl || issue.sourceUrl === "#") return "";
+  return issue.sourceUrl.endsWith(".html") ? "Read the issue" : "See the background";
+}
+
+function renderIssuePreviewCard(issue) {
+  const cta = issuePreviewCta(issue);
+  return `
+    <article class="issue-card" id="${issue.id}">
+      <div class="issue-card-visual" aria-hidden="true">
+        <svg class="issue-card-icon" viewBox="0 0 64 64">
+          ${issuePreviewIcons[issue.id] || issuePreviewIcons["downtown-vitality"]}
+        </svg>
+      </div>
+      <div class="issue-card-body">
+        ${issue.status ? `<span class="status-pill">${issue.status}</span>` : ""}
+        <h3>${issue.title}</h3>
+        <p>${issue.summary}</p>
+        ${cta ? `<a href="${issue.sourceUrl}">${cta} <span aria-hidden="true">↗</span></a>` : ""}
+      </div>
+    </article>
+  `;
+}
+
 function renderIssues(issues) {
   const targets = [
     [document.querySelector("[data-issues-preview]"), issues.slice(0, 6)],
@@ -340,18 +407,7 @@ function renderIssues(issues) {
     if (!target) return;
     if (target.matches("[data-issues-preview]")) {
       target.className = "issue-grid";
-      target.innerHTML = list
-        .map(
-          (issue) => `
-            <article class="issue-card" id="${issue.id}">
-              ${issue.status ? `<span class="status-pill">${issue.status}</span>` : ""}
-              <h3>${issue.title}</h3>
-              <p>${issue.summary}</p>
-              ${issue.sourceUrl && issue.sourceUrl !== "#" ? `<a href="${issue.sourceUrl}">${issue.sourceUrl.endsWith(".html") ? "Read the issue" : "See the background"}</a>` : ""}
-            </article>
-          `
-        )
-        .join("");
+      target.innerHTML = list.map(renderIssuePreviewCard).join("");
       return;
     }
     target.innerHTML = list
