@@ -974,6 +974,17 @@ function initJournalStoryRail() {
 
   prev?.addEventListener("click", () => scrollByCard(-1));
   next?.addEventListener("click", () => scrollByCard(1));
+  track.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      scrollByCard(-1);
+    }
+
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      scrollByCard(1);
+    }
+  });
   track.addEventListener("scroll", updateProgress, { passive: true });
   window.addEventListener("resize", updateProgress);
   updateProgress();
