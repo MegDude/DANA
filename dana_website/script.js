@@ -1445,6 +1445,27 @@ function initJournalStoryRail() {
   const cards = Array.from(rail.querySelectorAll(".journal-story-card"));
   if (!track || !cards.length) return;
 
+  const updateWave = () => {
+    const trackRect = track.getBoundingClientRect();
+    const center = trackRect.left + trackRect.width / 2;
+    let activeIndex = 0;
+    let nearest = Number.POSITIVE_INFINITY;
+
+    cards.forEach((card, index) => {
+      const rect = card.getBoundingClientRect();
+      const cardCenter = rect.left + rect.width / 2;
+      const distance = Math.abs(center - cardCenter);
+      if (distance < nearest) {
+        nearest = distance;
+        activeIndex = index;
+      }
+    });
+
+    cards.forEach((card, index) => {
+      card.classList.toggle("is-active", index === activeIndex);
+    });
+  };
+
   const updateProgress = () => {
     if (!progress) return;
     const maxScroll = track.scrollWidth - track.clientWidth;
@@ -1452,6 +1473,7 @@ function initJournalStoryRail() {
     const base = 1 / cards.length;
     const width = base + ratio * (1 - base);
     progress.style.setProperty("width", `${width * 100}%`, "important");
+    updateWave();
   };
 
   const scrollByCard = (direction) => {
@@ -1543,10 +1565,9 @@ function setupCivicCardSystem() {
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const starts = [
-    { x: -220, y: 110, rotate: -8 },
-    { x: -70, y: -70, rotate: 5 },
-    { x: 70, y: 80, rotate: -4 },
-    { x: 220, y: 120, rotate: 8 }
+    { x: -240, y: 120, rotate: -8 },
+    { x: 0, y: -82, rotate: 5 },
+    { x: 240, y: 120, rotate: 8 }
   ];
 
   const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
@@ -1589,7 +1610,7 @@ function setupCivicCardSystem() {
 
     cards.forEach((card, index) => {
       const start = starts[index] || { x: 0, y: 0, rotate: 0 };
-      const featureBoost = index === 1 || index === 2 ? featureProgress * 0.025 : 0;
+      const featureBoost = index === 1 ? featureProgress * 0.025 : 0;
       card.style.setProperty("--civic-card-x", `${mix(start.x, 0, settleProgress)}px`);
       card.style.setProperty("--civic-card-y", `${mix(start.y, 0, settleProgress)}px`);
       card.style.setProperty("--civic-card-rotate", `${mix(start.rotate, 0, settleProgress)}deg`);
