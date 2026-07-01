@@ -27191,3 +27191,134 @@ body .neighborhood-journal-section .journal-rail-progress span {
     opacity: 1 !important;
   }
 }
+
+/* Restored What DANA Does editorial mission section */
+body .what-dana-does-section {
+  background: #ffffff !important;
+  color: #072f24 !important;
+  overflow: hidden !important;
+  padding: clamp(4.5rem, 8vw, 7.5rem) 0 !important;
+}
+
+body .what-dana-does-shell {
+  display: grid !important;
+  grid-template-columns: minmax(10rem, 0.32fr) minmax(0, 0.68fr) !important;
+  gap: clamp(1.75rem, 6vw, 4.5rem) !important;
+  align-items: start !important;
+  max-width: 1180px !important;
+}
+
+body .what-dana-does-kicker,
+body .what-dana-does-copy {
+  border-top: 1px solid rgba(7, 47, 36, 0.12) !important;
+  padding-top: clamp(1rem, 2vw, 1.5rem) !important;
+}
+
+body .what-dana-does-section .eyebrow {
+  color: #c2ab7a !important;
+}
+
+body .what-dana-does-copy h2 {
+  max-width: 52rem !important;
+  margin: 0 !important;
+  color: #072f24 !important;
+  font-family: var(--font-serif, "Instrument Serif", serif) !important;
+  font-size: clamp(2.35rem, 5vw, 5rem) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.035em !important;
+  line-height: 0.96 !important;
+  text-wrap: balance !important;
+}
+
+body .what-dana-does-copy p {
+  max-width: 48rem !important;
+  margin: 1.2rem 0 0 !important;
+  color: rgba(7, 47, 36, 0.72) !important;
+  font-size: clamp(1rem, 1.18vw, 1.125rem) !important;
+  line-height: 1.68 !important;
+}
+
+body .what-dana-does-copy .what-dana-does-lede {
+  max-width: 49rem !important;
+  color: #1f2a27 !important;
+  font-size: clamp(1.08rem, 1.45vw, 1.32rem) !important;
+  line-height: 1.55 !important;
+}
+
+body .what-dana-does-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.9rem 1.25rem !important;
+  margin-top: clamp(1.6rem, 3vw, 2.2rem) !important;
+}
+
+body .what-dana-does-actions .text-link,
+body .what-dana-does-actions .text-link:visited {
+  color: #072f24 !important;
+  text-decoration-color: #c2ab7a !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 0.28em !important;
+}
+
+body .what-dana-does-actions .text-link:hover,
+body .what-dana-does-actions .text-link:focus-visible {
+  color: #072f24 !important;
+  text-decoration-thickness: 2px !important;
+}
+
+body .what-dana-does-section + .civic-card-section {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 760px) {
+  body .what-dana-does-section {
+    padding: clamp(3.5rem, 14vw, 5rem) 0 !important;
+  }
+
+  body .what-dana-does-shell {
+    grid-template-columns: 1fr !important;
+    gap: 1.1rem !important;
+  }
+
+  body .what-dana-does-kicker {
+    padding-top: 0.9rem !important;
+  }
+
+  body .what-dana-does-copy {
+    padding-top: 1.1rem !important;
+  }
+
+  body .what-dana-does-copy h2 {
+    font-size: clamp(2.25rem, 11vw, 3.25rem) !important;
+    letter-spacing: -0.025em !important;
+  }
+
+  body .what-dana-does-actions {
+    align-items: flex-start !important;
+    flex-direction: column !important;
+  }
+}
+
+/* Leadership headline width correction */
+body .landing-leadership .leadership-band {
+  width: 100% !important;
+  max-width: 1180px !important;
+}
+
+body .landing-leadership .leadership-band h2 {
+  width: 100% !important;
+  max-width: none !important;
+  text-wrap: normal !important;
+}
+
+@media (min-width: 900px) {
+  body .landing-leadership .leadership-band h2 {
+    white-space: nowrap !important;
+  }
+}
+
+@media (max-width: 899px) {
+  body .landing-leadership .leadership-band h2 {
+    white-space: normal !important;
+  }
+}
