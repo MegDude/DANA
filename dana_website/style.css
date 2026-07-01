@@ -25529,3 +25529,501 @@ body .civic-value-card p {
     transform: none !important;
   }
 }
+
+/* Final sitewide DANA editorial design system */
+:root {
+  --dana-emerald: #072f24 !important;
+  --dana-navy: #072f24 !important;
+  --dana-gold: #c2ab7a !important;
+  --dana-white: #ffffff !important;
+  --dana-soft: #f7f8fb !important;
+  --dana-ink: #072f24 !important;
+  --dana-muted: rgba(7, 47, 36, 0.72) !important;
+  --dana-border: rgba(7, 47, 36, 0.10) !important;
+  --dana-glow: 0 24px 80px rgba(7, 47, 36, 0.08) !important;
+  --navy: #072f24 !important;
+  --blue: #072f24 !important;
+  --olive: #072f24 !important;
+  --ink: #072f24 !important;
+  --emerald: #072f24 !important;
+  --gold: #c2ab7a !important;
+  --soft-gold: #c2ab7a !important;
+  --paper: #ffffff !important;
+  --surface: #ffffff !important;
+  --white: #ffffff !important;
+  --muted: rgba(7, 47, 36, 0.72) !important;
+  --border: rgba(7, 47, 36, 0.10) !important;
+  --hairline: rgba(7, 47, 36, 0.06) !important;
+  --color-primary: #072f24 !important;
+  --color-ink: #072f24 !important;
+  --color-accent: #c2ab7a !important;
+  --color-background: #ffffff !important;
+  --color-soft: #f7f8fb !important;
+}
+
+html {
+  background: #ffffff !important;
+}
+
+body {
+  background: #ffffff !important;
+  color: #072f24 !important;
+  font-family: var(--font-sans, "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif) !important;
+}
+
+body main {
+  background:
+    radial-gradient(circle at 50% 22%, rgba(194, 171, 122, 0.10), transparent 34rem),
+    #ffffff !important;
+}
+
+body .section,
+body .page-hero {
+  background-color: transparent !important;
+}
+
+body .section-muted,
+body .landing-issues,
+body .issues-editorial,
+body .neighborhood-journal-section,
+body .partner-pathways-section,
+body .subpage-media-section,
+body .civic-card-section {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(194, 171, 122, 0.12), transparent 34rem),
+    #f7f8fb !important;
+}
+
+body .section-navy,
+body .join-router-section,
+body .landing-leadership,
+body .site-footer {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(194, 171, 122, 0.16), transparent 28rem),
+    #072f24 !important;
+}
+
+body h1,
+body h2,
+body h3,
+body .hero-title,
+body .page-hero h1,
+body .section-header h2,
+body .civic-card-intro h2,
+body .civic-value-card h3,
+body .start-stack-content strong,
+body .partner-carousel-content h3,
+body .journal-feature-copy h3,
+body .journal-story-card h3,
+body .issue-card h3,
+body .membership-card h3,
+body .event-card-copy h3,
+body .downtown-action-header h2,
+body .newsletter-panel h2,
+body .footer-brand-text strong {
+  color: inherit;
+  font-family: var(--font-serif, "Instrument Serif", Georgia, serif) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.032em !important;
+  text-wrap: balance;
+}
+
+body .page-hero h1,
+body .hero-title {
+  font-size: clamp(2.6rem, 7.5vw, 5.8rem) !important;
+  line-height: 0.96 !important;
+}
+
+body h2,
+body .section-header h2,
+body .civic-card-intro h2,
+body .partner-pathways-intro h2,
+body .neighborhood-journal-header h2,
+body .events-header h2,
+body .downtown-action-header h2,
+body .join-router h2,
+body .newsletter-panel h2,
+body .media-callout-copy h2,
+body .editorial-panel-intro h2,
+body .subpage-media-band h2 {
+  font-size: clamp(2.15rem, 5.2vw, 4.35rem) !important;
+  line-height: 0.98 !important;
+}
+
+body h3,
+body .civic-value-card h3,
+body .issue-card h3,
+body .journal-story-card h3,
+body .membership-card h3,
+body .event-card-copy h3 {
+  font-size: clamp(1.55rem, 3vw, 2.6rem) !important;
+  line-height: 1.02 !important;
+}
+
+body p,
+body li,
+body label,
+body input,
+body textarea,
+body select,
+body button,
+body a {
+  font-family: var(--font-sans, "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif) !important;
+}
+
+body p,
+body li {
+  color: rgba(7, 47, 36, 0.72);
+}
+
+body .eyebrow,
+body .hero-eyebrow,
+body [class*="eyebrow"],
+body .pillar-label,
+body .journal-label,
+body .partner-carousel-kicker,
+body .partner-role-number,
+body .section-kicker,
+body .event-date span {
+  color: #c2ab7a !important;
+  font-family: var(--font-sans, "Inter", system-ui, sans-serif) !important;
+  font-size: 0.73rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.18em !important;
+  line-height: 1.2 !important;
+  text-transform: uppercase !important;
+}
+
+body .site-header {
+  background: rgba(255, 255, 255, 0.86) !important;
+  border: 0 !important;
+  box-shadow: 0 18px 54px rgba(7, 47, 36, 0.08) !important;
+  backdrop-filter: blur(18px) !important;
+}
+
+body .nav-shell {
+  max-width: 1180px !important;
+}
+
+body .nav-panel {
+  border: 0 !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+  box-shadow: 0 18px 54px rgba(7, 47, 36, 0.08) !important;
+}
+
+body .nav-list {
+  gap: 0.2rem 0.45rem !important;
+}
+
+body .nav-list a,
+body .footer-nav a {
+  color: #072f24 !important;
+  font-size: 0.78rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+body .nav-list a:hover,
+body .nav-list a:focus-visible,
+body .footer-nav a:hover,
+body .footer-nav a:focus-visible {
+  color: #8f7132 !important;
+}
+
+body .button,
+body button.button,
+body .button-primary,
+body .nav-cta,
+body .signup-form .button-primary,
+body .lead-form .button-primary {
+  min-height: 44px !important;
+  padding: 0.8rem 1.08rem !important;
+  border: 1px solid rgba(194, 171, 122, 0.34) !important;
+  border-radius: 0 !important;
+  background:
+    linear-gradient(135deg, rgba(194, 171, 122, 0.22), transparent 48%),
+    #072f24 !important;
+  color: #ffffff !important;
+  box-shadow: 0 16px 44px rgba(7, 47, 36, 0.18) !important;
+  font-size: 0.78rem !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.10em !important;
+  text-transform: uppercase !important;
+}
+
+body .button:hover,
+body .button:focus-visible {
+  border-color: rgba(194, 171, 122, 0.70) !important;
+  background:
+    linear-gradient(135deg, rgba(194, 171, 122, 0.30), transparent 48%),
+    #072f24 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+body .text-link,
+body a.text-link,
+body .hero-secondary-link,
+body .partner-pathways-intro .text-link,
+body .join-pathway-panel .text-link {
+  color: #072f24 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  font-size: 0.78rem !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.10em !important;
+  text-decoration: underline;
+  text-decoration-color: #c2ab7a !important;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.34em;
+  text-transform: uppercase !important;
+}
+
+body .hero .text-link,
+body .section-navy .text-link,
+body .join-router-section .text-link,
+body .landing-leadership .text-link,
+body .site-footer .text-link {
+  color: #ffffff !important;
+  text-decoration-color: #c2ab7a !important;
+}
+
+body .text-link::after,
+body .hero-secondary-link::after,
+body .button::after,
+body .feature-card a::after,
+body .issue-card a::after,
+body .event-card a::after,
+body .membership-card a::after,
+body .archive-list a::after,
+body .content-aside a::after,
+body .governance-list a::after,
+body .partner-cta a::after,
+body .sponsor-detail a::after {
+  display: none !important;
+  content: none !important;
+}
+
+body .subpage-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: fit-content;
+  margin-bottom: clamp(1.3rem, 3vw, 2rem);
+  color: #c2ab7a !important;
+  font-size: 0.74rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+body .subpage-back-link::before {
+  content: "←";
+  font-size: 1rem;
+  line-height: 1;
+}
+
+body .subpage-back-link:hover,
+body .subpage-back-link:focus-visible {
+  color: #8f7132 !important;
+}
+
+body .feature-card,
+body .resource-card,
+body .archive-list article,
+body .governance-section,
+body .governance-card,
+body .issue-card,
+body .journal-story-card,
+body .event-card,
+body .event-row,
+body .membership-card,
+body .partner-role-card,
+body .sponsor-detail,
+body .sponsor-logo-rail button,
+body .record-type-grid article,
+body .priority-grid article,
+body .contact-paths a,
+body .join-pathway-panel article,
+body .civic-value-card {
+  border-color: rgba(7, 47, 36, 0.08) !important;
+  border-radius: 0 !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 18px 58px rgba(7, 47, 36, 0.055) !important;
+}
+
+body .start-stack-card,
+body .partner-carousel-card,
+body .membership-card {
+  border-radius: 0 !important;
+  box-shadow: 0 22px 74px rgba(7, 47, 36, 0.12) !important;
+}
+
+body .hero-scrim,
+body .partner-carousel-card::after,
+body .membership-card::after,
+body .start-stack-overlay,
+body .subpage-media-band figure::after {
+  background:
+    linear-gradient(to top, rgba(7, 47, 36, 0.78), rgba(7, 47, 36, 0.10)),
+    linear-gradient(90deg, rgba(7, 47, 36, 0.72), rgba(7, 47, 36, 0.10)) !important;
+}
+
+body .site-footer,
+body .site-footer p,
+body .site-footer a,
+body .site-footer span {
+  color: rgba(255, 255, 255, 0.78) !important;
+}
+
+body .site-footer h2,
+body .site-footer .footer-brand-text strong {
+  color: #c2ab7a !important;
+}
+
+body .footer-layout,
+body .footer-bottom {
+  max-width: 1180px !important;
+}
+
+body input,
+body textarea,
+body select {
+  border: 1px solid rgba(7, 47, 36, 0.12) !important;
+  border-radius: 0 !important;
+  background: #ffffff !important;
+  color: #072f24 !important;
+}
+
+body input:focus,
+body textarea:focus,
+body select:focus,
+body a:focus-visible,
+body button:focus-visible {
+  outline: 2px solid rgba(194, 171, 122, 0.72) !important;
+  outline-offset: 3px !important;
+}
+
+body .event-view-button,
+body .event-calendar-head button,
+body .journal-rail-controls button,
+body .issue-rail-controls button,
+body .start-carousel-controls > button,
+body .partner-carousel-controls > button,
+body .event-toolbar button {
+  min-height: 44px !important;
+  border: 1px solid rgba(7, 47, 36, 0.12) !important;
+  border-radius: 0 !important;
+  background: rgba(255, 255, 255, 0.82) !important;
+  color: #072f24 !important;
+  box-shadow: 0 12px 34px rgba(7, 47, 36, 0.055) !important;
+  font-size: 0.76rem !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.09em !important;
+  text-transform: uppercase !important;
+}
+
+body .event-view-button.is-active,
+body .event-toolbar button.is-active,
+body .journal-rail-controls button:hover,
+body .issue-rail-controls button:hover,
+body .start-carousel-controls > button:hover,
+body .partner-carousel-controls > button:hover {
+  border-color: rgba(194, 171, 122, 0.44) !important;
+  background:
+    linear-gradient(135deg, rgba(194, 171, 122, 0.22), transparent 48%),
+    #072f24 !important;
+  color: #ffffff !important;
+}
+
+body .start-carousel-dots button,
+body .partner-carousel-dots button,
+body .issue-rail-progress,
+body .journal-rail-progress {
+  border: 0 !important;
+  background: rgba(7, 47, 36, 0.16) !important;
+  box-shadow: none !important;
+}
+
+body .start-carousel-dots button.is-active,
+body .partner-carousel-dots button.is-active,
+body .start-carousel-dots button[aria-current="true"],
+body .partner-carousel-dots button[aria-current="true"],
+body .issue-rail-progress span,
+body .journal-rail-progress span {
+  background: #c2ab7a !important;
+}
+
+body .sponsor-logo-rail button,
+body .sponsor-logo-rail button:hover,
+body .sponsor-logo-rail button.is-active,
+body .sponsor-logo-rail button[aria-selected="true"] {
+  border: 0 !important;
+  background: #ffffff !important;
+  color: #072f24 !important;
+  box-shadow: 0 18px 58px rgba(7, 47, 36, 0.055) !important;
+}
+
+@media (min-width: 980px) {
+  body .nav-panel {
+    max-width: min(860px, calc(100vw - 220px)) !important;
+  }
+
+  body .nav-list {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-end !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body .nav-panel {
+    max-height: calc(100svh - 88px);
+    overflow-y: auto;
+  }
+
+  body .nav-list {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.2rem !important;
+  }
+
+  body .nav-list a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  body .page-hero h1,
+  body .hero-title {
+    font-size: clamp(2.15rem, 10.5vw, 3.05rem) !important;
+  }
+
+  body h2,
+  body .section-header h2,
+  body .civic-card-intro h2,
+  body .partner-pathways-intro h2,
+  body .neighborhood-journal-header h2,
+  body .events-header h2,
+  body .downtown-action-header h2,
+  body .join-router h2,
+  body .newsletter-panel h2,
+  body .media-callout-copy h2,
+  body .editorial-panel-intro h2,
+  body .subpage-media-band h2 {
+    font-size: clamp(1.85rem, 8.8vw, 2.55rem) !important;
+  }
+
+  body h3,
+  body .civic-value-card h3,
+  body .issue-card h3,
+  body .journal-story-card h3,
+  body .membership-card h3,
+  body .event-card-copy h3 {
+    font-size: clamp(1.45rem, 7vw, 2rem) !important;
+  }
+}

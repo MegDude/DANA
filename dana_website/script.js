@@ -8,11 +8,20 @@ const SITE_NAV = `
     </button>
     <div class="nav-panel" id="primary-menu">
       <ul class="nav-list">
-        <li><a href="about.html">Learn</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="issues.html">Issues</a></li>
+        <li><a href="public-safety.html">Public Safety</a></li>
         <li><a href="events.html">Events</a></li>
         <li><a href="join.html">Join</a></li>
+        <li><a href="sponsors.html">Partners</a></li>
+        <li><a href="board.html">Leadership</a></li>
+        <li><a href="governance.html">Governance</a></li>
+        <li><a href="committees.html">Committees</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="newsletter.html">Newsletter</a></li>
+        <li><a href="archive.html">Archive</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
       </ul>
       <a class="button button-primary nav-cta" href="contact.html">Raise an Issue</a>
     </div>
@@ -193,11 +202,13 @@ async function getJson(path, key) {
 
 function setupChrome() {
   document.querySelectorAll("[data-header]").forEach((header) => {
-    if (!header.innerHTML.trim()) header.innerHTML = SITE_NAV;
+    header.innerHTML = SITE_NAV;
   });
   document.querySelectorAll("footer.site-footer").forEach((footer) => {
-    if (!footer.innerHTML.trim()) footer.innerHTML = SITE_FOOTER;
+    footer.innerHTML = SITE_FOOTER;
   });
+
+  setupSubpageBackLinks();
 
   const toggle = document.querySelector(".nav-toggle");
   const panel = document.querySelector(".nav-panel");
@@ -216,6 +227,21 @@ function setupChrome() {
       toggle.setAttribute("aria-expanded", "false");
     });
   });
+}
+
+function setupSubpageBackLinks() {
+  const path = window.location.pathname.split("/").pop() || "index.html";
+  if (path === "index.html") return;
+
+  const heroShell = document.querySelector(".page-hero .shell");
+  if (!heroShell || heroShell.querySelector(".subpage-back-link")) return;
+
+  const backLink = document.createElement("a");
+  backLink.className = "subpage-back-link";
+  backLink.href = "index.html";
+  backLink.setAttribute("aria-label", "Back to homepage");
+  backLink.textContent = "Back";
+  heroShell.prepend(backLink);
 }
 
 const editorialIssueCovers = [
