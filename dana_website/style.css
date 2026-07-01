@@ -26027,3 +26027,34 @@ body .sponsor-logo-rail button[aria-selected="true"] {
     font-size: clamp(1.45rem, 7vw, 2rem) !important;
   }
 }
+
+/* Legacy DANA what-board media safety: force full-width video/image treatment */
+body .dana-what-board,
+body .dana-what-board.dana-what-carousel {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+body .dana-what-board .dana-what-media {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  grid-column: 1 / -1 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+
+body .dana-what-board .dana-what-media video,
+body .dana-what-board .dana-what-media img,
+body .dana-what-board.dana-what-carousel .dana-what-media video,
+body .dana-what-board.dana-what-carousel .dana-what-media img {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
