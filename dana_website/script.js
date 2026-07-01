@@ -8,15 +8,13 @@ const SITE_NAV = `
     </button>
     <div class="nav-panel" id="primary-menu">
       <ul class="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="about.html">Learn</a></li>
         <li><a href="issues.html">Issues</a></li>
         <li><a href="events.html">Events</a></li>
         <li><a href="join.html">Join</a></li>
-        <li><a href="newsletter.html">Newsletter</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <a class="button button-primary nav-cta" href="join.html">Join DANA</a>
+      <a class="button button-primary nav-cta" href="contact.html">Raise an Issue</a>
     </div>
   </nav>
 `;
