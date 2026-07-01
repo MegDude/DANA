@@ -24504,3 +24504,143 @@ body .section.landing-issues.issues-editorial .issue-card a:focus-visible {
     transform: none !important;
   }
 }
+
+/* Final homepage Issues swipe rail. */
+body .section.landing-issues.issues-editorial .issue-rail {
+  display: grid !important;
+  gap: 1rem !important;
+  overflow: hidden !important;
+}
+
+body .section.landing-issues.issues-editorial .issue-rail-viewport {
+  overflow: visible !important;
+}
+
+body .section.landing-issues.issues-editorial .issue-grid.issue-rail-track[data-issues-preview] {
+  display: grid !important;
+  grid-auto-flow: column !important;
+  grid-auto-columns: minmax(320px, 31.5%) !important;
+  grid-template-columns: none !important;
+  gap: clamp(1rem, 2vw, 1.5rem) !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  overscroll-behavior-x: contain !important;
+  scroll-padding-inline: 1px !important;
+  scroll-snap-type: x mandatory !important;
+  scrollbar-width: none !important;
+  padding: 0 0 1rem !important;
+  background: transparent !important;
+}
+
+body .section.landing-issues.issues-editorial .issue-grid.issue-rail-track[data-issues-preview]::-webkit-scrollbar {
+  display: none !important;
+}
+
+body .section.landing-issues.issues-editorial .issue-grid.issue-rail-track[data-issues-preview] .issue-card {
+  scroll-snap-align: start !important;
+  min-height: 430px !important;
+}
+
+body .section.landing-issues.issues-editorial .issue-rail-controls {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 1rem !important;
+  width: min(100%, 520px) !important;
+  margin: 0 auto !important;
+}
+
+body .section.landing-issues.issues-editorial .issue-rail-controls button {
+  min-width: 74px !important;
+  min-height: 42px !important;
+  border: 1px solid rgba(7, 47, 36, 0.14) !important;
+  background: rgba(255, 255, 255, 0.72) !important;
+  color: #072F24 !important;
+  font: inherit !important;
+  font-size: 0.78rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+  backdrop-filter: blur(16px) !important;
+  transition:
+    border-color 180ms ease,
+    color 180ms ease,
+    background 180ms ease !important;
+}
+
+body .section.landing-issues.issues-editorial .issue-rail-controls button:hover,
+body .section.landing-issues.issues-editorial .issue-rail-controls button:focus-visible {
+  border-color: rgba(194, 171, 122, 0.65) !important;
+  color: #8F7132 !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+body .section.landing-issues.issues-editorial .issue-rail-controls button:disabled {
+  opacity: 0.38 !important;
+  cursor: not-allowed !important;
+}
+
+body .section.landing-issues.issues-editorial .issue-rail-progress {
+  position: relative !important;
+  flex: 1 1 auto !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  background: rgba(7, 47, 36, 0.14) !important;
+}
+
+body .section.landing-issues.issues-editorial .issue-rail-progress span {
+  display: block !important;
+  width: 16.666% !important;
+  height: 100% !important;
+  background: #C2AB7A !important;
+  transition: width 180ms ease !important;
+}
+
+@media (max-width: 900px) {
+  body .section.landing-issues.issues-editorial .issue-grid.issue-rail-track[data-issues-preview] {
+    grid-auto-columns: minmax(300px, 58%) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  body .section.landing-issues.issues-editorial .issue-rail {
+    margin-inline: -20px !important;
+  }
+
+  body .section.landing-issues.issues-editorial .issue-grid.issue-rail-track[data-issues-preview] {
+    grid-auto-flow: column !important;
+    grid-auto-columns: minmax(0, calc(100vw - 40px)) !important;
+    grid-template-columns: none !important;
+    overflow-x: auto !important;
+    padding-inline: 20px !important;
+    scroll-padding-inline: 20px !important;
+  }
+
+  body .section.landing-issues.issues-editorial .issue-grid.issue-rail-track[data-issues-preview] .issue-card {
+    grid-template-columns: 92px minmax(0, 1fr) !important;
+    grid-template-rows: auto !important;
+    min-height: 270px !important;
+  }
+
+  body .section.landing-issues.issues-editorial .issue-rail-controls {
+    width: calc(100% - 40px) !important;
+  }
+}
+
+@media (max-width: 420px) {
+  body .section.landing-issues.issues-editorial .issue-grid.issue-rail-track[data-issues-preview] .issue-card {
+    grid-template-columns: 1fr !important;
+    min-height: 390px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body .section.landing-issues.issues-editorial .issue-grid.issue-rail-track[data-issues-preview] {
+    scroll-behavior: auto !important;
+  }
+
+  body .section.landing-issues.issues-editorial .issue-rail-progress span {
+    transition: none !important;
+  }
+}

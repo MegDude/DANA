@@ -406,7 +406,7 @@ function renderIssues(issues) {
   targets.forEach(([target, list]) => {
     if (!target) return;
     if (target.matches("[data-issues-preview]")) {
-      target.className = "issue-grid";
+      target.className = "issue-grid issue-rail-track";
       target.innerHTML = list.map(renderIssuePreviewCard).join("");
       return;
     }
@@ -423,6 +423,49 @@ function renderIssues(issues) {
       )
       .join("");
   });
+}
+
+function initHomepageIssueRail() {
+  const rail = document.querySelector("[data-issues-rail]");
+  if (!rail) return;
+
+  const track = rail.querySelector("[data-issues-preview]");
+  const prev = rail.querySelector("[data-issues-prev]");
+  const next = rail.querySelector("[data-issues-next]");
+  const progress = rail.querySelector("[data-issues-progress]");
+  const cards = Array.from(rail.querySelectorAll(".issue-card"));
+
+  if (!track || !cards.length) return;
+
+  const updateProgress = () => {
+    if (!progress) return;
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    const ratio = maxScroll > 0 ? track.scrollLeft / maxScroll : 0;
+    const base = 1 / cards.length;
+    progress.style.width = `${(base + ratio * (1 - base)) * 100}%`;
+  };
+
+  const updateControls = () => {
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    const atStart = track.scrollLeft <= 2;
+    const atEnd = maxScroll <= 2 || track.scrollLeft >= maxScroll - 2;
+    prev?.toggleAttribute("disabled", atStart);
+    next?.toggleAttribute("disabled", atEnd);
+    updateProgress();
+  };
+
+  const scrollByCard = (direction) => {
+    const card = cards[0];
+    const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || "0");
+    const amount = card.getBoundingClientRect().width + gap;
+    track.scrollBy({ left: amount * direction, behavior: "smooth" });
+  };
+
+  prev?.addEventListener("click", () => scrollByCard(-1));
+  next?.addEventListener("click", () => scrollByCard(1));
+  track.addEventListener("scroll", updateControls, { passive: true });
+  window.addEventListener("resize", updateControls);
+  updateControls();
 }
 
 function setupIssueShelf() {
@@ -1157,6 +1200,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     getJson("data/site.json", "membership").then((data) => data.membership || fallback.membership)
   ]);
   renderIssues(issues);
+  initHomepageIssueRail();
   setupIssueShelf();
   renderEvents(events);
   renderMembership(membership);
