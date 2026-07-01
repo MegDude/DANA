@@ -25325,3 +25325,207 @@ body .subpage-media-band p:not(.eyebrow) {
     font-size: 0.96rem;
   }
 }
+
+/* Homepage civic value card system */
+body .civic-card-section {
+  position: relative;
+  min-height: 260vh;
+  overflow: clip;
+  background: #f7f8fb;
+  color: #0b1f33;
+}
+
+body .civic-card-sticky {
+  position: sticky;
+  top: 0;
+  display: flex;
+  min-height: 100svh;
+  align-items: center;
+  overflow: hidden;
+  padding-block: clamp(72px, 9vw, 120px);
+}
+
+body .civic-card-shell {
+  display: grid;
+  gap: clamp(36px, 6vw, 64px);
+}
+
+body .civic-card-intro {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+  opacity: var(--civic-intro-opacity, 1);
+  transform: translate3d(0, var(--civic-intro-y, 0px), 0);
+  will-change: transform, opacity;
+}
+
+body .civic-card-intro h2 {
+  max-width: 760px;
+  margin: 0 auto;
+  color: #0b1f33;
+  font-family: var(--font-serif, "Instrument Serif", serif);
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 500;
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+body .civic-card-intro p:not(.eyebrow) {
+  max-width: 620px;
+  margin: 1.15rem auto 0;
+  color: rgba(11, 31, 51, 0.72);
+  font-size: clamp(1rem, 1.25vw, 1.12rem);
+  line-height: 1.68;
+}
+
+body .civic-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 22px);
+  align-items: stretch;
+  max-width: 1180px;
+  margin: 0 auto;
+  perspective: 1400px;
+}
+
+body .civic-value-card {
+  position: relative;
+  min-width: 0;
+  min-height: clamp(330px, 34vw, 390px);
+  overflow: hidden;
+  padding: clamp(24px, 3vw, 34px);
+  background: #ffffff;
+  border: 1px solid rgba(11, 31, 51, 0.1);
+  color: #0b1f33;
+  box-shadow: 0 24px 80px rgba(11, 31, 51, 0.08);
+  opacity: var(--civic-card-opacity, 1);
+  transform:
+    translate3d(var(--civic-card-x, 0px), var(--civic-card-y, 0px), 0)
+    rotate(var(--civic-card-rotate, 0deg))
+    scale(var(--civic-card-scale, 1));
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+body .civic-value-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: #c8a96a;
+}
+
+body .civic-value-card::after {
+  content: "";
+  position: absolute;
+  left: clamp(24px, 3vw, 34px);
+  bottom: clamp(24px, 3vw, 34px);
+  width: 64px;
+  height: 1px;
+  background: #c8a96a;
+}
+
+body .civic-value-card span {
+  display: block;
+  margin-bottom: clamp(32px, 5vw, 54px);
+  color: #c8a96a;
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+body .civic-value-card h3 {
+  margin: 0;
+  color: #0b1f33;
+  font-family: var(--font-serif, "Instrument Serif", serif);
+  font-size: clamp(2rem, 3.2vw, 3.25rem);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+body .civic-value-card p {
+  margin: 1rem 0 0;
+  color: rgba(11, 31, 51, 0.72);
+  font-size: 0.98rem;
+  line-height: 1.62;
+}
+
+@media (max-width: 1080px) {
+  body .civic-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body .civic-value-card {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 700px) {
+  body .civic-card-section {
+    min-height: auto;
+  }
+
+  body .civic-card-sticky {
+    position: relative;
+    min-height: auto;
+    padding-block: clamp(64px, 16vw, 88px);
+  }
+
+  body .civic-card-intro {
+    margin-inline: 0;
+    text-align: left;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  body .civic-card-intro h2,
+  body .civic-card-intro p:not(.eyebrow) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  body .civic-card-intro h2 {
+    font-size: clamp(2.25rem, 10vw, 3.2rem);
+  }
+
+  body .civic-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body .civic-value-card {
+    min-height: auto;
+    padding: 1.35rem;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  body .civic-value-card span {
+    margin-bottom: 1.35rem;
+  }
+
+  body .civic-value-card h3 {
+    font-size: clamp(1.75rem, 8vw, 2.35rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body .civic-card-section {
+    min-height: auto;
+  }
+
+  body .civic-card-sticky {
+    position: relative;
+    min-height: auto;
+  }
+
+  body .civic-card-intro,
+  body .civic-value-card {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

@@ -1142,45 +1142,81 @@ function setupDanaOrbit() {
 }
 
 function setupCivicCardSystem() {
-  const cards = Array.from(document.querySelectorAll("[data-civic-card]"));
+  const section = document.querySelector("[data-civic-card-system]");
+  const cards = Array.from(section?.querySelectorAll("[data-civic-card]") || []);
   if (!cards.length) return;
+
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const startX = [-180, 0, 180];
-  const startY = [80, -50, 80];
-  const startRotate = [-7, 4, 7];
+  const starts = [
+    { x: -220, y: 110, rotate: -8 },
+    { x: -70, y: -70, rotate: 5 },
+    { x: 70, y: 80, rotate: -4 },
+    { x: 220, y: 120, rotate: 8 }
+  ];
+
+  const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+  const mix = (from, to, progress) => from + (to - from) * progress;
+  const easeOut = (progress) => 1 - Math.pow(1 - progress, 3);
 
   cards.forEach((card, index) => {
-    card.style.setProperty("--civic-card-x", prefersReducedMotion ? "0px" : `${startX[index] || 0}px`);
-    card.style.setProperty("--civic-card-y", prefersReducedMotion ? "0px" : `${startY[index] || 0}px`);
-    card.style.setProperty("--civic-card-rotate", prefersReducedMotion ? "0deg" : `${startRotate[index] || 0}deg`);
+    const start = starts[index] || { x: 0, y: 0, rotate: 0 };
+    card.style.setProperty("--civic-card-x", prefersReducedMotion ? "0px" : `${start.x}px`);
+    card.style.setProperty("--civic-card-y", prefersReducedMotion ? "0px" : `${start.y}px`);
+    card.style.setProperty("--civic-card-rotate", prefersReducedMotion ? "0deg" : `${start.rotate}deg`);
+    card.style.setProperty("--civic-card-scale", prefersReducedMotion ? "1" : "0.88");
+    card.style.setProperty("--civic-card-opacity", prefersReducedMotion ? "1" : "0");
     if (prefersReducedMotion) card.classList.add("is-visible");
   });
 
-  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+  if (prefersReducedMotion) {
     cards.forEach((card) => {
       card.style.setProperty("--civic-card-x", "0px");
       card.style.setProperty("--civic-card-y", "0px");
       card.style.setProperty("--civic-card-rotate", "0deg");
+      card.style.setProperty("--civic-card-scale", "1");
+      card.style.setProperty("--civic-card-opacity", "1");
       card.classList.add("is-visible");
     });
     return;
   }
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.style.setProperty("--civic-card-x", "0px");
-        entry.target.style.setProperty("--civic-card-y", "0px");
-        entry.target.style.setProperty("--civic-card-rotate", "0deg");
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      });
-    },
-    { threshold: 0.2, rootMargin: "0px 0px -8% 0px" }
-  );
+  const update = () => {
+    const rect = section.getBoundingClientRect();
+    const scrollable = Math.max(section.offsetHeight - window.innerHeight, 1);
+    const rawProgress = clamp(-rect.top / scrollable, 0, 1);
+    const settleProgress = easeOut(clamp(rawProgress / 0.52, 0, 1));
+    const revealProgress = clamp(rawProgress / 0.2, 0, 1);
+    const featureProgress = clamp((rawProgress - 0.58) / 0.2, 0, 1);
+    const introFade = 1 - clamp((rawProgress - 0.04) / 0.2, 0, 1);
 
-  cards.forEach((card) => observer.observe(card));
+    section.style.setProperty("--civic-intro-opacity", String(introFade));
+    section.style.setProperty("--civic-intro-y", `${mix(0, -36, 1 - introFade)}px`);
+
+    cards.forEach((card, index) => {
+      const start = starts[index] || { x: 0, y: 0, rotate: 0 };
+      const featureBoost = index === 1 || index === 2 ? featureProgress * 0.025 : 0;
+      card.style.setProperty("--civic-card-x", `${mix(start.x, 0, settleProgress)}px`);
+      card.style.setProperty("--civic-card-y", `${mix(start.y, 0, settleProgress)}px`);
+      card.style.setProperty("--civic-card-rotate", `${mix(start.rotate, 0, settleProgress)}deg`);
+      card.style.setProperty("--civic-card-scale", String(mix(0.88, 1 + featureBoost, settleProgress)));
+      card.style.setProperty("--civic-card-opacity", String(revealProgress));
+      card.classList.toggle("is-visible", revealProgress > 0.98);
+    });
+  };
+
+  let ticking = false;
+  const requestUpdate = () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(() => {
+      update();
+      ticking = false;
+    });
+  };
+
+  update();
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate);
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
