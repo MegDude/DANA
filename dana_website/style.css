@@ -28683,3 +28683,284 @@ body:has(.page-hero) .partner-category video {
     height: 150px !important;
   }
 }
+
+/* Sitewide typography governance: Instrument Serif is H1-only. */
+:root {
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html,
+body {
+  font-family: var(--font-sans) !important;
+}
+
+body :where(
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a,
+  button,
+  span,
+  label,
+  input,
+  textarea,
+  select,
+  nav,
+  li,
+  ul,
+  ol,
+  dl,
+  dt,
+  dd,
+  blockquote,
+  figcaption,
+  strong,
+  em,
+  small,
+  table,
+  th,
+  td,
+  article,
+  section,
+  aside,
+  header,
+  footer,
+  div,
+  form,
+  .card,
+  .feature-card,
+  .issue-card,
+  .event-card,
+  .membership-card,
+  .journal-feature-copy,
+  .journal-story-card,
+  .journal-briefing,
+  .journal-pulse,
+  .partner-pathway-copy,
+  .partner-carousel-content,
+  .start-stack-content,
+  .join-action-card,
+  .status-pill,
+  .eyebrow,
+  .text-link,
+  .button
+) {
+  font-family: var(--font-sans) !important;
+}
+
+body h1,
+body .hero-title,
+body .page-hero h1,
+body .hero-editorial .hero-title {
+  width: 100% !important;
+  max-width: none !important;
+  color: inherit;
+  font-family: var(--font-serif) !important;
+  font-size: clamp(3.5rem, 7vw, 5.5rem) !important;
+  font-weight: 500 !important;
+  line-height: 0.95 !important;
+  letter-spacing: -0.045em !important;
+  text-wrap: balance !important;
+  text-transform: none !important;
+}
+
+body h1 *,
+body .hero-title *,
+body .page-hero h1 * {
+  font-family: inherit !important;
+}
+
+body h2,
+body .section h2,
+body .section-header h2,
+body .split-header h2,
+body .content-main h2,
+body .content-aside h2,
+body .integration-note h2,
+body .dana-what-copy h2,
+body .start-here-header h2,
+body .downtown-action-header h2,
+body .partner-pathways-intro h2,
+body .neighborhood-journal-header h2,
+body .events-header h2,
+body .join-router h2,
+body .newsletter-panel h2,
+body .subpage-media-band h2,
+body .media-callout-copy h2,
+body .editorial-panel-intro h2,
+body .sponsor-guide-grid h2,
+body .sponsor-connection-grid h2,
+body .sponsor-map-section h2,
+body .sponsor-connections h2,
+body .sponsor-showcase-section h2,
+body .contact-copy h2 {
+  width: 100% !important;
+  max-width: none !important;
+  font-family: var(--font-sans) !important;
+  font-size: clamp(2rem, 4vw, 3.25rem) !important;
+  font-weight: 650 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.045em !important;
+  text-wrap: balance !important;
+  text-transform: none !important;
+}
+
+body h3,
+body .section h3,
+body .card h3,
+body .feature-card h3,
+body .issue-card h3,
+body .event-card h3,
+body .event-card-copy h3,
+body .downtown-event-copy h3,
+body .membership-card h3,
+body .journal-feature-copy h3,
+body .journal-story-card h3,
+body .partner-pathway-copy h3,
+body .partner-carousel-content h3,
+body .partner-pathways-section .partner-pathway-card h3,
+body .sponsor-place-rail h3,
+body .sponsor-connection-list h3,
+body .sponsor-detail h3,
+body .start-stack-card strong,
+body .start-stack-content strong,
+body .start-here-carousel .start-stack-content strong,
+body .dana-what-card h3,
+body .join-pathway-panel h3,
+body .record-type-grid h2 {
+  font-family: var(--font-sans) !important;
+  font-size: clamp(1.35rem, 2vw, 1.9rem) !important;
+  font-weight: 650 !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.035em !important;
+  text-wrap: balance !important;
+  text-transform: none !important;
+}
+
+body p,
+body li,
+body dd,
+body blockquote,
+body figcaption,
+body input,
+body textarea,
+body select {
+  font-family: var(--font-sans) !important;
+  font-size: clamp(1rem, 1.2vw, 1.125rem) !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+}
+
+body .eyebrow,
+body .status-pill,
+body label,
+body .event-meta,
+body .pillar-label,
+body .dana-what-eyebrow,
+body .dana-what-number,
+body .start-stack-eyebrow,
+body .start-stack-number,
+body .partner-carousel-kicker,
+body .partner-carousel-number,
+body .journal-label,
+body .footer-column h2 {
+  font-family: var(--font-sans) !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+}
+
+body a,
+body button,
+body .button,
+body .text-link,
+body .nav-list a,
+body .footer-nav a,
+body .site-footer,
+body .site-footer * {
+  font-family: var(--font-sans) !important;
+}
+
+@media (max-width: 640px) {
+  body h1,
+  body .hero-title,
+  body .page-hero h1 {
+    font-size: clamp(3rem, 14vw, 4.25rem) !important;
+  }
+
+  body h2,
+  body .section h2,
+  body .section-header h2,
+  body .subpage-media-band h2 {
+    font-size: clamp(1.9rem, 9vw, 2.55rem) !important;
+    letter-spacing: -0.035em !important;
+  }
+
+  body h3,
+  body .section h3,
+  body .issue-card h3,
+  body .event-card-copy h3,
+  body .membership-card h3,
+  body .journal-story-card h3 {
+    font-size: clamp(1.25rem, 6vw, 1.65rem) !important;
+  }
+}
+
+/* Final non-H1 heading lock: older component locks used stronger serif selectors. */
+body main section.section h2,
+body main section.section h3,
+body main section.section h4,
+body main section.section h5,
+body main section.section h6,
+body main .dana-what-section .dana-what-copy h2,
+body main .dana-what-section .dana-what-card h3,
+body main .landing-issues .section-header h2,
+body main .landing-issues .issue-card h3,
+body main .issues-editorial .section-header h2,
+body main .issues-editorial .issue-card h3,
+body main .membership-grid .membership-card h3,
+body main .membership-card h3,
+body main .partner-carousel-content h3,
+body main .journal-feature-copy h3,
+body main .journal-story-card h3,
+body main .event-card h3,
+body main .event-card-copy h3,
+body main .start-stack-content strong,
+body main .start-stack-card strong,
+body main .join-action-card h3,
+body main .contact-card h2,
+body main .archive-list h2,
+body main .content-main h2,
+body main .content-aside h2,
+body main .integration-note h2 {
+  font-family: var(--font-sans) !important;
+}
+
+body main .section.landing-issues.issues-editorial .section-header h2,
+body main .section.landing-issues.issues-editorial .issue-card h3,
+body main .section.landing-issues.issues-editorial:not(.civic-briefing-section) .section-header h2,
+body main .section.landing-issues.issues-editorial:not(.civic-briefing-section) .issue-card h3,
+body main .join-router-section .membership-card h3,
+body main .section.join-router-section .membership-card h3,
+body main .events-section .events-header h2,
+body main .events-section .event-card-copy h3,
+body main .sponsor-page-carousel-track article h3,
+body main .sponsor-place-rail.sponsor-page-carousel-track article h3,
+body main .sponsor-connection-list.sponsor-page-carousel-track article h3,
+body main .partner-support-list.sponsor-page-carousel-track article h3,
+body main .sponsor-guide-grid h2,
+body main .sponsor-map-section h2,
+body main .sponsor-connections h2,
+body main .sponsor-showcase-section h2,
+body main section.start-here.start-here-carousel .start-here-header h2,
+body main section.partner-pathways-section .partner-pathways-intro h2,
+body main .section.partner-pathways-section .partner-pathways-intro h2,
+body main section.section.partner-pathways-section .partner-pathways-intro h2 {
+  font-family: var(--font-sans) !important;
+}
