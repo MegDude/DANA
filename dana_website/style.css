@@ -27,6 +27,30 @@
   --max: 1240px;
 }
 
+@media (max-width: 820px) {
+  body main .section-navy.join-router-section .join-router .membership-grid,
+  body main .join-router-section .join-router .membership-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-auto-flow: row !important;
+    grid-auto-columns: auto !important;
+    gap: 1rem !important;
+    width: 100% !important;
+    margin-inline: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    scroll-snap-type: none !important;
+  }
+
+  body main .section-navy.join-router-section .join-router .membership-card,
+  body main .join-router-section .join-router .membership-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    scroll-snap-align: none !important;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -24642,5 +24666,566 @@ body .section.landing-issues.issues-editorial .issue-rail-progress span {
 
   body .section.landing-issues.issues-editorial .issue-rail-progress span {
     transition: none !important;
+  }
+}
+
+/* Sitewide iPhone 15 responsive polish lock. */
+@media (max-width: 820px) {
+  html,
+  body {
+    max-width: 100% !important;
+    overflow-x: clip !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box !important;
+  }
+
+  img,
+  video,
+  svg,
+  canvas {
+    max-width: 100% !important;
+  }
+
+  body .shell,
+  body .nav-shell,
+  body .hero-content,
+  body .page-hero .shell,
+  body .footer-layout,
+  body .footer-bottom {
+    width: min(100% - 32px, 1180px) !important;
+    margin-inline: auto !important;
+  }
+
+  body .section,
+  body .page-hero {
+    padding-block: clamp(3rem, 12vw, 5rem) !important;
+  }
+
+  body .section-header,
+  body .section-header-row,
+  body .events-header,
+  body .partner-pathways-intro,
+  body .neighborhood-journal-header,
+  body .downtown-action-header,
+  body .dana-what-intro {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    align-items: start !important;
+    max-width: 100% !important;
+    margin-bottom: clamp(1.6rem, 7vw, 2.4rem) !important;
+  }
+
+  body h1,
+  body h2,
+  body h3,
+  body p,
+  body a,
+  body button,
+  body label,
+  body input,
+  body textarea,
+  body select,
+  body li,
+  body span,
+  body strong {
+    max-width: 100% !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  body .hero-title,
+  body .page-hero h1 {
+    font-size: clamp(2.25rem, 10vw, 3.2rem) !important;
+    line-height: 0.96 !important;
+    letter-spacing: -0.035em !important;
+  }
+
+  body .section-header h2,
+  body .dana-what-intro h2,
+  body .partner-pathways-intro h2,
+  body .neighborhood-journal-header h2,
+  body .events-header h2,
+  body .downtown-action-header h2,
+  body .join-router h2,
+  body .newsletter-panel h2,
+  body .media-callout-copy h2,
+  body .editorial-panel-intro h2 {
+    font-size: clamp(2rem, 8.8vw, 3rem) !important;
+    line-height: 0.98 !important;
+    letter-spacing: -0.032em !important;
+  }
+
+  body .hero-copy,
+  body .page-hero p,
+  body .section-header p:not(.eyebrow),
+  body .dana-what-intro p,
+  body .partner-pathways-intro p:not(.eyebrow),
+  body .events-header p,
+  body .downtown-action-header p,
+  body .media-callout-copy p,
+  body .editorial-panel-intro p {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+  }
+
+  body .button,
+  body .text-link,
+  body button,
+  body input,
+  body textarea,
+  body select,
+  body .event-link,
+  body .issue-card a,
+  body .membership-card a,
+  body .journal-story-card a,
+  body .partner-carousel-content strong {
+    min-height: 44px !important;
+  }
+
+  body .hero-actions,
+  body .intro-actions,
+  body .downtown-event-actions,
+  body .events-view-actions,
+  body .journal-rail-controls,
+  body .issue-rail-controls,
+  body .start-carousel-controls,
+  body .partner-carousel-controls {
+    max-width: 100% !important;
+  }
+
+  body .about-story,
+  body .editorial-panel,
+  body .content-layout,
+  body .contact-page-layout,
+  body .media-callout,
+  body .board-hero-grid,
+  body .board-intro-grid,
+  body .governance-grid,
+  body .priority-grid,
+  body .record-type-grid,
+  body .sponsor-guide-grid,
+  body .sponsor-map-guide,
+  body .sponsor-connection-grid,
+  body .join-router,
+  body .newsletter-inner,
+  body .footer-layout {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: clamp(1.25rem, 6vw, 2rem) !important;
+  }
+
+  body .issue-grid:not(.issue-rail-track),
+  body .event-grid:not(.event-rail),
+  body .membership-grid,
+  body .feature-grid,
+  body .resource-grid,
+  body .archive-list,
+  body .editorial-action-list,
+  body .partner-stats,
+  body .downtown-live-actions,
+  body .board-member-grid,
+  body .sponsor-detail-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  body .content-aside,
+  body .governance-card,
+  body .issue-card,
+  body .event-card,
+  body .membership-card,
+  body .feature-card,
+  body .resource-card,
+  body .archive-list article,
+  body .editorial-action-list article,
+  body .journal-story-card,
+  body .partner-category,
+  body .sponsor-detail,
+  body .sponsor-connection-card {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  body .about-story figure,
+  body .media-callout-frame,
+  body .journal-feature-media,
+  body .partner-carousel-card,
+  body .start-stack-card,
+  body .membership-card {
+    border-radius: 0 !important;
+  }
+
+  body .about-story figure,
+  body .media-callout-frame,
+  body .journal-feature-media {
+    min-height: auto !important;
+    aspect-ratio: 4 / 3 !important;
+  }
+
+  body .about-story video,
+  body .media-callout-frame video,
+  body .journal-feature-media video,
+  body .partner-carousel-card video,
+  body .membership-card video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  body .event-row-link,
+  body .downtown-feature-event {
+    grid-template-columns: 82px minmax(0, 1fr) !important;
+    gap: 1rem !important;
+  }
+
+  body .event-date,
+  body .downtown-event-date {
+    width: 76px !important;
+    min-width: 76px !important;
+    height: 76px !important;
+  }
+
+  body .event-date strong,
+  body .downtown-event-date strong {
+    font-size: 2rem !important;
+  }
+
+  body .events-view-actions,
+  body .sponsor-logo-rail,
+  body .sponsor-place-rail,
+  body .partner-category-rail,
+  body .partner-name-rail {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    overscroll-behavior-x: contain !important;
+    scroll-snap-type: x proximity !important;
+    scrollbar-width: none !important;
+  }
+
+  body .events-view-actions::-webkit-scrollbar,
+  body .sponsor-logo-rail::-webkit-scrollbar,
+  body .sponsor-place-rail::-webkit-scrollbar,
+  body .partner-category-rail::-webkit-scrollbar,
+  body .partner-name-rail::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  body .lead-form,
+  body .signup-form {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    width: 100% !important;
+  }
+
+  body .form-row,
+  body .form-row-full,
+  body .lead-form .form-row,
+  body .signup-form .form-row {
+    grid-column: 1 / -1 !important;
+    min-width: 0 !important;
+  }
+
+  body input,
+  body textarea,
+  body select {
+    width: 100% !important;
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 430px) {
+  body .shell,
+  body .nav-shell,
+  body .hero-content,
+  body .page-hero .shell,
+  body .footer-layout,
+  body .footer-bottom {
+    width: calc(100% - 32px) !important;
+  }
+
+  body .hero {
+    min-height: 78svh !important;
+  }
+
+  body .hero-content {
+    padding-block: 6.5rem 3rem !important;
+  }
+
+  body .hero-title,
+  body .page-hero h1 {
+    font-size: clamp(2.1rem, 11vw, 2.85rem) !important;
+  }
+
+  body .section-header h2,
+  body .dana-what-intro h2,
+  body .partner-pathways-intro h2,
+  body .neighborhood-journal-header h2,
+  body .events-header h2,
+  body .downtown-action-header h2,
+  body .join-router h2,
+  body .newsletter-panel h2,
+  body .media-callout-copy h2,
+  body .editorial-panel-intro h2 {
+    font-size: clamp(1.9rem, 9.5vw, 2.55rem) !important;
+  }
+
+  body .hero-actions,
+  body .downtown-event-actions,
+  body .newsletter-inner,
+  body .footer-bottom {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+
+  body .hero-actions .button,
+  body .hero-actions .text-link,
+  body .newsletter-inner .button,
+  body .signup-form .button,
+  body .lead-form .button {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  body .dana-what-section,
+  body .partner-pathways-section,
+  body .neighborhood-journal-section,
+  body .landing-issues,
+  body .downtown-action-section,
+  body .join-router-section,
+  body .newsletter-panel {
+    padding-block: 3rem !important;
+  }
+
+  body .dana-what-system,
+  body .dana-what-copy,
+  body .dana-what-board,
+  body .downtown-action-panel,
+  body .journal-feature-card,
+  body .partner-pathways-carousel {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  body .dana-what-media {
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 4 / 3 !important;
+  }
+
+  body .dana-what-card {
+    flex-basis: calc(100vw - 32px) !important;
+    min-height: 300px !important;
+  }
+
+  body .dana-what-card h3 {
+    font-size: clamp(1.45rem, 7vw, 1.9rem) !important;
+    white-space: normal !important;
+  }
+
+  body .start-carousel-stage,
+  body .start-stack,
+  body .start-stack-card {
+    min-height: 560px !important;
+  }
+
+  body .start-stack-content {
+    padding: 1.25rem !important;
+  }
+
+  body .start-stack-content strong {
+    font-size: clamp(2rem, 10vw, 2.8rem) !important;
+    line-height: 0.98 !important;
+  }
+
+  body .start-stack-body {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+  }
+
+  body .start-stack-includes {
+    gap: 0.45rem !important;
+  }
+
+  body .start-stack-includes span,
+  body .partner-chip-list span {
+    font-size: 0.68rem !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  body .partner-carousel-card,
+  body .partner-carousel-content {
+    min-height: 620px !important;
+  }
+
+  body .partner-carousel-content {
+    padding: 1.25rem !important;
+  }
+
+  body .partner-carousel-content h3 {
+    font-size: clamp(2.2rem, 11vw, 3rem) !important;
+    line-height: 0.98 !important;
+  }
+
+  body .partner-carousel-content p:not(.partner-carousel-kicker) {
+    font-size: 0.96rem !important;
+    line-height: 1.52 !important;
+  }
+
+  body .partner-carousel-content strong {
+    width: fit-content !important;
+    max-width: 100% !important;
+    padding: 0.55rem 0.8rem !important;
+    font-size: 0.68rem !important;
+  }
+
+  body .partner-carousel-controls,
+  body .start-carousel-controls,
+  body .issue-rail-controls,
+  body .journal-rail-controls {
+    gap: 0.65rem !important;
+  }
+
+  body .partner-carousel-controls > button,
+  body .start-carousel-controls > button,
+  body .issue-rail-controls button,
+  body .journal-rail-controls button {
+    min-width: 58px !important;
+    padding-inline: 0.7rem !important;
+    font-size: 0.68rem !important;
+  }
+
+  body .journal-feature-card,
+  body .journal-story-card,
+  body .membership-card,
+  body .issue-card,
+  body .event-row-link,
+  body .downtown-feature-event,
+  body .content-main,
+  body .content-aside,
+  body .editorial-panel,
+  body .governance-card,
+  body .sponsor-detail {
+    padding: 1.15rem !important;
+  }
+
+  body .journal-feature-copy {
+    padding: 1.35rem !important;
+  }
+
+  body .journal-feature-copy h3,
+  body .journal-story-card h3,
+  body .membership-card h3,
+  body .issue-card h3,
+  body .event-card-copy h3,
+  body .downtown-event-copy h3,
+  body .archive-list h2,
+  body .content-main h2,
+  body .content-aside h2,
+  body .feature-card h3,
+  body .resource-card h3 {
+    font-size: clamp(1.35rem, 7vw, 1.9rem) !important;
+    line-height: 1.02 !important;
+  }
+
+  body .section.landing-issues.issues-editorial .issue-grid.issue-rail-track[data-issues-preview] {
+    grid-auto-columns: minmax(0, calc(100vw - 32px)) !important;
+    padding-inline: 16px !important;
+    scroll-padding-inline: 16px !important;
+  }
+
+  body .section.landing-issues.issues-editorial .issue-rail {
+    margin-inline: -16px !important;
+  }
+
+  body .section.landing-issues.issues-editorial .issue-grid.issue-rail-track[data-issues-preview] .issue-card {
+    grid-template-columns: 88px minmax(0, 1fr) !important;
+    min-height: 300px !important;
+  }
+
+  body .section.landing-issues.issues-editorial .issue-card-visual {
+    min-height: 100% !important;
+  }
+
+  body .section.landing-issues.issues-editorial .issue-card p {
+    font-size: 0.92rem !important;
+    line-height: 1.48 !important;
+  }
+
+  body .event-row-link,
+  body .downtown-feature-event {
+    grid-template-columns: 72px minmax(0, 1fr) !important;
+  }
+
+  body .event-date,
+  body .downtown-event-date {
+    width: 68px !important;
+    min-width: 68px !important;
+    height: 68px !important;
+  }
+
+  body .events-view-actions {
+    margin-inline: -16px !important;
+    padding-inline: 16px !important;
+  }
+
+  body .event-calendar-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  body .membership-card {
+    min-height: 360px !important;
+  }
+
+  body .footer-nav {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  body .footer-brand {
+    align-items: flex-start !important;
+  }
+}
+
+@media (max-width: 820px) {
+  body main .issue-grid.issue-grid-wide[data-issues-all],
+  body main .membership-grid.membership-grid-large[data-membership],
+  body main .join-router .membership-grid,
+  body main .feature-grid,
+  body main .resource-grid,
+  body main .archive-list,
+  body main .record-type-grid,
+  body main .priority-grid,
+  body main .governance-grid,
+  body main .downtown-live-actions {
+    display: grid !important;
+    grid-auto-flow: row !important;
+    grid-template-columns: 1fr !important;
+    grid-auto-columns: auto !important;
+    gap: 1rem !important;
+    overflow: visible !important;
+    padding-inline: 0 !important;
+  }
+
+  body main .issue-grid.issue-grid-wide[data-issues-all] > *,
+  body main .membership-grid.membership-grid-large[data-membership] > *,
+  body main .join-router .membership-grid > *,
+  body main .feature-grid > *,
+  body main .resource-grid > *,
+  body main .archive-list > *,
+  body main .record-type-grid > *,
+  body main .priority-grid > *,
+  body main .governance-grid > *,
+  body main .downtown-live-actions > * {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
   }
 }
