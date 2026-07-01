@@ -28964,3 +28964,211 @@ body main .section.partner-pathways-section .partner-pathways-intro h2,
 body main section.section.partner-pathways-section .partner-pathways-intro h2 {
   font-family: var(--font-sans) !important;
 }
+
+/* Horizontal next-step rail */
+body .next-step-section {
+  background: #ffffff !important;
+  color: #072f24 !important;
+  padding: clamp(72px, 9vw, 128px) 0 !important;
+  overflow: hidden !important;
+}
+
+body .next-step-shell {
+  display: grid !important;
+  gap: clamp(1.5rem, 3vw, 2.25rem) !important;
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+}
+
+body .next-step-header {
+  align-items: end !important;
+  gap: 1.5rem !important;
+  margin: 0 !important;
+}
+
+body .next-step-header h2 {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  color: #072f24 !important;
+  font-family: var(--font-sans) !important;
+  font-size: clamp(2rem, 4vw, 3.25rem) !important;
+  font-weight: 650 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.045em !important;
+  text-wrap: balance !important;
+}
+
+body .next-step-header p:not(.eyebrow) {
+  max-width: 46rem !important;
+  color: rgba(7, 47, 36, 0.72) !important;
+  font-family: var(--font-sans) !important;
+  font-size: clamp(1rem, 1.2vw, 1.125rem) !important;
+  line-height: 1.6 !important;
+}
+
+body .next-step-controls {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 0.5rem !important;
+  min-width: max-content !important;
+}
+
+body .next-step-controls button {
+  min-height: 44px !important;
+  border: 1px solid rgba(7, 47, 36, 0.12) !important;
+  background: rgba(255, 255, 255, 0.72) !important;
+  color: #072f24 !important;
+  box-shadow: 0 18px 48px rgba(7, 47, 36, 0.08) !important;
+  padding: 0 1rem !important;
+  font-family: var(--font-sans) !important;
+  font-size: 0.78rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+  transition:
+    border-color 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    color 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+body .next-step-controls button:hover,
+body .next-step-controls button:focus-visible {
+  border-color: rgba(194, 171, 122, 0.65) !important;
+  color: #c2ab7a !important;
+  transform: translateY(-2px) !important;
+}
+
+body .next-step-track {
+  display: flex !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  gap: clamp(1rem, 2vw, 1.5rem) !important;
+  overflow-x: auto !important;
+  overscroll-behavior-x: contain !important;
+  scroll-snap-type: x mandatory !important;
+  scrollbar-width: none !important;
+  padding: 0 0 1rem !important;
+}
+
+body .next-step-track::-webkit-scrollbar {
+  display: none !important;
+}
+
+body .next-step-card {
+  flex: 0 0 min(86vw, 390px) !important;
+  scroll-snap-align: start !important;
+  min-height: 320px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1rem !important;
+  padding: clamp(1.35rem, 2.5vw, 2rem) !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(7, 47, 36, 0.1) !important;
+  box-shadow: 0 24px 80px rgba(7, 47, 36, 0.07) !important;
+  color: #072f24 !important;
+  transition:
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+body .next-step-card:hover,
+body .next-step-card:focus-within {
+  transform: translateY(-3px) !important;
+  border-color: rgba(194, 171, 122, 0.55) !important;
+  box-shadow: 0 30px 90px rgba(7, 47, 36, 0.1) !important;
+}
+
+body .next-step-number {
+  color: #c2ab7a !important;
+  font-family: var(--font-sans) !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+}
+
+body .next-step-card h3 {
+  margin: 0 !important;
+  color: #072f24 !important;
+  font-family: var(--font-sans) !important;
+  font-size: clamp(1.35rem, 2vw, 1.9rem) !important;
+  font-weight: 650 !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.035em !important;
+}
+
+body .next-step-card p {
+  margin: 0 !important;
+  color: rgba(7, 47, 36, 0.72) !important;
+  font-family: var(--font-sans) !important;
+  font-size: clamp(1rem, 1.1vw, 1.0625rem) !important;
+  line-height: 1.6 !important;
+}
+
+body .next-step-card a {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+  width: fit-content !important;
+  min-height: 44px !important;
+  margin-top: auto !important;
+  padding-top: 1.25rem !important;
+  color: #072f24 !important;
+  font-family: var(--font-sans) !important;
+  font-size: 0.78rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+}
+
+body .next-step-card a span {
+  color: #c2ab7a !important;
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+body .next-step-card a:hover,
+body .next-step-card a:focus-visible {
+  color: #c2ab7a !important;
+}
+
+body .next-step-card a:hover span,
+body .next-step-card a:focus-visible span {
+  transform: translate(3px, -3px) !important;
+}
+
+@media (min-width: 1180px) {
+  body .next-step-card {
+    flex-basis: min(42vw, 460px) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body .next-step-section {
+    padding: clamp(64px, 14vw, 88px) 0 !important;
+  }
+
+  body .next-step-header {
+    display: grid !important;
+    align-items: start !important;
+  }
+
+  body .next-step-controls {
+    justify-content: flex-start !important;
+  }
+
+  body .next-step-track {
+    margin-inline: -20px !important;
+    padding-inline: 20px !important;
+  }
+
+  body .next-step-card {
+    min-height: 300px !important;
+  }
+}

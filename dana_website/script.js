@@ -1495,6 +1495,43 @@ function initJournalStoryRail() {
   updateProgress();
 }
 
+function initNextStepRail() {
+  const rail = document.querySelector("[data-next-step-rail]");
+  if (!rail) return;
+
+  const track = rail.querySelector(".next-step-track");
+  const prev = rail.querySelector("[data-next-step-prev]");
+  const next = rail.querySelector("[data-next-step-next]");
+  const cards = Array.from(rail.querySelectorAll(".next-step-card"));
+  if (!track || !cards.length) return;
+
+  const scrollByCard = (direction) => {
+    const card = cards[0];
+    const gap = parseFloat(window.getComputedStyle(track).columnGap || "0");
+    const amount = card.getBoundingClientRect().width + gap;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    track.scrollBy({
+      left: direction * amount,
+      behavior: reduceMotion ? "auto" : "smooth"
+    });
+  };
+
+  prev?.addEventListener("click", () => scrollByCard(-1));
+  next?.addEventListener("click", () => scrollByCard(1));
+  track.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      scrollByCard(-1);
+    }
+
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      scrollByCard(1);
+    }
+  });
+}
+
 function setupDanaOrbit() {
   const orbit = document.querySelector(".dana-orbit");
   if (!orbit) return;
@@ -1629,6 +1666,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   setupHeroParallax();
   setupSponsorShowcase();
   initJournalStoryRail();
+  initNextStepRail();
   setupDanaOrbit();
   setupCivicCardSystem();
   setupDanaWhatPillarMorph();
