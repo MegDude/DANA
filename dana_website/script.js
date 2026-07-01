@@ -407,12 +407,12 @@ function issuePreviewCta(issue) {
 
 function renderIssuePreviewCard(issue) {
   const cta = issuePreviewCta(issue);
+  const image = issue.image || "images/editorial/waterloo-greenway-creek.png";
+  const imageAlt = issue.imageAlt || "";
   return `
     <article class="issue-card" id="${issue.id}">
-      <div class="issue-card-visual" aria-hidden="true">
-        <svg class="issue-card-icon" viewBox="0 0 64 64">
-          ${issuePreviewIcons[issue.id] || issuePreviewIcons["downtown-vitality"]}
-        </svg>
+      <div class="issue-card-visual">
+        <img src="${image}" alt="${imageAlt}" loading="lazy" decoding="async" />
       </div>
       <div class="issue-card-body">
         ${issue.status ? `<span class="status-pill">${issue.status}</span>` : ""}
@@ -444,8 +444,8 @@ const civicBriefingIssues = [
     url: "public-safety.html",
     secondaryCta: "Share a concern",
     secondaryUrl: "issues.html",
-    image: "images/dana-community-event.jpg",
-    imageAlt: "Downtown residents walking near lit streets at night."
+    image: "images/editorial/trail-walking.webp",
+    imageAlt: "People walking on a downtown trail near the water."
   },
   {
     id: "housing-development",
@@ -466,8 +466,8 @@ const civicBriefingIssues = [
     url: "https://www.downtownaustin.org/toward-a-more-walkable-austin/",
     secondaryCta: "Follow updates",
     secondaryUrl: "issues.html",
-    image: "images/editorial/seaholm-district.jpg",
-    imageAlt: "Downtown Austin construction and mixed-use residential development."
+    image: "images/editorial/70-rainey-austin.jpg",
+    imageAlt: "A downtown Austin residential tower with the river and city skyline nearby."
   },
   {
     id: "parks-public-spaces",
@@ -488,8 +488,8 @@ const civicBriefingIssues = [
     url: "https://www.downtownaustin.org/june-shoal-creek-clean-up/",
     secondaryCta: "Volunteer",
     secondaryUrl: "join.html",
-    image: "images/dana-trail-walkway.jpg",
-    imageAlt: "People walking along a downtown creek trail and public green space."
+    image: "images/editorial/waterloo-greenway-creek.png",
+    imageAlt: "People enjoying a downtown Austin greenway and creek."
   },
   {
     id: "i-35",
@@ -532,8 +532,8 @@ const civicBriefingIssues = [
     url: "issues.html",
     secondaryCta: "View meetings",
     secondaryUrl: "events.html",
-    image: "images/dana-waterloo-aerial.jpg",
-    imageAlt: "Downtown transit planning, rail corridor, and station area context."
+    image: "images/editorial/waterloo-bridge-creek.png",
+    imageAlt: "A creek bridge connecting downtown trails and buildings."
   },
   {
     id: "downtown-future",
@@ -554,8 +554,8 @@ const civicBriefingIssues = [
     url: "https://www.downtownaustin.org/dana-letter-c20-2024-018-ddbp-updates-2026-05-14/",
     secondaryCta: "Join DANA",
     secondaryUrl: "join.html",
-    image: "images/editorial/republic-square-lawn.jpg",
-    imageAlt: "Residents walking downtown near outdoor dining and active public life."
+    image: "images/editorial/waterloo-trail-sunset.png",
+    imageAlt: "A bright downtown trail and garden at sunset."
   }
 ];
 
@@ -713,32 +713,10 @@ function renderIssues(issues) {
     if (!target) return;
     if (target.matches("[data-issues-preview]")) {
       target.className = "issue-grid";
-      target.innerHTML = list
-        .map(
-          (issue) => `
-            <article class="issue-card" id="${issue.id}">
-              ${issue.status ? `<span class="status-pill">${issue.status}</span>` : ""}
-              <h3>${issue.title}</h3>
-              <p>${issue.summary}</p>
-              ${issue.sourceUrl && issue.sourceUrl !== "#" ? `<a href="${issue.sourceUrl}">${issue.sourceUrl.endsWith(".html") ? "Read the issue" : "See the background"}</a>` : ""}
-            </article>
-          `
-        )
-        .join("");
+      target.innerHTML = list.map(renderIssuePreviewCard).join("");
       return;
     }
-    target.innerHTML = list
-      .map(
-        (issue) => `
-          <article class="issue-card" id="${issue.id}">
-            ${issue.status ? `<span class="status-pill">${issue.status}</span>` : ""}
-            <h3>${issue.title}</h3>
-            <p>${issue.summary}</p>
-            ${issue.sourceUrl && issue.sourceUrl !== "#" ? `<a href="${issue.sourceUrl}">${issue.sourceUrl.endsWith(".html") ? "Read the issue" : "See the background"}</a>` : ""}
-          </article>
-        `
-      )
-      .join("");
+    target.innerHTML = list.map(renderIssuePreviewCard).join("");
   });
 }
 

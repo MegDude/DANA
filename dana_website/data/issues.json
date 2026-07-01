@@ -5,7 +5,9 @@
     "summary": "Helping downtown feel safer, quieter, better lit, and easier to enjoy at different times of day.",
     "status": "Recently Updated",
     "sourceUrl": "public-safety.html",
-    "notes": "Street lighting, crossings, sound, walking, and public spaces."
+    "notes": "Street lighting, crossings, sound, walking, and public spaces.",
+    "image": "images/editorial/trail-walking.webp",
+    "imageAlt": "People walking on a downtown trail near the water."
   },
   {
     "id": "transportation-housing",
@@ -13,7 +15,9 @@
     "summary": "New homes, new buildings, and planning conversations that shape how downtown grows.",
     "status": "In Planning",
     "sourceUrl": "https://www.downtownaustin.org/toward-a-more-walkable-austin/",
-    "notes": "Residential development, affordable housing, mixed-use projects, and development proposals."
+    "notes": "Residential development, affordable housing, mixed-use projects, and development proposals.",
+    "image": "images/editorial/70-rainey-austin.jpg",
+    "imageAlt": "A downtown Austin residential tower with the river and city skyline nearby."
   },
   {
     "id": "parks-shoal-creek",
@@ -21,7 +25,9 @@
     "summary": "Parks, trails, trees, plazas, and open spaces where people actually want to spend time.",
     "status": "Community Project",
     "sourceUrl": "https://www.downtownaustin.org/june-shoal-creek-clean-up/",
-    "notes": "Waterloo Greenway, Shoal Creek, Republic Square, public plazas, and street trees."
+    "notes": "Waterloo Greenway, Shoal Creek, Republic Square, public plazas, and street trees.",
+    "image": "images/editorial/waterloo-greenway-creek.png",
+    "imageAlt": "People enjoying a downtown Austin greenway and creek."
   },
   {
     "id": "i-35-expansion",
@@ -29,7 +35,9 @@
     "summary": "Construction, traffic changes, air quality, and how the reconstruction may affect downtown residents.",
     "status": "Long-Term Project",
     "sourceUrl": "issues.html",
-    "notes": "Highway changes near downtown and the long effort to reconnect the city."
+    "notes": "Highway changes near downtown and the long effort to reconnect the city.",
+    "image": "images/dana-mobility-highway.jpg",
+    "imageAlt": "Downtown highway infrastructure and mobility corridor."
   },
   {
     "id": "project-connect",
@@ -37,7 +45,9 @@
     "summary": "Austin's future transit network, including downtown station planning, timelines, and resident impact.",
     "status": "City Project",
     "sourceUrl": "issues.html",
-    "notes": "Light rail planning, station locations, timelines, and downtown connections."
+    "notes": "Light rail planning, station locations, timelines, and downtown connections.",
+    "image": "images/editorial/waterloo-bridge-creek.png",
+    "imageAlt": "A creek bridge connecting downtown trails and buildings."
   },
   {
     "id": "downtown-vitality",
@@ -45,6 +55,8 @@
     "summary": "The mix of homes, local businesses, walkable streets, public life, and community events that make downtown feel like a neighborhood.",
     "status": "Community Conversation",
     "sourceUrl": "https://www.downtownaustin.org/dana-letter-c20-2024-018-ddbp-updates-2026-05-14/",
-    "notes": "Housing, public spaces, walkability, street life, and local businesses."
+    "notes": "Housing, public spaces, walkability, street life, and local businesses.",
+    "image": "images/editorial/waterloo-trail-sunset.png",
+    "imageAlt": "A bright downtown trail and garden at sunset."
   }
 ]

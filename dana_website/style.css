@@ -28586,7 +28586,100 @@ body .lead-form .button-primary {
     grid-template-columns: 1fr !important;
   }
 
-  body .lead-form {
-    padding: 1.15rem !important;
+body .lead-form {
+  padding: 1.15rem !important;
+  }
+}
+
+/* Editorial image matching pass: real photography, no green overlay wash. */
+body:has(.page-hero) .subpage-media-band figure::after,
+body:has(.page-hero) .media-callout-frame::after,
+body:has(.page-hero) .about-story figure::after,
+body:has(.page-hero) .story-feature-media::after,
+body:has(.page-hero) .issue-feature-media::after,
+body:has(.page-hero) .sponsor-media-card::after,
+body:has(.page-hero) .signal-card::after,
+body:has(.page-hero) .partner-category::after,
+body .section.landing-issues.issues-editorial .issue-card-visual::after {
+  content: none !important;
+  display: none !important;
+  background: transparent !important;
+}
+
+body .section.landing-issues.issues-editorial .issue-card-visual {
+  width: 100% !important;
+  height: clamp(150px, 22vw, 210px) !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  background: #ffffff !important;
+}
+
+body .section.landing-issues.issues-editorial .issue-card,
+body main .issue-grid.issue-grid-wide[data-issues-all] .issue-card {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  grid-template-rows: auto 1fr !important;
+  align-items: stretch !important;
+}
+
+body main .issue-grid.issue-grid-wide[data-issues-all] .issue-card-visual {
+  position: relative !important;
+  height: clamp(150px, 22vw, 210px) !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  background: #ffffff !important;
+}
+
+body .section.landing-issues.issues-editorial .issue-card-visual img {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  object-fit: cover !important;
+  filter: none !important;
+}
+
+body main .issue-grid.issue-grid-wide[data-issues-all] .issue-card-visual img {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  object-fit: cover !important;
+  filter: none !important;
+}
+
+body:has(.page-hero) .subpage-media-band figure {
+  background: #ffffff !important;
+}
+
+body:has(.page-hero) .subpage-media-band img,
+body:has(.page-hero) .media-callout-frame img,
+body:has(.page-hero) .media-callout-frame video,
+body:has(.page-hero) .about-story img,
+body:has(.page-hero) .about-story video,
+body:has(.page-hero) .story-feature-media img,
+body:has(.page-hero) .story-feature-media video,
+body:has(.page-hero) .issue-feature-media img,
+body:has(.page-hero) .issue-feature-media video,
+body:has(.page-hero) .sponsor-media-card img,
+body:has(.page-hero) .sponsor-media-card video,
+body:has(.page-hero) .signal-card img,
+body:has(.page-hero) .signal-card video,
+body:has(.page-hero) .partner-category img,
+body:has(.page-hero) .partner-category video {
+  filter: none !important;
+}
+
+@media (max-width: 640px) {
+  body .section.landing-issues.issues-editorial .issue-card-visual,
+  body .section.landing-issues.issues-editorial .issue-card-visual img,
+  body main .issue-grid.issue-grid-wide[data-issues-all] .issue-card-visual,
+  body main .issue-grid.issue-grid-wide[data-issues-all] .issue-card-visual img {
+    height: 150px !important;
   }
 }
