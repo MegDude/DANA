@@ -776,17 +776,18 @@ function setupDanaWhatCarousel() {
 
     let index = 0;
 
-    const visibleCount = () => 1;
+    const visibleCount = () => (window.matchMedia("(min-width: 1120px)").matches ? cards.length : 1);
 
     const maxIndex = () => Math.max(0, cards.length - visibleCount());
 
     const updateCarousel = () => {
       index = Math.min(index, maxIndex());
+      if (maxIndex() === 0) index = 0;
       const gap = parseFloat(window.getComputedStyle(track).gap || "0");
       const cardWidth = cards[0].getBoundingClientRect().width;
       const step = cardWidth + gap;
 
-      track.style.transform = `translateX(${-index * step}px)`;
+      track.style.transform = maxIndex() === 0 ? "none" : `translateX(${-index * step}px)`;
       cards.forEach((card, cardIndex) => {
         card.classList.toggle("is-active", cardIndex === index);
       });
