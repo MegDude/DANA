@@ -23157,3 +23157,278 @@ body .dana-what-board.dana-what-carousel .dana-what-pillars.dana-what-pillars--c
     flex-basis: calc((100% - 66px) / 4) !important;
   }
 }
+
+/* Partner Pathways independent carousel. */
+body .partner-pathways-section {
+  background: #F7F8FB !important;
+  padding: clamp(72px, 10vw, 132px) 0 !important;
+  overflow: hidden !important;
+}
+
+body .partner-pathways-section .partner-pathways-shell {
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+}
+
+body .partner-pathways-section .partner-pathways-intro {
+  max-width: 820px !important;
+  margin-bottom: clamp(32px, 5vw, 54px) !important;
+}
+
+body .partner-pathways-section .partner-pathways-intro h2 {
+  max-width: 760px !important;
+  margin: 0 !important;
+  color: #0B1F33 !important;
+  font-family: "Instrument Serif", Georgia, serif !important;
+  font-size: clamp(40px, 5.6vw, 72px) !important;
+  font-weight: 400 !important;
+  line-height: 0.96 !important;
+  letter-spacing: 0 !important;
+}
+
+body .partner-pathways-section .partner-pathways-intro p:not(.eyebrow) {
+  max-width: 680px !important;
+  color: rgba(11, 31, 51, 0.72) !important;
+  font-size: 17px !important;
+  line-height: 1.62 !important;
+}
+
+body .partner-pathways-section .partner-impact-layout,
+body .partner-pathways-section .partner-role-grid,
+body .partner-pathways-section .partner-role-card,
+body .partner-pathways-section .partner-role-card-featured,
+body .partner-pathways-section .partner-role-card-sponsor {
+  display: initial !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+}
+
+body .partner-pathways-carousel {
+  width: 100%;
+  overflow: visible;
+}
+
+body .partner-carousel-viewport {
+  overflow: visible;
+  width: 100%;
+}
+
+body .partner-carousel-track {
+  display: flex;
+  align-items: stretch;
+  gap: clamp(16px, 2vw, 24px);
+  transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+body .partner-carousel-card {
+  position: relative;
+  flex: 0 0 min(82vw, 780px);
+  min-height: clamp(560px, 62vw, 680px);
+  overflow: hidden;
+  background: #0B1F33;
+  border: 0;
+  opacity: 0.52;
+  transform: scale(0.96);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+body .partner-carousel-card.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+body .partner-carousel-card:not(.is-active) {
+  pointer-events: none;
+}
+
+body .partner-carousel-card video,
+body .partner-carousel-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body .partner-carousel-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(11, 31, 51, 0.90), rgba(11, 31, 51, 0.58) 45%, rgba(11, 31, 51, 0.24)),
+    linear-gradient(to top, rgba(11, 31, 51, 0.70), rgba(11, 31, 51, 0.08));
+}
+
+body .partner-carousel-content,
+body .partner-carousel-content:visited {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  min-height: inherit;
+  max-width: 680px;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(26px, 5vw, 58px);
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+body .partner-carousel-number {
+  display: block;
+  margin-bottom: 16px;
+  color: #C8A96A;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.14em;
+}
+
+body .partner-carousel-kicker {
+  margin: 0 0 12px;
+  color: #C8A96A;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+body .partner-carousel-content h3 {
+  max-width: 620px;
+  margin: 0 0 16px;
+  color: #FFFFFF;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: clamp(38px, 7vw, 76px);
+  font-weight: 400;
+  line-height: 0.94;
+  letter-spacing: 0;
+}
+
+body .partner-carousel-content p:not(.partner-carousel-kicker) {
+  max-width: 610px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: clamp(16px, 2.1vw, 19px);
+  line-height: 1.55;
+}
+
+body .partner-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+body .partner-chip-list span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 7px 10px;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+body .partner-carousel-content strong {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 44px;
+  align-items: center;
+  margin-top: 22px;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+body .partner-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+body .partner-carousel-controls > button {
+  display: inline-grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  color: #0B1F33;
+  background: #FFFFFF;
+  border: 1px solid rgba(11, 31, 51, 0.16);
+  cursor: pointer;
+}
+
+body .partner-carousel-dots {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  gap: 8px;
+}
+
+body .partner-carousel-dots button {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  background: rgba(11, 31, 51, 0.22);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+body .partner-carousel-dots button.is-active {
+  width: 28px;
+  background: #C8A96A;
+}
+
+@media (max-width: 760px) {
+  body .partner-pathways-section {
+    padding: clamp(58px, 14vw, 88px) 0 !important;
+  }
+
+  body .partner-carousel-card {
+    flex-basis: calc(100vw - 40px);
+    min-height: 620px;
+  }
+
+  body .partner-carousel-overlay {
+    background: linear-gradient(to top, rgba(11, 31, 51, 0.94), rgba(11, 31, 51, 0.42));
+  }
+
+  body .partner-carousel-content {
+    justify-content: flex-end;
+    padding: 24px;
+  }
+
+  body .partner-carousel-content h3 {
+    font-size: clamp(34px, 10vw, 44px);
+    line-height: 0.98;
+  }
+
+  body .partner-carousel-content p:not(.partner-carousel-kicker) {
+    font-size: 15.5px;
+  }
+
+  body .partner-chip-list {
+    gap: 7px;
+    margin-top: 18px;
+  }
+
+  body .partner-chip-list span {
+    min-height: 30px;
+    font-size: 11.5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body .partner-carousel-track,
+  body .partner-carousel-card {
+    transition: none !important;
+  }
+}

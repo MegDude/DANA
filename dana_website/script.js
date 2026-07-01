@@ -826,6 +826,60 @@ function setupDanaWhatCarousel() {
   });
 }
 
+function setupPartnerPathwaysCarousel() {
+  document.querySelectorAll("[data-partner-carousel]").forEach((carousel) => {
+    const track = carousel.querySelector(".partner-carousel-track");
+    const cards = Array.from(carousel.querySelectorAll("[data-partner-card]"));
+    const prev = carousel.querySelector("[data-partner-prev]");
+    const next = carousel.querySelector("[data-partner-next]");
+    const dots = Array.from(carousel.querySelectorAll("[data-partner-dot]"));
+    if (!track || !cards.length) return;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let index = 0;
+
+    const setActive = (nextIndex) => {
+      index = (nextIndex + cards.length) % cards.length;
+      const firstCard = cards[0].getBoundingClientRect();
+      const gap = parseFloat(window.getComputedStyle(track).gap || "0");
+      const step = firstCard.width + gap;
+      track.style.transform = `translateX(${-index * step}px)`;
+      track.style.transitionDuration = reduceMotion ? "0ms" : "";
+
+      cards.forEach((card, cardIndex) => {
+        const isActive = cardIndex === index;
+        const link = card.querySelector("a");
+        card.classList.toggle("is-active", isActive);
+        card.setAttribute("aria-hidden", String(!isActive));
+        if (link) link.tabIndex = isActive ? 0 : -1;
+      });
+
+      dots.forEach((dot, dotIndex) => {
+        const isActive = dotIndex === index;
+        dot.classList.toggle("is-active", isActive);
+        dot.setAttribute("aria-current", isActive ? "true" : "false");
+      });
+    };
+
+    prev?.addEventListener("click", () => setActive(index - 1));
+    next?.addEventListener("click", () => setActive(index + 1));
+
+    dots.forEach((dot, dotIndex) => {
+      dot.addEventListener("click", () => setActive(dotIndex));
+    });
+
+    carousel.addEventListener("keydown", (event) => {
+      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+      event.preventDefault();
+      setActive(index + (event.key === "ArrowRight" ? 1 : -1));
+    });
+
+    window.addEventListener("resize", () => setActive(index));
+    carousel.tabIndex = 0;
+    setActive(0);
+  });
+}
+
 function setupSponsorShowcase() {
   const tabs = document.querySelector("[data-sponsor-tabs]");
   const details = document.querySelector("[data-sponsor-details]");
@@ -1028,6 +1082,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   setupCivicCardSystem();
   setupDanaWhatPillarMorph();
   setupDanaWhatCarousel();
+  setupPartnerPathwaysCarousel();
   initStartHereStack();
   const [issues, events, membership] = await Promise.all([
     getJson("data/issues.json", "issues"),
