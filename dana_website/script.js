@@ -101,7 +101,7 @@ const fallback = {
     {
       id: "i-35-expansion",
       title: "I-35",
-      summary: "Construction, traffic changes, air quality, and how reconstruction may affect downtown residents.",
+      summary: "Construction, traffic changes, air quality, and how the reconstruction may affect downtown residents.",
       status: "Long-Term Project",
       sourceUrl: "issues.html"
     },
@@ -115,7 +115,7 @@ const fallback = {
     {
       id: "downtown-vitality",
       title: "Downtown's Future",
-      summary: "Homes, local businesses, walkable streets, public life, and community events that help downtown feel like a neighborhood.",
+      summary: "The mix of homes, local businesses, walkable streets, public life, and community events that make downtown feel like a neighborhood.",
       status: "Community Conversation",
       sourceUrl: "https://www.downtownaustin.org/dana-letter-c20-2024-018-ddbp-updates-2026-05-14/"
     }
@@ -712,8 +712,19 @@ function renderIssues(issues) {
   targets.forEach(([target, list]) => {
     if (!target) return;
     if (target.matches("[data-issues-preview]")) {
-      target.className = "issue-grid issue-rail-track";
-      target.innerHTML = list.map(renderIssuePreviewCard).join("");
+      target.className = "issue-grid";
+      target.innerHTML = list
+        .map(
+          (issue) => `
+            <article class="issue-card" id="${issue.id}">
+              ${issue.status ? `<span class="status-pill">${issue.status}</span>` : ""}
+              <h3>${issue.title}</h3>
+              <p>${issue.summary}</p>
+              ${issue.sourceUrl && issue.sourceUrl !== "#" ? `<a href="${issue.sourceUrl}">${issue.sourceUrl.endsWith(".html") ? "Read the issue" : "See the background"}</a>` : ""}
+            </article>
+          `
+        )
+        .join("");
       return;
     }
     target.innerHTML = list
