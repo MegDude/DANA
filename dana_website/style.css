@@ -24072,6 +24072,40 @@ body .section.partner-pathways-section .partner-carousel-content p:not(.partner-
   line-height: 1.65 !important;
 }
 
+body .section.partner-pathways-section .partner-carousel-content strong {
+  display: inline-flex !important;
+  width: fit-content !important;
+  min-height: 23px !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin-top: 14px !important;
+  padding: 0 9px !important;
+  color: #C2AB7A !important;
+  background: rgba(255, 255, 255, 0.10) !important;
+  border: 1px solid rgba(255, 255, 255, 0.24) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 10px 26px rgba(0, 0, 0, 0.16) !important;
+  backdrop-filter: blur(16px) !important;
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.14em !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+}
+
+body .section.partner-pathways-section .partner-carousel-content strong span {
+  color: #C2AB7A !important;
+}
+
+body .section.partner-pathways-section .partner-carousel-content:hover strong,
+body .section.partner-pathways-section .partner-carousel-content:focus-visible strong {
+  color: #C2AB7A !important;
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(194, 171, 122, 0.58) !important;
+}
+
 body .section.partner-pathways-section .partner-carousel-overlay {
   background:
     linear-gradient(90deg, rgba(15, 76, 69, 0.96) 0%, rgba(15, 76, 69, 0.72) 48%, rgba(15, 76, 69, 0.28) 100%),
@@ -24200,6 +24234,13 @@ body .section.partner-pathways-section .partner-carousel-dots button.is-active::
 
   body .section.partner-pathways-section .partner-chip-list {
     display: none !important;
+  }
+
+  body .section.partner-pathways-section .partner-carousel-content strong {
+    min-height: 24px !important;
+    margin-top: 12px !important;
+    padding-inline: 9px !important;
+    font-size: 9.5px !important;
   }
 
   body .section.partner-pathways-section .partner-carousel-controls {
